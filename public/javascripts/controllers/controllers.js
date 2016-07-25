@@ -1,4 +1,4 @@
-app.controller("HitchBikeController", ['$scope', 'HitchBikeService', function($scope, HitchBikeService){
+app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', function($scope, HitchBikeService, $location){
   $scope.view = {};
 
   HitchBikeService.bikes().then(function(data) {
@@ -17,6 +17,7 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', function($s
 
   $scope.view.signIn = function() {
     HitchBikeService.signIn($scope.view.username, $scope.view.password);
+    $location.path('/bikes');
   }
 
   $scope.view.signUp = function() {

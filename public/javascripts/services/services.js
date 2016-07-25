@@ -1,4 +1,4 @@
-app.factory('HitchBikeService', function($http) {
+app.factory('HitchBikeService', function($http, $location) {
   return {
     bikes: function() {
       return $http.get('/api/bikes');
