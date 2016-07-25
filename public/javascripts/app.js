@@ -12,5 +12,14 @@ app.config(function($routeProvider){
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html'
     })
+    .when('/addbike', {
+      templateUrl: 'views/addbike.html'
+    })
+    .when('/signup', {
+      templateUrl: 'views/signup.html'
+    })
+    .when('/signin', {
+      templateUrl: 'views/signin.html'
+    })
     .otherwise( { redirectTo: '/' } );
   });
