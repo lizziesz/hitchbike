@@ -13,7 +13,8 @@ app.config(function($routeProvider){
       templateUrl: 'views/signupsuccess.html'
     })
     .when('/signin', {
-      templateUrl: 'views/signin.html'
+      templateUrl: 'views/signin.html',
+      controller: "HitchBikeController"
     })
     .when('/bikes', {
       templateUrl: 'views/bikes.html',

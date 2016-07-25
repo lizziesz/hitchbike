@@ -8,6 +8,12 @@ app.factory('HitchBikeService', function($http) {
     },
     users: function() {
       return $http.get('/api/users');
+    },
+    signIn: function(username, password) {
+      var user = {};
+      user.username = username;
+      user.password = password;
+      return $http.post('/api/signin', user);
     }
   }
 })

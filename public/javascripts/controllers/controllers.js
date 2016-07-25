@@ -15,4 +15,8 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', function($s
     $scope.view.users = data.data;
   });
 
+  $scope.view.signIn = function() {
+    HitchBikeService.signIn($scope.view.username, $scope.view.password);
+  }
+
 }]);
