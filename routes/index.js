@@ -47,6 +47,7 @@ router.post('/api/signin', function(req, res, next) {
       token = jwt.sign({ id: data.id, username: data.username, is_admin: data.is_admin }, secret);
       res.json({token:token});
       console.log("token token: " + token);
+      // res.redirect('/bikes');
     }
   }).catch(function(err) {
     next(err)
@@ -83,6 +84,7 @@ router.post('/api/signup', function(req, res, next) {
         var listedItems = {id: user[0].id, username: user[0].username, is_admin: user[0].is_admin};
         token = jwt.sign({ id: user[0].id}, secret);
         res.json({token:token, user:listedItems});
+        // res.redirect('/bikes');
       }).catch(function(err) {
         console.log(err);
       })
