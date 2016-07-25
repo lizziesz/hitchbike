@@ -4,6 +4,10 @@ module.exports = {
   development: {
     client: 'postgres',
     connection: 'postgres://localhost:5432/hitchbike'
+  },
+  production: {
+    client: 'postgres',
+    connection: process.env.DATABASE_URL
   }
 
 };
