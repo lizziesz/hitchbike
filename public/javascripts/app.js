@@ -4,6 +4,7 @@ app.config(function($routeProvider){
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',
+      controller: "HitchBikeController"
     })
     .when('/signup', {
       templateUrl: 'views/signup.html'
@@ -15,7 +16,8 @@ app.config(function($routeProvider){
       templateUrl: 'views/signin.html'
     })
     .when('/bikes', {
-      templateUrl: 'views/bikes.html'
+      templateUrl: 'views/bikes.html',
+      controller: "HitchBikeController"
     })
     .when('/bikes/addbike', {
       templateUrl: 'views/addbike.html'
