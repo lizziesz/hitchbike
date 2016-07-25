@@ -19,4 +19,8 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', function($s
     HitchBikeService.signIn($scope.view.username, $scope.view.password);
   }
 
+  $scope.view.signUp = function() {
+    HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
+  }
+
 }]);
