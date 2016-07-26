@@ -13,7 +13,8 @@ exports.seed = function(knex, Promise) {
         street_address: '220 Brightwood St.',
         city: "San Antonio",
         state: "TX",
-        zip_code: 78209
+        zip_code: 78209,
+        is_admin: true
     }),
     knex('users').insert({
         username: 'Jeffrey',
@@ -22,7 +23,8 @@ exports.seed = function(knex, Promise) {
         street_address: '2500 Pine St.',
         city: "Boulder",
         state: "CO",
-        zip_code: 80302
+        zip_code: 80302,
+        is_admin: true
     }),
     knex('users').insert({
         username: 'Paul',
@@ -31,7 +33,8 @@ exports.seed = function(knex, Promise) {
         street_address: '4500 North St.',
         city: "Philadelphia",
         state: "PA",
-        zip_code: 19019
+        zip_code: 19019,
+        is_admin: true
     }),
     knex('users').insert({
         username: 'Lizzie',
@@ -40,7 +43,8 @@ exports.seed = function(knex, Promise) {
         street_address: '405 Robinhood St.',
         city: "Lafayette",
         state: "CO",
-        zip_code: 80026
+        zip_code: 80026,
+        is_admin: true
     }),
     knex('users').insert({
         username: 'Casey',
@@ -49,7 +53,8 @@ exports.seed = function(knex, Promise) {
         street_address: '609 Beer St.',
         city: "Milwaukee",
         state: "WI",
-        zip_code: 53202
+        zip_code: 53202,
+        is_admin: true
     })
   );
 };
