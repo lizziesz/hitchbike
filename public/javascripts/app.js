@@ -22,6 +22,9 @@ app.config(function($routeProvider){
     .when('/bikes/addbike', {
       templateUrl: 'views/addbike.html'
     })
+    .when('/bikes/addbikesuccess', {
+      templateUrl: 'views/addbikesuccess.html'
+    })
     .when('/bikes/signup', {
       templateUrl: 'views/signup.html'
     })
@@ -32,10 +35,7 @@ app.config(function($routeProvider){
       templateUrl: 'views/signin.html'
     })
     .when('/bikes/request', {
-      templateUrl: 'views/requestbike.html'
-    })
-    .when('/bikes/requestconfirm', {
-      templateUrl: 'views/requestconfirm.html'
+      templateUrl: 'views/request.html'
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html'
@@ -48,6 +48,12 @@ app.config(function($routeProvider){
     })
     .when('/dashboard/mybikes', {
       templateUrl: 'views/mybikes.html'
+    })
+    .when('/dashboard/mybikes/confirmaccept', {
+      templateUrl: 'views/confirmaccept.html'
+    })
+    .when('/dashboard/mybikes/confirmdeny', {
+      templateUrl: 'views/confirmdeny.html'
     })
     .when('/dashboard/mybikes/deleteconfirm', {
       templateUrl: 'views/bikedelete.html'
