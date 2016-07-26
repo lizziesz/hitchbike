@@ -1,5 +1,6 @@
 exports.seed = function(knex, Promise) {
   return Promise.join(
+    knex('bikes').del(),
     // Inserts seed entries
     knex('bikes').insert({
         owner_id: 5,
@@ -10,7 +11,11 @@ exports.seed = function(knex, Promise) {
         condition: 'perfect',
         price_hour: 2,
         price_day: 10,
-        instructions: 'Pick it up out back by the canoe'
+        instructions: 'Pick it up out back by the canoe',
+        street_address: '123 Packers Lane',
+        city: 'Milwaukee',
+        state: 'WI',
+        zip_code: 53202
     }),
     knex('bikes').insert({
         owner_id: 4,
@@ -21,7 +26,11 @@ exports.seed = function(knex, Promise) {
         condition: 'fair',
         price_hour: 7,
         price_day: 25,
-        instructions: 'On the side of the house by the ladder'
+        instructions: 'On the side of the house by the ladder',
+        street_address: '44 Mountain Drive',
+        city: 'Dillon',
+        state: 'CO',
+        zip_code: 80435
     }),
     knex('bikes').insert({
         owner_id: 3,
@@ -33,7 +42,11 @@ exports.seed = function(knex, Promise) {
         price_day: 30,
         instructions: 'Climb up the mountain. It\'s at the top',
         is_available: false,
-        is_borrowed: true
+        is_borrowed: true,
+        street_address: '4500 North St.',
+        city: 'Philadelphia',
+        state: 'PA',
+        zip_code: 19019
     }),
     knex('bikes').insert({
         owner_id: 2,
@@ -43,7 +56,11 @@ exports.seed = function(knex, Promise) {
         type: "unknown",
         condition: 'godly',
         price_day: 2,
-        instructions: 'Knock three times on the rock near the waterfall in the canyon'
+        instructions: 'Knock three times on the rock near the waterfall in the canyon',
+        street_address: '2500 Pine St.',
+        city: "Boulder",
+        state: 'CO',
+        zip_code: 80302
     }),
     knex('bikes').insert({
         owner_id: 1,
@@ -56,7 +73,11 @@ exports.seed = function(knex, Promise) {
         price_day: 5,
         instructions: "Ask the blind man on the porch",
         is_available: false,
-        is_borrowed: true
+        is_borrowed: true,
+        street_address: '220 Brightwood St.',
+        city: "San Antonio",
+        state: 'Texas',
+        zip_code: 78209
     })
   );
 };

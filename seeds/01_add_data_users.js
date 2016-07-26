@@ -4,9 +4,9 @@ exports.seed = function(knex, Promise) {
   return Promise.join(
     // Deletes ALL existing entries
     knex('users').del(),
-    knex('bikes').del(),
     // Inserts seed entries
     knex('users').insert({
+        id: 1,
         username: 'Andrew',
         password: bcrypt.hashSync('test', 8),
         email: "westaa@colorado.edu",
@@ -17,6 +17,7 @@ exports.seed = function(knex, Promise) {
         is_admin: true
     }),
     knex('users').insert({
+        id: 2,
         username: 'Jeffrey',
         password: bcrypt.hashSync('test', 8),
         email: "medders.jeffrey@gmail.com",
@@ -27,6 +28,7 @@ exports.seed = function(knex, Promise) {
         is_admin: true
     }),
     knex('users').insert({
+        id: 3,
         username: 'Paul',
         password: bcrypt.hashSync('password', 8),
         email: "made.up@gmail.com",
@@ -37,6 +39,7 @@ exports.seed = function(knex, Promise) {
         is_admin: true
     }),
     knex('users').insert({
+        id: 4,
         username: 'Lizzie',
         password: bcrypt.hashSync('Lizzie', 8),
         email: "dont.know@gmail.com",
@@ -47,6 +50,7 @@ exports.seed = function(knex, Promise) {
         is_admin: true
     }),
     knex('users').insert({
+        id: 5,
         username: 'Casey',
         password: bcrypt.hashSync('Casey', 8),
         email: "caseyisnotcool@gmail.com",

@@ -21,6 +21,10 @@ app.config(function($routeProvider){
       templateUrl: 'views/bikes.html',
       controller: "HitchBikeController"
     })
+    .when('/bikes/:location', {
+      templateUrl: 'views/bikes.html',
+      controller: "BikesSearchController"
+    })
     .when('/bikes/addbike', {
       templateUrl: 'views/addbike.html'
     })
