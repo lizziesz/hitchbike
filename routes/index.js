@@ -20,7 +20,7 @@ router.get('/api/bikes', function(req, res, next) {
 
 router.get('/api/bikes/:location', function(req, res, next) {
   console.log("PARAMS: " + req.params.location);
-  knex('bikes').where('city', req.params.location).then(function(data) {
+  knex('bikes').where('city', req.params.location).orWhere('zip_code', req.params.location).then(function(data) {
     console.log(data);
     res.json(data);
   })
