@@ -1,5 +1,6 @@
 exports.seed = function(knex, Promise) {
   return Promise.join(
+    knex('requested_bikes').del(),
     // Inserts seed entries
     knex('requested_bikes').insert({
         requestor_id: 2,

@@ -9,6 +9,9 @@ app.factory('HitchBikeService', function($http, $location) {
     users: function() {
       return $http.get('/api/users');
     },
+    searchBikes: function(locationInput) {
+      return $http.get('/api/bikes/' + locationInput);
+    },
     signIn: function(username, password) {
       var user = {};
       user.username = username;
