@@ -1,26 +1,146 @@
-header {
+header.masthead {
   display: flex;
-  height: 100px;
-  width: 100vw; }
+  justify-content: space-between;
+  height: 80px;
+  width: 100%; }
 
 header div {
   display: flex;
-  justify-content: space-between;
+  align-items: center; }
+
+div.head-logo {
+  width: 230px;
+  justify-content: center; }
+
+img.head-logo {
+  width: 170px;
+  height: 64px; }
+
+div.account-cta {
+  display: flex;
+  justify-content: space-around;
+  width: 200px; }
+
+main.bikes {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  margin-right: 10px; }
+  width: 100%;
+  height: auto;
+  background-size: 1440px; }
 
-header img {
-  width: 240px;
-  height: 90px; }
+section.bike-search-params {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 68px;
+  margin-bottom: 40px; }
 
-header div a {
-  margin-right: 10px; }
+section.all-bikes-frame {
+  display: flex;
+  flex-direction: column;
+  width: 1340px;
+  height: auto;
+  padding: 0px 40px 40px 40px;
+  margin-bottom: 40px; }
+
+section.result-subtitle {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px; }
+
+section.bike-results {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 100%; }
+
+div.bike-frame {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 615px;
+  height: 290px;
+  margin-bottom: 40px;
+  padding-top: 20px; }
+
+div.location-date-search {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  height: 68px;
+  margin-left: 50px; }
+
+div.bike-sort {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 22%;
+  height: 68px;
+  margin-left: 80px; }
+
+form.location-date-search {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 68px;
+  margin-top: 14px; }
+  form.location-date-search input.location {
+    width: 140px; }
+  form.location-date-search input.date {
+    width: 160px; }
+  form.location-date-search input.submit {
+    width: 120px;
+    background-color: #3498DB;
+    color: white;
+    border: none; }
+
+h2.filter-by {
+  color: white;
+  margin-bottom: 22px; }
+
+select.bike-sort {
+  width: 160px; }
+
+div.bike-frame img {
+  height: 200px;
+  width: 200px; }
+
+div.bike-frame input {
+  height: 30px; }
+
+div.bike-frame text {
+  font-size: .65em; }
+
+div.bike-frame h6 {
+  margin-bottom: -5px;
+  font-size: .7em; }
+
+#bikeh1 {
+  margin-bottom: 97px; }
+
+div.bike-frame section {
+  width: 320px; }
 
 header {
-  background-color: lightgrey; }
+  background-color: #EBEBEB; }
 
 header div {
   color: black;
   font-size: 18px; }
+
+main.bikes {
+  background-image: url("../../../../images/beach_bikes.jpg"); }
+
+section.bike-search-params {
+  background-color: rgba(87, 87, 87, 0.5); }
+
+section.all-bikes-frame {
+  background-color: rgba(235, 235, 235, 0.5); }
+
+div.bike-frame {
+  background-color: rgba(255, 255, 255, 0.8); }
 
 /*# sourceMappingURL=style.css.map */

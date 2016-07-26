@@ -2,6 +2,7 @@
 <html lang="en" ng-app="hitchBikeApp">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="stylesheets/reset.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
   <link rel="stylesheet" href="stylesheets/style.css">
   <title>Hitch Bike</title>
@@ -19,16 +20,20 @@
   <script type="text/javascript" src="javascripts/filters/filters.js"></script>
 </head>
 <body>
-  <header>
-    <div>
-      <img src="/images/HitchBike.png" alt="">
+
+  <header class="masthead">
+    <div class="head-logo">
+      <img class="head-logo" src="/images/HitchBike.png" alt="logo">
     </div>
-    <div>
+    <div class="account-cta">
       <a href="">Sign Up</a>
       <a href="">Sign In</a>
     </div>
   </header>
 
-  <div ng-view></div>
+  <main class="main-content" ng-view>
+
+  </main>
+
 </body>
 </html>

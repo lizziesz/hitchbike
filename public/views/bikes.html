@@ -1,4 +1,52 @@
-<h1>Bikes!</h1>
-<ul ng-repeat="bike in view.bikes">
-  <li>{{bike.title}}</li>
-</ul>
+<main class="bikes">
+
+  <section class="bike-search-params">
+    <div class="location-date-search">
+      <form class="location-date-search form-group" ng-submit="">
+        <input class="form-control location" type="text" placeholder="city + state or zip">
+        <input class="form-control date" type="date" placeholder="start">
+        <input class="form-control date" type="date" placeholder="end">
+        <input class="form-control submit" type="submit" value="Display Results">
+      </form>
+    </div>
+    <div class="bike-sort">
+      <h2 class="filter-by">Filter By:</h2>
+      <select name="" class="form-control bike-sort">
+        <option value="">availability (soonest)</option>
+        <option value="">location (nearest)</option>
+        <option value="">location (farthest)</option>
+        <option value="">price (lowest $/day)</option>
+        <option value="">price (highest $/day)</option>
+        <option value="">bike condition (best)</option>
+        <option value="">bike condition (worst)</option>
+      </select>
+    </div>
+  </section>
+
+  <section class="all-bikes-frame">
+    <section class="result-subtitle">
+      <h2>232 Bikes within 10 miles...</h2>
+    </section>
+    <section class="bike-results">
+      <div class="bike-frame" ng-repeat="bike in view.bikes">
+
+        <div id="bikeDisplayImg">
+           <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
+           <h6>{{bike.price_day}}</h6>
+           <h6>{{bike.price_hour}}</h6>
+         </div>
+
+         <section>
+           <h5>{{bike.title}}</h5>
+           <h6>{{bike.is_available}}</h6>
+           <h6>{{bike.type}}</h6>
+           <h6>{{bike.condition}}</h6>
+           <text>{{bike.description}}</text>
+           <input class="form-control" type="submit" ng-click="" value="Request Bike">
+         </section>
+
+      </div>
+    </section>
+  </section>
+
+</main>

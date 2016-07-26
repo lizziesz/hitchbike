@@ -1,8 +1,23 @@
 header {
-  background-color: lightgrey;
+  background-color: #EBEBEB;
 }
 header div {
   color: black;
   font-size: 18px;
+}
 
+main.bikes {
+  background-image: url('../../../../images/beach_bikes.jpg');
+}
+
+section.bike-search-params {
+  background-color: rgba(87, 87, 87, 0.5);
+}
+
+section.all-bikes-frame {
+  background-color: rgba(235, 235, 235, 0.5);
+}
+
+div.bike-frame {
+  background-color: rgba(255, 255, 255, 0.8)
 }

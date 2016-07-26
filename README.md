@@ -11,4 +11,8 @@ https://drive.google.com/file/d/0B-VGJTowAGIZcjVVbXdNTGJwQmc/view
 
 Wireframes
 
-https://drive.google.com/file/d/0B-VGJTowAGIZVlROTGRSZ0RHekU/view
+  drive pdf
+  https://drive.google.com/file/d/0B-VGJTowAGIZbFNQQkwtc1JYVWM/view
+
+  uxPin preview (better quality)
+  https://collaborate.uxpin.com/8575fcea6dda78cb96d791214bbc2754f7f18773#/pages/54833709
