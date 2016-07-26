@@ -18,6 +18,14 @@ router.get('/api/bikes', function(req, res, next) {
   });
 });
 
+router.get('/api/bikes/:location', function(req, res, next) {
+  console.log("PARAMS: " + req.params.location);
+  knex('bikes').where('city', req.params.location).orWhere('zip_code', req.params.location).then(function(data) {
+    console.log(data);
+    res.json(data);
+  })
+})
+
 router.get('/api/requestedbikes', function(req, res, next) {
   knex('requested_bikes').then(function(data) {
     console.log(data);

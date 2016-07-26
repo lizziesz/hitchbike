@@ -2,7 +2,7 @@ body {
   margin-bottom: 0;
 }
 
-// Landing Page Styling
+// Landing Page Structure
 
 #landingContainer {
   margin-top: 0px;
@@ -14,7 +14,7 @@ body {
   padding-top: 30px;
 }
 
-#instrucitons {
+#instructions {
   margin-bottom: 30px;
 }
 
@@ -43,12 +43,12 @@ body {
   margin-right: 20px;
 }
 
-// Styling for the universal header
+// Structure for the universal header
 
 header.masthead {
   display: flex;
   justify-content: space-between;
-  height: 80px;
+  height: 10vh;
   width: 100%;
 }
 
@@ -68,16 +68,17 @@ div.account-cta {
   display: flex;
   justify-content: space-around;
   width: 200px;
+  margin-right: 50px;
 }
 
-// Bikes Page Styling
+// Bikes Page Structure
 
 main.bikes {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: auto;
+  min-height: 90vh;
   background-size: 1440px;
 }
 

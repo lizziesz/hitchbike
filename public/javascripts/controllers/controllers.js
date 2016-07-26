@@ -29,10 +29,15 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
 app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$location', '$routeParams', function($scope, HitchBikeService, $location, $routeParams){
   $scope.view = {};
 
-  HitchBikeService.bikes().then(function(data) {
+  // HitchBikeService.bikes().then(function(data) {
+  //   console.log(data);
+  //   $scope.view.bikes = data.data;
+  // });
+
+  HitchBikeService.searchBikes($routeParams.location).then(function(data) {
     console.log(data);
     $scope.view.bikes = data.data;
-  });
+  })
 
   HitchBikeService.requestedbikes().then(function(data) {
     console.log(data);

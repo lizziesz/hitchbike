@@ -12,7 +12,7 @@ https://drive.google.com/file/d/0B-VGJTowAGIZcjVVbXdNTGJwQmc/view
 Wireframes
 
   drive pdf
-  https://drive.google.com/file/d/0B-VGJTowAGIZbFNQQkwtc1JYVWM/view
+  https://drive.google.com/file/d/0B-VGJTowAGIZVjRRY3FzY21oT0U/view
 
   uxPin preview (better quality)
   https://collaborate.uxpin.com/8575fcea6dda78cb96d791214bbc2754f7f18773#/pages/54833709
