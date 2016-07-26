@@ -160,18 +160,6 @@ div.bike-frame h6 {
 div.bike-frame section {
   width: 320px; }
 
-.dashboardDivs {
-  display: flex;
-  width: 80vw;
-  height: 60px;
-  margin: auto;
-  margin-top: 20px;
-  align-items: center; }
-
-.dashboardDivs h3 {
-  margin: 0;
-  margin-left: 20px; }
-
 .signup {
   display: flex;
   flex-direction: column;
@@ -254,6 +242,32 @@ div.bike-frame section {
   width: 100vw;
   height: 100vh;
   padding-top: 50px; }
+
+.signupSuccess {
+  height: 160px;
+  width: 650px;
+  background: white;
+  position: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: .6px;
+  align-content: space-around;
+  margin: 50px;
+  padding: 20px; }
+
+.signupSuccess input[type=submit] {
+  background: #4c96d7;
+  float: right;
+  margin-right: 20px;
+  width: 150px;
+  height: 30px;
+  color: white;
+  font-size: 1.6em;
+  padding-bottom: 35px; }
+
+.signupSuccess h1 {
+  margin-top: -10px; }
 
 header.masthead {
   background-color: #EBEBEB;
