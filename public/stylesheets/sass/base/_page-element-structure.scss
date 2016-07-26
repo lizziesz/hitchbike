@@ -1,9 +1,57 @@
+body {
+  margin-bottom: 0;
+}
+
+// Landing Page Styling
+
+#landingContainer {
+  margin-top: 0px;
+  height: 100vh;
+}
+
+#slogan {
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+#instrucitons {
+  margin-bottom: 30px;
+}
+
+#slogan p {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px;
+}
+#instructions p {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px;
+}
+#landingSearchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 70px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+#landingSearchForm input {
+  margin-right: 20px;
+}
+
+// Styling for the universal header
+
 header.masthead {
   display: flex;
   justify-content: space-between;
   height: 80px;
   width: 100%;
 }
+
 header div {
   display: flex;
   align-items: center;
@@ -21,6 +69,8 @@ div.account-cta {
   justify-content: space-around;
   width: 200px;
 }
+
+// Bikes Page Styling
 
 main.bikes {
   display: flex;
@@ -104,15 +154,9 @@ form.location-date-search {
   }
   input.submit {
     width: 120px;
-    background-color: #3498DB;
-    color: white;
     border: none;
   }
 }
-
-// select.bike-sort {
-//   width: 200px;
-// }
 
 h2.filter-by {
   margin-bottom: 22px;

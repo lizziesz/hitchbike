@@ -29,22 +29,20 @@
     </section>
     <section class="bike-results">
       <div class="bike-frame" ng-repeat="bike in view.bikes">
+        <div id="bike-frame-image">
+          <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
+          <h6>Daily Rate: {{bike.price_day | currency: "$"}}</h6>
+          <h6>Hourly Rate: {{bike.price_hour | currency: "$" | hourly}}</h6>
+        </div>
 
-        <div id="bikeDisplayImg">
-           <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
-           <h6>{{bike.price_day}}</h6>
-           <h6>{{bike.price_hour}}</h6>
-         </div>
-
-         <section>
-           <h5>{{bike.title}}</h5>
-           <h6>{{bike.is_available}}</h6>
-           <h6>{{bike.type}}</h6>
-           <h6>{{bike.condition}}</h6>
-           <text>{{bike.description}}</text>
-           <input class="form-control" type="submit" ng-click="" value="Request Bike">
-         </section>
-
+        <section>
+          <h5>{{bike.title}}</h5>
+          <h6>{{bike.is_available | inStock}}</h6>
+          <h6>Type: {{bike.type}}</h6>
+          <h6>Condition: {{bike.condition}}</h6>
+          <text>Description: {{bike.description}}</text>
+          <input class="form-control" type="submit" ng-click="" value="Request Bike">
+        </section>
       </div>
     </section>
   </section>
