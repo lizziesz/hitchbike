@@ -1,20 +1,67 @@
+body {
+  margin-bottom: 0;
+}
+
+// Styling for the univeral header
+
 header {
   display: flex;
   height: 100px;
   width: 100vw;
+  margin-bottom: 0;
 }
 header div {
   display: flex;
   justify-content: space-between;;
   align-items: center;
   margin-right: 10px;
-
 }
 header img {
   width: 240px;
   height: 90px;
-
+  margin-left: 20px;
 }
 header div a {
   margin-right: 10px;
+}
+
+// Landing Page Styling
+
+#landingContainer {
+  margin-top: 0px;
+  height: 100vh;
+}
+
+#slogan {
+  margin-bottom: 30px;
+  padding-top: 30px;
+}
+
+#instrucitons {
+  margin-bottom: 30px;
+}
+
+#slogan p {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px;
+}
+#instructions p {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px;
+}
+#landingSearchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 70px;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+#landingSearchForm input {
+  margin-right: 20px;
 }

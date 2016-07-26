@@ -1,7 +1,11 @@
+body {
+  margin-bottom: 0; }
+
 header {
   display: flex;
   height: 100px;
-  width: 100vw; }
+  width: 100vw;
+  margin-bottom: 0; }
 
 header div {
   display: flex;
@@ -11,10 +15,46 @@ header div {
 
 header img {
   width: 240px;
-  height: 90px; }
+  height: 90px;
+  margin-left: 20px; }
 
 header div a {
   margin-right: 10px; }
+
+#landingContainer {
+  margin-top: 0px;
+  height: 100vh; }
+
+#slogan {
+  margin-bottom: 30px;
+  padding-top: 30px; }
+
+#instrucitons {
+  margin-bottom: 30px; }
+
+#slogan p {
+  font-size: 30px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px; }
+
+#instructions p {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 30px; }
+
+#landingSearchForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 550px;
+  height: 70px;
+  margin-left: 30px;
+  margin-top: 30px; }
+
+#landingSearchForm input {
+  margin-right: 20px; }
 
 header {
   background-color: lightgrey; }
@@ -22,7 +62,6 @@ header {
 header div {
   color: black;
   font-size: 18px; }
-
 /*BIKE PAGE / BIKE DISPLAY DIV*/
 
 .bikeDisplay{
@@ -52,6 +91,25 @@ header div {
 .bikeDisplay section {
   width: 320px;
 }
+
+#landingContainer {
+  background-image: url(/images/LandingPicture.jpeg);
+  background-size: cover; }
+
+#slogan p {
+  color: white; }
+
+#instructions p {
+  color: white; }
+
+#landingSearchForm {
+  background-color: rgba(0, 0, 0, 0.5); }
+
+#landingSearch {
+  background-color: #4c96d7;
+  color: white;
+  width: 100px;
+  border: none; }
 
 
 /*# sourceMappingURL=style.css.map */
