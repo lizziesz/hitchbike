@@ -1,13 +1,15 @@
 // Styling for the universal Header
 
-header {
+header.masthead {
   background-color: #EBEBEB;
+  -webkit-box-shadow: 0px 1.5px 3px 0px rgba(0,0,0,0.6);
+  -moz-box-shadow: 0px 1.5px 3px 0px rgba(0,0,0,0.6);
+  box-shadow: 0px 1.5px 3px 0px rgba(0,0,0,0.6);
 }
 header div {
   color: black;
   font-size: 18px;
 }
-
 
 // Styling for the Landing Page
 
