@@ -2,6 +2,15 @@ body {
   margin-bottom: 0;
 }
 
+div.dark-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.5);
+    width: 100vw;
+    height: 100vh;
+}
+
 // Landing Page Structure
 
 #landingContainer {
@@ -192,3 +201,5 @@ div.bike-frame h6 {
 div.bike-frame section {
  width: 320px;
 }
+
+// Popup Box Structure

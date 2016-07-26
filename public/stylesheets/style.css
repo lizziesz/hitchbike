@@ -1,6 +1,14 @@
 body {
   margin-bottom: 0; }
 
+div.dark-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh; }
+
 #landingContainer {
   margin-top: 0px;
   height: 100vh; }
@@ -211,46 +219,5 @@ h2.filter-by {
 
 h2.result-subtitle {
   color: white; }
-/*SIGNUP PAGE*/
-.signup {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  height: 400px;
-  border-color: black;
-  border-width: .5px;
-  border-style: solid;
-  margin: 100px;
-}
 
-.signup h2 {
-  text-align: center;
-}
-
-.signup form {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  justify-content: center;
-  align-content: center;
-  margin: auto;
-  margin-top: 10px;
-}
-.signup input {
-  margin-top: 12px;
-  text-align: center;
-  height: 35px;
-  font-size: 1.5em;
-}
-.signupAddress{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.signupAddress input{
-  width: 120px;
-}
-.signup input[type=submit]{
-  background: #4c96d7;
-}
 /*# sourceMappingURL=style.css.map */

@@ -24,6 +24,14 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
   }
 
+  $scope.view.darkBackground = function() {
+    view.darkBackground === true;
+  }
+
+  $scope.view.removeDarkBackground = function() {
+    view.darkBackground === false;
+  }
+
 }]);
 
 app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$location', '$routeParams', function($scope, HitchBikeService, $location, $routeParams){
