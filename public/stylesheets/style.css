@@ -208,6 +208,7 @@ h2.filter-by {
 h2.result-subtitle {
   color: white; }
 /*SIGNUP PAGE*/
+
 .signup {
   display: flex;
   flex-direction: column;
@@ -216,7 +217,8 @@ h2.result-subtitle {
   border-color: black;
   border-width: .5px;
   border-style: solid;
-  margin: 100px;
+  margin: 50px;
+  background: white;
 }
 
 .signup h2 {
@@ -248,5 +250,11 @@ h2.result-subtitle {
 }
 .signup input[type=submit]{
   background: #4c96d7;
+}
+.background{
+  width: 100vw;
+  height: 100vh;
+  background: grey;
+  margin-top: -50px;
 }
 /*# sourceMappingURL=style.css.map */
