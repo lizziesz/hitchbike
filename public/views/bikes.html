@@ -1,4 +1,18 @@
-<h1>Bikes!</h1>
-<ul ng-repeat="bike in view.bikes">
-  <li>{{bike.title}}</li>
-</ul>
+<h1 id="bikeh1">Bikes!</h1>
+
+<div ng-repeat="bike in view.bikes" class="bikeDisplay">
+  <div id="bikeDisplayImg">
+    <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
+    <h6>Daily Rate: {{bike.price_day | currency: "$"}}</h6>
+    <h6>Hourly Rate: {{bike.price_hour | currency: "$" | hourly}}</h6>
+  </div>
+
+  <section>
+    <h5>{{bike.title}}</h5>
+    <h6>{{bike.is_available | inStock}}</h6>
+    <h6>Type: {{bike.type}}</h6>
+    <h6>Condition: {{bike.condition}}</h6>
+    <text>Description: {{bike.description}}</text>
+    <input type="submit" value="Request Bike">
+  </section>
+</div>

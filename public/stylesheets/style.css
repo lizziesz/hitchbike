@@ -23,4 +23,35 @@ header div {
   color: black;
   font-size: 18px; }
 
+/*BIKE PAGE / BIKE DISPLAY DIV*/
+
+.bikeDisplay{
+  height: 278px;
+  width: 566px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.bikeDisplay img{
+  height: 200px;
+  width: 200px;
+}
+.bikeDisplay input{
+  height:30px;
+}
+.bikeDisplay text {
+  font-size: .65em;
+}
+.bikeDisplay h6 {
+  margin-bottom: -5px;
+  font-size: .7em;
+}
+#bikeh1 {
+  margin-bottom: 97px;
+}
+.bikeDisplay section {
+  width: 320px;
+}
+
+
 /*# sourceMappingURL=style.css.map */
