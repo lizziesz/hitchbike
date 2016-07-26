@@ -1,8 +1,32 @@
+// Styling for the univeral Header
+
 header {
   background-color: lightgrey;
 }
 header div {
   color: black;
   font-size: 18px;
+}
 
+
+// Styling for the Landing Page
+
+#landingContainer {
+  background-image: url(/images/LandingPicture.jpeg);
+  background-size: cover;
+}
+#slogan p {
+  color: white;
+}
+#instructions p {
+  color: white;
+}
+#landingSearchForm{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+#landingSearch {
+  background-color: #4c96d7;
+  color: white;
+  width: 100px;
+  border: none;
 }
