@@ -3,10 +3,12 @@
   <section class="bike-search-params">
     <div class="location-date-search">
       <form class="location-date-search form-group" ng-submit="">
-        <input class="form-control location" type="text" placeholder="city + state or zip">
-        <input class="form-control date" type="date" placeholder="start">
-        <input class="form-control date" type="date" placeholder="end">
-        <input class="form-control submit" type="submit" value="Display Results">
+        <input class="form-control location" type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
+        <input class="form-control date" type="date" id="startTime" name="startTime" ng-model="startTime">
+        <input class="form-control date" type="date" id="endTime" name="endTime" ng-model="endTime">
+        <!-- <input class="form-control submit" type="submit" value="Display Results"> -->
+        <a href="/#/bikes/{{location}}"><button class="form-control submit" type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="!startTime">Search!</button></a>
+        <a href="/#/bikes/{{location}}/{{startTime}}/{{endTime}}"><button class="form-control submit" type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="startTime">Search!</button></a>
       </form>
     </div>
     <div class="bike-sort">
