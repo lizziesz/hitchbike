@@ -28,6 +28,31 @@ router.get('/api/bikes/:location', function(req, res, next) {
   });
 });
 
+router.get('/api/bikes/:location/:startTime/:endTime', function(req, res, next) {
+  console.log("PARAMS: " + req.params.location);
+  console.log("START: " + req.params.startTime);
+  var start = Date.parse(req.params.startTime.slice(1,11));
+  var end = Date.parse(req.params.endTime.slice(1,11));
+  console.log("Short start: " + start);
+  console.log("Short end: " + end);
+  knex('bikes').fullOuterJoin('requested_bikes', 'bike_id', 'bikes.id').where(function() {
+    this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
+  }).where('is_available', 'true')
+  // .whereNotBetween('borrow_start_time', [start, end])
+  .whereNotBetween('startDate', [start, end])
+  .whereNotBetween('endDate', [start, end])
+  .then(function(data) {
+    console.log(data);
+    res.json(data);
+  });
+  // knex('bikes').where(function() {
+  //   this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
+  // }).where('is_available', 'true').then(function(data) {
+  //   console.log(data);
+  //   res.json(data);
+  // });
+});
+
 router.get('/api/requestedbikes', function(req, res, next) {
   knex('requested_bikes').then(function(data) {
     console.log(data);
