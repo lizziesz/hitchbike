@@ -15,7 +15,7 @@ exports.seed = function(knex, Promise) {
         street_address: '123 Packers Lane',
         city: 'Milwaukee',
         state: 'WI',
-        zip_code: 53202
+        zip_code: '53202'
     }),
     knex('bikes').insert({
         owner_id: 4,
@@ -30,7 +30,7 @@ exports.seed = function(knex, Promise) {
         street_address: '44 Mountain Drive',
         city: 'Dillon',
         state: 'CO',
-        zip_code: 80435
+        zip_code: '80435'
     }),
     knex('bikes').insert({
         owner_id: 3,
@@ -46,7 +46,7 @@ exports.seed = function(knex, Promise) {
         street_address: '4500 North St.',
         city: 'Philadelphia',
         state: 'PA',
-        zip_code: 19019
+        zip_code: '19019'
     }),
     knex('bikes').insert({
         owner_id: 2,
@@ -60,7 +60,7 @@ exports.seed = function(knex, Promise) {
         street_address: '2500 Pine St.',
         city: "Boulder",
         state: 'CO',
-        zip_code: 80302
+        zip_code: '80302'
     }),
     knex('bikes').insert({
         owner_id: 1,
@@ -77,7 +77,7 @@ exports.seed = function(knex, Promise) {
         street_address: '220 Brightwood St.',
         city: "San Antonio",
         state: 'Texas',
-        zip_code: 78209
+        zip_code: '78209'
     })
   );
 };
