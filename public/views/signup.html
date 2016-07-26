@@ -1,17 +1,19 @@
+<div class=
+"signup">
 <form ng-submit="view.signUp()" name="signUpForm">
-  <p>Username</p>
-  <input type="text" name="username" ng-model="view.usernameSignup">
-  <p>Password</p>
-  <input type="password" name="password" ng-model="view.passwordSignup">
-  <p>Email</p>
-  <input type="email" name="email" ng-model="view.emailSignup">
-  <p>Street Address</p>
-  <input type="text" name="street_address" ng-model="view.street_addressSignup">
-  <p>City</p>
-  <input type="text" name="city" ng-model="view.citySignup">
-  <p>State</p>
-  <input type="text" name="state" ng-model="view.stateSignup">
-  <p>Zip Code</p>
-  <input type="number" name="zip_code" ng-model="view.zip_codeSignup">
+  <h2>Sign Up</h2>
+  <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username">
+  <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password">
+  <input type="email" name="email" ng-model="view.emailSignup" placeholder="email">
+  <input type="text" name="street_address" ng-model="view.streets_addressSignup" placeholder="street address">
+
+  <div class="signupAddress">
+    <input type="text" name="city" ng-model="view.citySignup" placeholder="city">
+    <input type="text" name="state" ng-model="view.stateSignup" placeholder="state">
+    <input type="number" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code">
+  </div>
+
   <input type="submit">
+
 </form>
+</div>
