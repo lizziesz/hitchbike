@@ -191,3 +191,18 @@ div.bike-frame h6 {
 div.bike-frame section {
  width: 320px;
 }
+
+// Dashboard styling
+
+.dashboardDivs {
+  display: flex;
+  width: 80vw;
+  height: 60px;
+  margin: auto;
+  margin-top: 20px;
+  align-items: center;
+}
+.dashboardDivs h3 {
+  margin: 0;
+  margin-left: 20px;
+}
