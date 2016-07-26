@@ -25,6 +25,10 @@ app.config(function($routeProvider){
       templateUrl: 'views/bikes.html',
       controller: "BikesSearchController"
     })
+    .when('/bikes/:location/:startTime/:endTime', {
+      templateUrl: 'views/bikes.html',
+      controller: "BikesSearchDateController"
+    })
     .when('/bikes/addbike', {
       templateUrl: 'views/addbike.html'
     })
