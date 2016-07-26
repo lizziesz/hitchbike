@@ -1,8 +1,26 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
+header {
+  display: flex;
+  height: 100px;
+  width: 100vw; }
 
-a {
-  color: #00B7FF;
-}
+header div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 10px; }
+
+header img {
+  width: 240px;
+  height: 90px; }
+
+header div a {
+  margin-right: 10px; }
+
+header {
+  background-color: lightgrey; }
+
+header div {
+  color: black;
+  font-size: 18px; }
+
+/*# sourceMappingURL=style.css.map */

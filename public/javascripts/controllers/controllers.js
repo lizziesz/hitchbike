@@ -1,4 +1,4 @@
-app.controller("HitchBikeController", ['$scope', 'HitchBikeService', function($scope, HitchBikeService){
+app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', function($scope, HitchBikeService, $location){
   $scope.view = {};
 
   HitchBikeService.bikes().then(function(data) {
@@ -14,5 +14,14 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', function($s
   HitchBikeService.users().then(function(data) {
     $scope.view.users = data.data;
   });
+
+  $scope.view.signIn = function() {
+    HitchBikeService.signIn($scope.view.username, $scope.view.password);
+    $location.path('/bikes');
+  }
+
+  $scope.view.signUp = function() {
+    HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
+  }
 
 }]);
