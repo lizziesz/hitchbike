@@ -30,13 +30,15 @@
         </a>
       </div>
 
-      <a ng-href="/#/bikes/addbike">
-      <h1>ADD BIKES</h1>
-      </a>
+      <a ng-href="/#/bikes/addbike" ng-show="user"><h1>ADD BIKES</h1></a>
 
     <div class="account-cta">
-      <a ng-href="/#/signup">Sign Up</a>
-      <a ng-href="/#/signin">Sign In</a>
+      <a ng-href="/#/signup" ng-show="!user">Sign Up</a>
+      <a ng-href="/#/signin" ng-show="!user">Sign In</a>
+      <!-- <a ng-href="/#/signout" ng-show="user">Sign Out</a> -->
+      <a ng-href="/#/dashboard" ng-show="user">{{user.username}}'s dashboard</a>
+      <button ng-click="view.signOut()" ng-show="user">Sign Out</button>
+
     </div>
 
   </header>
