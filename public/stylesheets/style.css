@@ -341,31 +341,6 @@ div.bike-frame section {
 #postBike {
   background: #4c96d7; }
 
-.confirm {
-  height: 59vh;
-  width: 41vw;
-  border-width: .5px;
-  border-color: black;
-  border-style: solid;
-  background: white;
-  margin: auto;
-  padding: 15px;
-  display: flex;
-  flex-direction: column; }
-
-.confirm input {
-  width: 30vw;
-  height: 10vh; }
-
-.confirm h4 {
-  margin-bottom: 0px;
-  margin-top: 0px; }
-
-#paymentDiv {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
-
 header.masthead {
   background-color: #EBEBEB;
   -webkit-box-shadow: 0px 1.5px 3px 0px rgba(0, 0, 0, 0.6);
@@ -433,5 +408,3 @@ h2.filter-by {
 
 h2.result-subtitle {
   color: white; }
-
-/*# sourceMappingURL=style.css.map */
