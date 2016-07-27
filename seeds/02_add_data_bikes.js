@@ -3,6 +3,7 @@ exports.seed = function(knex, Promise) {
     knex('bikes').del(),
     // Inserts seed entries
     knex('bikes').insert({
+        id: 1,
         owner_id: 5,
         title: "Cool bike for rent!",
         description: 'The bike works great, check it out before it\'s gone',
@@ -18,6 +19,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53202'
     }),
     knex('bikes').insert({
+        id: 2,
         owner_id: 4,
         title: "Decent bike for rent",
         description: 'It squeaks but she\'ll get you where you\'re going',
@@ -33,6 +35,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '80435'
     }),
     knex('bikes').insert({
+        id: 3,
         owner_id: 3,
         title: 'Fine mountain bike',
         description: 'Roll down the mountains in style',
@@ -49,6 +52,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '19019'
     }),
     knex('bikes').insert({
+        id: 4,
         owner_id: 2,
         title: "Coolest bike on this site, without question.",
         description: 'This bike was manufactured in the forest by small gnomes. They worked tirelessly to complete this bike. They were paid, that\'s for sure. Good benefits. Really wonderful bike with no imperfections anywhere',
@@ -63,6 +67,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '80302'
     }),
     knex('bikes').insert({
+        id: 5,
         owner_id: 1,
         title: "Granny bike",
         description: "Slow, but proud",
