@@ -1,13 +1,15 @@
 app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', function($scope, HitchBikeService, $location){
   $scope.view = {};
+  // this should technically be false, but works as true for some reason..
+  $scope.view.popUp = true;
 
   HitchBikeService.bikes().then(function(data) {
-    console.log(data);
+    // console.log(data);
     $scope.view.bikes = data.data;
   });
 
   HitchBikeService.requestedbikes().then(function(data) {
-    console.log(data);
+    // console.log(data);
     $scope.view.requestedBikes = data.data;
   });
 
@@ -22,6 +24,56 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
 
   $scope.view.signUp = function() {
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
+  }
+
+  $scope.openPopUp = function() {
+    $scope.view.popUp = true;
+    console.log('open');
+  }
+
+  $scope.closePopUp = function() {
+    $scope.view.popUp = false;
+    var path = $location.path();
+    if (path === '/signup') {
+      return $location.path('/');
+    }
+    else if (path === '/signupsuccess') {
+      return $location.path('/');
+    }
+    else if (path === '/signin') {
+      return $location.path('/');
+    }
+    else if (path === '/bikes/signup') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/bikes/signupsuccess') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/bikes/signin') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/bikes/addbike') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/bikes/addbikesuccess') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/bikes/request') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/dashboard/addbike') {
+      return $location.path('/dashboard');
+    }
+    else if (path === '/dashboard/addbikesuccess') {
+      return $location.path('/dashboard');
+    }
+    else if (path === '/dashboard/mybikes/confirmdeny') {
+      return $location.path('/dashboard/mybikes');
+    }
+    else if (path === '/dashboard/mybikes/confirmaccept') {
+      return $location.path('/dashboard/mybikes');
+    }
+    console.log('closed');
   }
 
 }]);

@@ -19,14 +19,15 @@
   <script type="text/javascript" src="javascripts/directives/directives.js"></script>
   <script type="text/javascript" src="javascripts/filters/filters.js"></script>
 </head>
-<body>
+<body ng-controller="HitchBikeController">
 
-  <header class="masthead">
-    <div class="head-logo">
-      <a href="/#/">
-        <img class="head-logo" src="/images/HitchBike.png" alt="logo">
-      </a>
-    </div>
+    <header class="masthead">
+      <div class="head-logo">
+        <a href="/#/">
+          <img class="head-logo" src="/images/HitchBike.png" alt="logo">
+        </a>
+      </div>
+
 
     <div class="account-cta">
       <a ng-href="/#/signup">Sign Up</a>
@@ -34,9 +35,17 @@
     </div>
   </header>
 
-  <main class="main-content" ng-view>
+      <div class="account-cta">
+        <a ng-click="openPopUp()" ng-href="/#/signup">Sign Up</a>
+        <a ng-click="openPopUp()" ng-href="/#/signin" ng-click="">Sign In</a>
+      </div>
+    </header>
 
-  </main>
+
+    <main class="main-content" ng-view>
+
+    </main>
+
 
 </body>
 </html>

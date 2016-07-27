@@ -10,7 +10,6 @@ header div {
   color: black;
   font-size: 18px;
 }
-
 // Styling for the Landing Page
 
 #landingContainer {
@@ -59,8 +58,19 @@ form.location-date-search {
   }
 }
 
-// Styling for the dashboard page
+// Custom Directive Testing
 
+div.test-directive {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vh;
+  height: 100vh;
+  background-color: red;
+  color: blue;
+  z-index: 1000;
+}
+// Styling for the dashboard page
 .dashboardDivs {
   background-color: #4c96d7;
 }
