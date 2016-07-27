@@ -1,23 +1,34 @@
 
 <div id="dashboardContainer">
-  <div id="accountSettingBar" class="dashboardDivs">
+  <div id="accountSettingBar" class="dashboardDivs" ng-click="toggleAccount()">
     <h3>Account Settings</h3>
   </div>
-  <div ng-show="showAccountInfo" ng-click="toggleAccount()" class="dashboardDrop">
-    Account
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid nostrum veniam tempora veritatis iure saepe dicta, neque consectetur maxime accusantium debitis, eos ex modi nesciunt facere porro ea ut quia.
+  <div ng-show="showAccountInfo === true" class="dashboardDrop">
+    <p>Adress</p>
+    <input type="text" value="{{user.address}}">
+    <input type="text" value="{{user.city}}">
+    <input type="state">
+    <input type="text" value="{{user.zip_code}}">
+    <p>Search Bike Radius</p>
+    <select name="" id="">
+      <option value="1 Mile">1 Mile</option>
+      <option value="5 Miles">5 Miles</option>
+      <option value="10 Miles">10 Miles</option>
+      <option value="15 Miles">15 Miles</option>
+      <option value="25 Miles">25 Miles</option>
+    </select>
+    <input type="button" value="Save Updates">
   </div>
-  <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs">
+  <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
     <h3>Currently Borrowed Bikes</h3>
   </div>
-  <div ng-show="showBorrowedBikes === true" ng-click="toggleBorrowedBikes()" class="dashboardDrop">
-    Borrowed
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam illum, mollitia iusto dolore distinctio illo doloribus, praesentium perferendis cumque, blanditiis a. Veniam est, iusto esse, itaque distinctio necessitatibus dolorum quas!
+  <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
+
   </div>
-  <div id="myBikesBar" class="dashboardDivs">
+  <div id="myBikesBar" class="dashboardDivs" ng-click="toggleMyBikes()">
     <h3>My Bikes</h3>
   </div>
-  <div ng-show="showMyBikes === true" ng-click="toggleMyBikes()" class="dashboardDrop">
+  <div ng-show="showMyBikes === true" class="dashboardDrop">
     My Bikes
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quasi quam laborum a tenetur mollitia nesciunt veritatis ipsam iure explicabo dignissimos aperiam ex magni aspernatur, impedit cumque. Non impedit, ut.
   </div>
