@@ -13,28 +13,28 @@ router.get('/', function(req, res, next) {
 
 router.get('/api/bikes', function(req, res, next) {
   knex('bikes').then(function(data) {
-    console.log(data);
+    // console.log(data);
     res.json(data);
   });
 });
 
-router.get('/api/bikes/:location', function(req, res, next) {
+router.get('/api/bikes/search/:location', function(req, res, next) {
   console.log("PARAMS: " + req.params.location);
   knex('bikes').where(function() {
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
   }).where('is_available', 'true').then(function(data) {
-    console.log(data);
+    // console.log(data);
     res.json(data);
   });
 });
 
-router.get('/api/bikes/:location/:startTime/:endTime', function(req, res, next) {
-  console.log("PARAMS: " + req.params.location);
-  console.log("START: " + req.params.startTime);
+router.get('/api/bikes/search/:location/:startTime/:endTime', function(req, res, next) {
+  // console.log("PARAMS: " + req.params.location);
+  // console.log("START: " + req.params.startTime);
   var start = Date.parse(req.params.startTime.slice(1,11));
   var end = Date.parse(req.params.endTime.slice(1,11));
-  console.log("Short start: " + start);
-  console.log("Short end: " + end);
+  // console.log("Short start: " + start);
+  // console.log("Short end: " + end);
   knex('bikes').fullOuterJoin('requested_bikes', 'requested_bikes.bike_id', 'bikes.id').where(function() {
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
   })
@@ -58,7 +58,7 @@ router.get('/api/bikes/:location/:startTime/:endTime', function(req, res, next) 
 
 router.get('/api/requestedbikes', function(req, res, next) {
   knex('requested_bikes').then(function(data) {
-    console.log(data);
+    // console.log(data);
     res.json(data);
   });
 });
@@ -77,6 +77,7 @@ router.post('/api/signin', function(req, res, next) {
   })
   .first()
   .then(function(data) {
+    console.log(data);
     if(!data) {
       console.log("username doesn't exist");
     }

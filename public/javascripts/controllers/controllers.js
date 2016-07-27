@@ -13,6 +13,10 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     $scope.view.requestedBikes = data.data;
   });
 
+  $scope.view.addBike = function() {
+    HitchBikeService.addBike($scope.view.bikes, )
+  }
+
   HitchBikeService.users().then(function(data) {
     $scope.view.users = data.data;
   });
