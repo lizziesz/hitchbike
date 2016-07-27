@@ -187,7 +187,22 @@ div.bike-frame section {
   margin: auto;
   border-left: solid black 1px;
   border-right: solid black 1px;
-  border-bottom: solid black 1px; }
+  border-bottom: solid black 1px;
+  padding: 20px; }
+
+.dashboardBikeFrame {
+  padding: 15px; }
+
+#uniqueP {
+  margin-top: 20px; }
+
+#editUsersButton {
+  display: flex;
+  margin-top: 10px;
+  justify-content: center;
+  color: white;
+  background-color: #4c96d7;
+  border: none; }
 
 .signup {
   position: absolute;
