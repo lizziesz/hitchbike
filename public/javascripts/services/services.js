@@ -33,8 +33,9 @@ app.factory('HitchBikeService', function($http, $location) {
       array.push(newUser);
       return $http.post('/api/signup', newUser);
     },
-    addBike: function(array, title, image, priceday, pricehour, type, condition, instructions, description, street_address, city, state, zip_code) {
+    addBike: function(array, title, image, priceday, pricehour, type, condition, instructions, description, street_address, city, state, zip_code, owner_id) {
       var newBike = {};
+      newBike.owner_id = owner_id;
       newBike.title = title;
       newBike.picture = image;
       newBike.price_day = priceday;

@@ -150,7 +150,7 @@ router.post('/api/signup', function(req, res, next) {
 
 router.post('/api/addbike', protect,function(req, res, next) {
   knex('bikes').insert({
-    // owner_id:
+    owner_id: req.body.owner_id,
     title: req.body.title,
     description: req.body.description,
     picture: req.body.picture,

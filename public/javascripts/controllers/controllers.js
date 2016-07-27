@@ -1,4 +1,4 @@
-app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', function($scope, HitchBikeService, $location, $http){
+app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', '$window', function($scope, HitchBikeService, $location, $http, $window){
   $scope.view = {};
   // this should technically be false, but works as true for some reason..
   $scope.view.popUp = true;
@@ -14,8 +14,10 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     $scope.view.requestedBikes = data.data;
   });
 
-  $scope.view.addBike = function() {
-    HitchBikeService.addBike($scope.view.bikes, $scope.view.addBikeTitle, $scope.view.addBikeImage, $scope.view.addBikePriceday, $scope.view.addBikePricehour, $scope.view.addBikeType, $scope.view.addBikeCondition, $scope.view.addBikeInstructions, $scope.view.addBikeDescription, $scope.view.addBikeStreet_address, $scope.view.addBikeCity, $scope.view.addBikeState, $scope.view.addBikeZip_code)
+  $scope.view.addBike = function(id) {
+    // console.log($scope.view.addBikeOwnerId);
+    console.log(id);
+    HitchBikeService.addBike($scope.view.bikes, $scope.view.addBikeTitle, $scope.view.addBikeImage, $scope.view.addBikePriceday, $scope.view.addBikePricehour, $scope.view.addBikeType, $scope.view.addBikeCondition, $scope.view.addBikeInstructions, $scope.view.addBikeDescription, $scope.view.addBikeStreet_address, $scope.view.addBikeCity, $scope.view.addBikeState, $scope.view.addBikeZip_code, id);
   }
 
   HitchBikeService.users().then(function(data) {
@@ -26,6 +28,7 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     HitchBikeService.signIn($scope.view.username, $scope.view.password).then(function (res) {
       localStorage.jwt = res.data.token;
       $location.path('/bikes');
+      $window.location.reload();
     });
   }
 
@@ -34,7 +37,14 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     .then(function(res) {
       localStorage.jwt = res.data.token;
       $location.path('/bikes');
+      $window.location.reload();
     });
+  }
+
+  $scope.view.signOut = function() {
+    localStorage.clear();
+    $location.path('/');
+    $window.location.reload();
   }
 
   $scope.openPopUp = function() {
