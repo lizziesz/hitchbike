@@ -117,14 +117,7 @@ app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$loc
   HitchBikeService.searchBikesDate($routeParams.location, $routeParams.startTime, $routeParams.endTime).then(function(data) {
     // console.log(data);
     $scope.view.bikes = data.data;
-    // for(var i=0, j=0; i<$scope.view.bikes, j<$scope.view.requestedBikes; i++, j++) {
-    //   if($scope.view.bikes[i].id === $scope.view.requestedBikes[j].bike_id) {
-    //     console.log(data);
-    //   }
-    // }
   })
-
-
 
   HitchBikeService.users().then(function(data) {
     $scope.view.users = data.data;
