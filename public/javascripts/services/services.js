@@ -33,12 +33,33 @@ app.factory('HitchBikeService', function($http, $location) {
       array.push(newUser);
       return $http.post('/api/signup', newUser);
     },
-    addBike: function(array, title, image, priceday, pricehour, type, condition, instructions, description) {
+    addBike: function(array, title, image, priceday, pricehour, type, condition, instructions, description, street_address, city, state, zip_code) {
       var newBike = {};
       newBike.title = title;
       newBike.picture = image;
       newBike.price_day = priceday;
+      newBike.price_hour = pricehour;
+      newBike.type = type;
+      newBike.condition = condition;
+      newBike.instructions = instructions;
+      newBike.description = description;
+      newBike.street_address = street_address;
+      newBike.city = city;
+      newBike.state = state;
+      newBike.zip_code = zip_code;
+      array.push(newBike);
+      return $http.post('/api/addbike', newBike);
+    }
+  }
+})
 
+app.service("HitchBikeInterceptor", function HitchBikeInterceptor() {
+  return {
+    request: function(config){
+      console.log(localStorage.jwt);
+      if (localStorage.jwt) {
+        config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }
+      return config;
     }
 })
