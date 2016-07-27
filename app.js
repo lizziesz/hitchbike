@@ -4,11 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var jwt = require('jsonwebtoken');
+var bearerToken = require('express-bearer-token');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
 var app = express();
+
+app.use(bearerToken());
+
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +27,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// app.use(function (req,res,next) {
+//   console.log("REQ.JWT: " + req.token);
+//   jwt.verify(req.token, process.env.SECRET, function (err,decoded) {
+//     if (!err) {
+//       next();
+//     } else {
+//       res.status(400).send('Bad Request');
+//     }
+//   });
+// });
 
 app.use('/', routes);
 app.use('/users', users);

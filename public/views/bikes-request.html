@@ -3,7 +3,7 @@
   <p>
     Upon submitting this form, the bike owner will be immediately notified of your request and will have the option to confirm or deny. You will be notified of the owner's decision once it is made. Feel free to add any additional details, such as contact information, in the message below.
   </p>
-  <input type="text" value="(Optional message to owner)">
+  <input type="text" value="(Optional message to owner)" id="optionalMessage">
   <p><h4>
     Please review the following information:
   </h4></p>
@@ -13,11 +13,13 @@
   </div>
   <div id ="confirmBottomDiv">
     <input type="text" placeholder="xxxx-xxxx-xxxx-4455">
-    <select ng-repeat = "time in [7am, 730am, 8am, 830am, 9am, 930am, 10am, 1030am, 11am, 1130am, 12pm, 1230pm, 1pm, 130pm, 2pm, 230pm, 3pm, 330pm, 4pm, 430pm, 5pm, 530pm, 6pm, 630pm, 7pm, 730pm, 8pm, 830pm, 9pm, 930pm, 10pm]">
-      <option>{{time}}</option>
+    <select>
+      <option>Start Time</option>
+      <option ng-repeat = "time in view.time">{{time}}</option>
     </select>
-    <select ng-repeat="time in [7am, 730am, 8am, 830am, 9am, 930am, 10am, 1030am, 11am, 1130am, 12pm, 1230pm, 1pm, 130pm, 2pm, 230pm, 3pm, 330pm, 4pm, 430pm, 5pm, 530pm, 6pm, 630pm, 7pm, 730pm, 8pm, 830pm, 9pm, 930pm, 10pm]">
-    <option>{{time}}</option>
+    <select>
+      <option>End Time</option>
+      <option ng-repeat = "time in view.time">{{time}}</option>
     </select>
   </div>
   <div id="confirmButtonDiv">

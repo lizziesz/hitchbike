@@ -1,7 +1,8 @@
-app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', function($scope, HitchBikeService, $location){
+app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', function($scope, HitchBikeService, $location, $http){
   $scope.view = {};
   // this should technically be false, but works as true for some reason..
   $scope.view.popUp = true;
+  $scope.view.time = ['7am', '730am', '8am', '830am', '9am', '930am', '10am', '1030am', '11am', '1130am', '12pm', '1230pm', '1pm', '130pm', '2pm', '230pm', '3pm', '330pm','4pm', '430pm', '5pm', '530pm', '6pm', '630pm', '7pm', '730pm', '8pm', '830pm', '9pm', '930pm', '10pm'];
 
   HitchBikeService.bikes().then(function(data) {
     // console.log(data);
@@ -13,17 +14,27 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     $scope.view.requestedBikes = data.data;
   });
 
+  $scope.view.addBike = function() {
+    HitchBikeService.addBike($scope.view.bikes, $scope.view.addBikeTitle, $scope.view.addBikeImage, $scope.view.addBikePriceday, $scope.view.addBikePricehour, $scope.view.addBikeType, $scope.view.addBikeCondition, $scope.view.addBikeInstructions, $scope.view.addBikeDescription, $scope.view.addBikeStreet_address, $scope.view.addBikeCity, $scope.view.addBikeState, $scope.view.addBikeZip_code)
+  }
+
   HitchBikeService.users().then(function(data) {
     $scope.view.users = data.data;
   });
 
   $scope.view.signIn = function() {
-    HitchBikeService.signIn($scope.view.username, $scope.view.password);
-    $location.path('/bikes');
+    HitchBikeService.signIn($scope.view.username, $scope.view.password).then(function (res) {
+      localStorage.jwt = res.data.token;
+      $location.path('/bikes');
+    });
   }
 
   $scope.view.signUp = function() {
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
+    .then(function(res) {
+      localStorage.jwt = res.data.token;
+      $location.path('/bikes');
+    });
   }
 
   $scope.openPopUp = function() {
