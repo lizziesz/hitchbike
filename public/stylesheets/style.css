@@ -169,6 +169,26 @@ div.bike-frame h6 {
 div.bike-frame section {
   width: 320px; }
 
+.dashboardDivs {
+  display: flex;
+  width: 80vw;
+  height: 60px;
+  margin: auto;
+  margin-top: 20px;
+  align-items: center; }
+
+.dashboardDivs h3 {
+  margin: 0;
+  margin-left: 20px; }
+
+.dashboardDrop {
+  width: 80vw;
+  height: auto;
+  margin: auto;
+  border-left: solid black 1px;
+  border-right: solid black 1px;
+  border-bottom: solid black 1px; }
+
 .signup {
   position: absolute;
   top: 20vh;
