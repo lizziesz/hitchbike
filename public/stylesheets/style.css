@@ -209,7 +209,33 @@ div.bike-frame section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 79%; }
+  width: 79%;
+  margin-left: 15px; }
+
+.dashboardBikeFrameContent2 {
+  display: flex;
+  justify-content: space-between;
+  width: 79%;
+  margin-left: 15px; }
+
+.myBikesColumn {
+  width: 60vw; }
+
+.myBikesColumn2 {
+  width: 25vw;
+  margin-left: 15px; }
+
+#myBikesAvailable {
+  width: 100px;
+  background-color: green;
+  color: white;
+  border: none; }
+
+#myBikesEdit {
+  width: 100px;
+  background-color: #4c96d7;
+  color: white;
+  border: none; }
 
 .bikeFrameHeading {
   display: flex;
@@ -225,6 +251,10 @@ div.bike-frame section {
   display: flex;
   flex-direction: column; }
 
+.dashboardSpecialInstructions {
+  width: 60%;
+  margin-left: 15px; }
+
 #uniqueP {
   margin-top: 20px; }
 
@@ -234,6 +264,33 @@ div.bike-frame section {
   justify-content: center;
   color: white;
   background-color: #4c96d7;
+  border: none; }
+
+.pendingRequests {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-bottom: 1px solid black; }
+
+.requestSection {
+  width: 30vw;
+  margin-left: 15px; }
+
+.requestSection1 {
+  width: 50vw;
+  margin-left: 15px; }
+
+#confirmRequestButton {
+  width: 100px;
+  color: white;
+  background-color: green;
+  border: none; }
+
+#denyRequestButton {
+  width: 100px;
+  color: white;
+  background-color: red;
   border: none; }
 
 .signup {

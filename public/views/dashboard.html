@@ -78,16 +78,6 @@
     <h3>Currently Borrowed Bikes</h3>
   </div>
   <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
-    <div>
-      IMG
-    </div>
-    <div>
-      <p>Post Title</p>
-      <p>Bike Owner</p>
-    </div>
-    <div>
-      <p>Bike Due Date</p>
-      <p>Time Remaining</p>
 
     <div class="dashboardBikeFrame">
 
@@ -107,6 +97,17 @@
 
       </div>
 
+      <div class="dashboardSpecialInstructions">
+        <h4>Special Instructions</h4>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet iusto dignissimos beatae neque, sapiente praesentium, ipsam, officia dolor maxime ratione architecto repellendus esse! Et quidem sunt modi, illo blanditiis.
+        </p>
+        <h4>Return Address</h4>
+        <h5>
+          3125 Raleigh St. Denver, CO 80212
+        </h5>
+      </div>
+
     </div>
   </div>
 
@@ -116,9 +117,40 @@
   <div ng-show="showMyBikes === true" class="dashboardDrop">
     <div class="dashboardBikeFrame">
       <img ng-src="http://feelgrafix.com/data_images/out/28/979576-bike.jpg" alt="{{bike.title}}">
-      <div class="dashboardBikeFrameContent">
-
-      </div>
+      <div class="dashboardBikeFrameContent2">
+        <div class="myBikesColumn">
+          <h1 class="bikeFrameHeadingElement">Post Title</h1>
+          <h5 class="bikeFrameHeadingElement">owner name</h5>
+          <h4>Special Instructions</h4>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet iusto dignissimos beatae neque, sapiente praesentium, ipsam, officia dolor maxime ratione architecto repellendus esse! Et quidem sunt modi, illo blanditiis.
+          </p>
+        </div>
+        <div class="myBikesColumn2">
+          <button id="myBikesAvailable">Available</button>
+          <h4>Bike Type</h4>
+          <h4>Bike Condition</h4>
+        </div>
+        <div class="myBikesColumn2">
+          <button id="myBikesEdit">Edit Info</button>
+          <h4>Price/day</h4>
+          <h4>Price/hour</h4>
+        </div>
+    </div>
+  </div>
+  <div class="pendingRequests">
+    <div class="requestSection">
+      <p><strong>Request from:</strong> Person</p>
+      <p><strong>Start Date:</strong> June, 1 2016</p>
+      <p><strong>End Date:</strong> June 2, 2016 </p>
+    </div>
+    <div class="requestSection1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt velit culpa quo perspiciatis nobis soluta</p>
+    </div>
+    <div class="requestSection">
+      <h4>Status: Status</h4>
+      <button id="confirmRequestButton">Confirm</button>
+      <button id="denyRequestButton">Deny</button>
     </div>
   </div>
 </div>
