@@ -6,6 +6,7 @@ header.masthead {
   -moz-box-shadow: 0px 1.5px 3px 0px rgba(0,0,0,0.6);
   box-shadow: 0px 1.5px 3px 0px rgba(0,0,0,0.6);
 }
+
 header div {
   color: black;
   font-size: 18px;
@@ -57,4 +58,17 @@ form.location-date-search {
     color: white;
     border: none;
   }
+}
+
+// Custom Directive Testing
+
+div.test-directive {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vh;
+  height: 100vh;
+  background-color: red;
+  color: blue;
+  z-index: 1000;
 }

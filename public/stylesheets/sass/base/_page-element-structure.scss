@@ -57,6 +57,7 @@ div.dark-background {
 // Structure for the universal header
 
 header.masthead {
+  position: relative;
   display: flex;
   justify-content: space-between;
   height: 10vh;
@@ -208,45 +209,9 @@ div.bike-frame section {
 // BIKES SIGNUP PAGE
 
 .signup {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
-  height: 400px;
-  border-color: black;
-  border-width: .5px;
-  border-style: solid;
-  margin: 30px;
-  margin-top: 10px;
-  background: white;
-}
-
-.signup form {
-  display: flex;
-  flex-direction: column;
-  width: 450px;
-  justify-content: center;
-  align-content: center;
-  margin: auto;
-  margin-top: 10px;
-}
-.signup input {
-  margin-top: 12px;
-  height: 35px;
-  font-size: 1.5em;
-}
-.signupAddress{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-.signupAddress input{
-  width: 120px;
-}
-.signup input[type=submit]{
-  background: #4c96d7;
-}
-
-.signup {
+  position: absolute;
+  top: 20vh;
+  left: 50vh;
   display: flex;
   flex-direction: column;
   width: 600px;
@@ -283,12 +248,13 @@ div.bike-frame section {
 }
 .signup input[type=submit]{
   background: #4c96d7;
+  color: white;
 }
 .background{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   padding-top:50px;
 }
