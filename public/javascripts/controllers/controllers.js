@@ -1,4 +1,4 @@
-app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', function($scope, HitchBikeService, $location, $http){
+app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', '$window', function($scope, HitchBikeService, $location, $http, $window){
   $scope.view = {};
   // this should technically be false, but works as true for some reason..
   $scope.view.popUp = true;
@@ -28,6 +28,7 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     HitchBikeService.signIn($scope.view.username, $scope.view.password).then(function (res) {
       localStorage.jwt = res.data.token;
       $location.path('/bikes');
+      $window.location.reload();
     });
   }
 
@@ -36,7 +37,14 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     .then(function(res) {
       localStorage.jwt = res.data.token;
       $location.path('/bikes');
+      $window.location.reload();
     });
+  }
+
+  $scope.view.signOut = function() {
+    localStorage.clear();
+    $location.path('/');
+    $window.location.reload();
   }
 
   $scope.openPopUp = function() {
