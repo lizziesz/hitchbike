@@ -2,7 +2,7 @@ body {
   margin-bottom: 0;
 }
 
-// Pop Up Background Overlay
+// Pop Up Functionality
 
 div.dark-background {
     position: fixed;
@@ -11,6 +11,10 @@ div.dark-background {
     background: rgba(0,0,0,0.5);
     width: 100vw;
     height: 100vh;
+}
+
+.popup {
+  position: absolute;
 }
 
 // Landing Page Structure
@@ -129,8 +133,8 @@ div.bike-frame {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 615px;
-  height: 290px;
+  width: 42.7vw;
+  height: 37.28vh;
   margin-bottom: 40px;
   padding-top: 20px;
 }
@@ -138,7 +142,7 @@ div.bike-frame {
 div.location-date-search {
   display: flex;
   align-items: center;
-  width: 45%;
+  width: 45vw;
   height: 68px;
   margin-left: 50px;
 }
@@ -147,7 +151,7 @@ div.bike-sort {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 22%;
+  width: 22vw;
   height: 68px;
   margin-left: 80px;
 }
@@ -233,6 +237,40 @@ div.bike-frame section {
 
 .dashboardBikeFrame {
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  width: 100%;
+  border: 1px solid black;
+  img {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+  }
+}
+
+.dashboardBikeFrameContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 79%;
+}
+
+.bikeFrameHeading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: auto;
+  padding-right: 40px;
+}
+
+.bikeFrameHeadingElement {
+  margin: 0;
+}
+
+.bikeFrameTimeWindow {
+  display: flex;
+  flex-direction: column;
 }
 
 #uniqueP {
@@ -250,7 +288,6 @@ div.bike-frame section {
 // BIKES SIGNUP PAGE
 
 .signup {
-  position: absolute;
   top: 20vh;
   left: 50vh;
   display: flex;
@@ -301,6 +338,7 @@ div.bike-frame section {
 }
 
 // SIGNUPSUCCESS PAGE
+
 .signupSuccess {
   height: 160px;
   width: 650px;
@@ -355,6 +393,7 @@ div.bike-frame section {
   margin-top: -10px;
 }
 // ADD BIKE VIEW
+
 .addBike {
   border-color: black;
   border-style: solid;
@@ -451,4 +490,42 @@ height: 12vh;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+// SIGN IN PAGE
+.popup{
+  position: absolute;
+}
+
+#signinDiv{
+  position: absolute;
+  top: 20vh;
+  left: 67vh;
+  height: 36vh;
+  width: 30vw;
+  margin:auto;
+  margin-top: 20vh;
+  border-style: solid;
+  border-width: .5px;
+  border-color: black;
+  padding: 1.0vw;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background: white;
+}
+#signinDiv h1 {
+  margin-top: 0;
+  margin-bottom: 3vh;
+}
+#signinDiv h5 {
+  margin-bottom: .3vh;
+}
+#signinDiv input {
+  margin: 0;
+  width: 20vw;
+  height: 4vh;
+}
+#signinDiv input[type=submit]{
+  background: #4c96d7;
+  margin-top: 3vh;
 }

@@ -57,6 +57,9 @@ app.config(function($routeProvider){
     .when('/bikes/request', {
       templateUrl: 'views/request.html'
     })
+    .when('/dashboard/confirmdeny', {
+      templateUrl: 'views/confirmdeny.html'
+    })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
       controller: 'dashboardController'
