@@ -407,3 +407,30 @@ height: 12vh;
 #postBike{
   background: #4c96d7;
 }
+// REQUEST page
+
+.confirm {
+  height: 59vh;
+  width: 41vw;
+  border-width: .5px;
+  border-color: black;
+  border-style: solid;
+  background: white;
+  margin: auto;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.confirm input {
+  width: 30vw;
+  height: 10vh;
+}
+.confirm h4 {
+  margin-bottom: 0px;
+  margin-top: 0px;
+}
+#paymentDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
