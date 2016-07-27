@@ -10,7 +10,8 @@ var app = angular.module("hitchBikeApp", ['angularMoment', 'ngAnimate', 'ngRoute
 //   }
 // })
 
-app.config(function($routeProvider){
+app.config(function($routeProvider, $httpProvider){
+  $httpProvider.interceptors.push('HitchBikeInterceptor');
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',
@@ -89,4 +90,16 @@ app.config(function($routeProvider){
       templateUrl: 'views/borrowedbikes.html'
     })
     .otherwise( { redirectTo: '/' } );
+  });
+
+  app.run(function($rootScope, $location) {
+    if ($location.search().hasOwnProperty( 'token' ) ) {
+     localStorage.token = $location.search().token;
+     $location.search('token',null);
+    }
+
+    if (localStorage.jwt) {
+      $rootScope.user = jwt_decode(localStorage.jwt);
+      console.log("USER: " + $rootScope.user);
+    }
   });
