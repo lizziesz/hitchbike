@@ -10,10 +10,11 @@
   <div id="landingSearchForm">
     <form>
       <input type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
-      <input type="date" value="Start Time" id="startTime" name="startTime" ng-model="startTime">
-      <input type="date" value="End Time" id="endTime" name="endTime" ng-model="endTime">
-      <!-- <a href="/#/bikes/{{location}}/{{startTime}}/{{endTime}}"><button type="submit" ng-click="searchBikes()" id="landingSearch">Search Bikes!</button></a> -->
-      <a href="/#/bikes/{{location}}"><button type="submit" ng-click="searchBikes()" id="landingSearch">Search Bikes!</button></a>
+      <input type="date" id="startTime" name="startTime" ng-model="startTime">
+      <input type="date" id="endTime" name="endTime" ng-model="endTime">
+      <a href="/#/bikes/{{location}}"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="!startTime">Search Bikes!</button></a>
+      <a href="/#/bikes/{{location}}/{{startTime}}/{{endTime}}"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="startTime">Search Bikes!</button></a>
     </form>
   </div>
+
 </div>
