@@ -309,3 +309,101 @@ div.bike-frame section {
 .signupSuccess h1 {
   margin-top: -10px;
 }
+// ADD BIKES SUCCESS VIEW
+.addbikesSuccess {
+  height: 160px;
+  width: 650px;
+  background: white;
+  position: flex;
+  flex-direction: column;
+  border-style: solid;
+  border-color: black;
+  border-width: .6px;
+  align-content: space-around;
+  margin: 50px;
+  padding: 20px;
+}
+.signupSuccess input[type=submit]{
+  background: #4c96d7;
+  float: right;
+  margin-right: 20px;
+  width: 150px;
+  height: 30px;
+  color: white;
+  font-size: 1.6em;
+  padding-bottom: 35px;
+}
+.signupSuccess h1 {
+  margin-top: -10px;
+}
+// ADD BIKE VIEW
+.addBike {
+  border-color: black;
+  border-style: solid;
+  border-width: .5px;
+  width: 59vw;
+  height: 77vh;
+  margin: auto;
+  margin-top: 5vh;
+  padding: 18px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.addBike h4{
+  margin-bottom: 3px;
+}
+.addBike input[type=text]{
+  width: 25vw;
+  height: 5vh;
+  font-size: 1.5em;
+  font-weight: 200;
+  padding-left:10px;
+}
+.addBike select {
+  height: 5vh;
+  width: 18vw;
+}
+.addBike h1{
+  margin-top: 5px;
+}
+#rightdiv {
+  float: right;
+  width: 28vw;
+  margin-top:  -262px;
+}
+#topdiv {
+  display: flex-row;
+  justify-content: space-between;
+}
+#leftdiv {
+  float: left;
+  width: 28vw;
+}
+#pickupIns {
+text-align: top;
+height: 12vh;
+}
+#description{
+  width: 53vw;
+  height: 12vh;
+}
+#bottomDiv {
+  margin-top: 20px;
+}
+#buttonDiv{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  margin-top: 8px;
+}
+#buttonDiv input {
+  width: 13vw;
+  margin-left: 1vw;
+  height: 4vh
+}
+#cancel{
+  background: #FF4F51;
+}
+#postBike{
+  background: #4c96d7;
+}
