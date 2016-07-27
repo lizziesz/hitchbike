@@ -44,7 +44,8 @@ app.config(function($routeProvider){
       templateUrl: 'views/request.html'
     })
     .when('/dashboard', {
-      templateUrl: 'views/dashboard.html'
+      templateUrl: 'views/dashboard.html',
+      controller: 'dashboardController'
     })
     .when('/dashboard/addbike', {
       templateUrl: 'views/addbike.html'
