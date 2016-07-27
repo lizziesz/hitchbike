@@ -16,3 +16,11 @@ Wireframes
 
   uxPin preview (better quality)
   https://collaborate.uxpin.com/8575fcea6dda78cb96d791214bbc2754f7f18773#/pages/54833709
+
+Instructions to run on local machine:
+
+  1)
+  2)
+  3)
+  4)
+  5)

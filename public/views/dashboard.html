@@ -1,5 +1,6 @@
 
-<div id="dashboardContainer">
+<div id="dashboardContainer">'
+
   <div id="accountSettingBar" class="dashboardDivs" ng-click="toggleAccount()">
     <h3>Account Settings</h3>
   </div>
@@ -19,17 +20,41 @@
     </select>
     <input type="button" value="Save Updates">
   </div>
+
   <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
     <h3>Currently Borrowed Bikes</h3>
   </div>
   <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
+    <div class="dashboardBikeFrame">
 
+      <img ng-src="http://feelgrafix.com/data_images/out/28/979588-bike.jpg" alt="{{bike.title}}">
+
+      <div class="dashboardBikeFrameContent">
+
+        <div class="bikeFrameHeading">
+          <h1 class="bikeFrameHeadingElement">Post Title</h1>
+          <h5 class="bikeFrameHeadingElement">owner name</h5>
+        </div>
+
+        <div class="bikeFrameTimeWindow">
+          <h5>Bike Due June July 30th, 2016 at 10:00am</h5>
+          <h5>in 17 hours and 54 minutes</h5>
+        </div>
+
+      </div>
+
+    </div>
   </div>
+
   <div id="myBikesBar" class="dashboardDivs" ng-click="toggleMyBikes()">
     <h3>My Bikes</h3>
   </div>
   <div ng-show="showMyBikes === true" class="dashboardDrop">
-    My Bikes
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quasi quam laborum a tenetur mollitia nesciunt veritatis ipsam iure explicabo dignissimos aperiam ex magni aspernatur, impedit cumque. Non impedit, ut.
+    <div class="dashboardBikeFrame">
+      <img ng-src="http://feelgrafix.com/data_images/out/28/979576-bike.jpg" alt="{{bike.title}}">
+      <div class="dashboardBikeFrameContent">
+
+      </div>
+    </div>
   </div>
 </div>
