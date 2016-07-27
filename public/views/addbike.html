@@ -44,9 +44,10 @@
     <h4>Bike Description</h4>
     <input type="text" placeholder="Enter Description" id="description" name="description" ng-model="view.addBikeDescription">
   </div>
+  <!-- <input type="text" ng-value="user.id" name="owner_id" ng-model="view.addBikeOwnerId"> -->
   <div id = "buttonDiv">
     <input type="submit" value="Cancel" id="cancel">
-    <input type="submit" value="Post Bike" id="postBike" ng-click="view.addBike()">
+    <input type="submit" value="Post Bike" id="postBike" ng-click="view.addBike(user.id)">
   </div>
 </form>
 </div>
