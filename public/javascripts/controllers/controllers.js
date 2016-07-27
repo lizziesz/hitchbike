@@ -14,7 +14,7 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
   });
 
   $scope.view.addBike = function() {
-    HitchBikeService.addBike($scope.view.bikes, )
+    HitchBikeService.addBike($scope.view.bikes)
   }
 
   HitchBikeService.users().then(function(data) {

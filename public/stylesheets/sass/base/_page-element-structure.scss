@@ -367,6 +367,7 @@ div.bike-frame section {
   margin: 50px;
   padding: 20px;
 }
+// SIGN UP SUCCESS VIEWS
 .signupSuccess input[type=submit]{
   background: #4c96d7;
   float: right;
@@ -440,11 +441,12 @@ height: 12vh;
   justify-content: flex-end;
   margin-right: 15px;
   margin-top: 8px;
+  color: white;
 }
 #buttonDiv input {
   width: 13vw;
   margin-left: 1vw;
-  height: 4vh
+  height: 4vh;
 }
 #cancel{
   background: #FF4F51;
@@ -516,4 +518,7 @@ height: 12vh;
 #signinDiv input[type=submit]{
   background: #4c96d7;
   margin-top: 3vh;
+}
+#signinSubmit{
+  color: white;
 }

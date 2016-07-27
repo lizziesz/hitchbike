@@ -36,9 +36,9 @@ app.factory('HitchBikeService', function($http, $location) {
     addBike: function(array, title, image, priceday, pricehour, type, condition, instructions, description) {
       var newBike = {};
       newBike.title = title;
-      newBike.picture = image,
-      newBike.price_day = priceday,
-       
+      newBike.picture = image;
+      newBike.price_day = priceday;
+
+      }
     }
-  }
 })
