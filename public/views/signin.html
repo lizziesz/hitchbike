@@ -1,7 +1,37 @@
-<form ng-submit="view.signIn()" name="signInForm">
-  <p>Username</p>
-  <input type="text" name="username" ng-model="view.username">
-  <p>Password</p>
-  <input type="password" name="password" ng-model="view.password">
-  <input type="submit">
-</form>
+<div id="landingContainer">
+  <div id="slogan">
+    <p>Rent a bike anytime,</p>
+    <p>anywhere, from anyone.</p>
+  </div>
+  <div id="instructions">
+    <p>Enter your location</p>
+    <p>and when you need a bike</p>
+  </div>
+  <div id="landingSearchForm">
+    <form>
+      <input type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
+      <input type="date" value="Start Time" id="startTime" name="startTime" ng-model="startTime">
+      <input type="date" value="End Time" id="endTime" name="endTime" ng-model="endTime">
+      <!-- <a href="/#/bikes/{{location}}/{{startTime}}/{{endTime}}"><button type="submit" ng-click="searchBikes()" id="landingSearch">Search Bikes!</button></a> -->
+      <a href="/#/bikes/{{location}}"><button type="submit" ng-click="searchBikes()" id="landingSearch">Search Bikes!</button></a>
+    </form>
+  </div>
+
+</div>
+
+
+<!-- SIGN IN POP UP -->
+
+<div class="dark-background" ng-click="closePopUp()" ng-show="view.popUp"></div>
+
+<div id ="signinDiv" class="popup" ng-show="view.popUp">
+  <form ng-submit="view.signIn()" name="signInForm">
+    <h1>Sign In</h1>
+    <h5>Username</h5>
+    <input type="text" name="username" ng-model="view.username" placeholder="username">
+    <h5>Password</h5>
+    <input type="password" name="password" ng-model="view.password" placeholder="password">
+    <br>
+    <input type="submit">
+  </form>
+</div>

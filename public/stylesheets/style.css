@@ -421,6 +421,42 @@ div.bike-frame section {
   flex-direction: row;
   justify-content: space-between; }
 
+.popup {
+  position: absolute; }
+
+#signinDiv {
+  position: absolute;
+  top: 20vh;
+  left: 67vh;
+  height: 36vh;
+  width: 30vw;
+  margin: auto;
+  margin-top: 20vh;
+  border-style: solid;
+  border-width: .5px;
+  border-color: black;
+  padding: 1.0vw;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  background: white; }
+
+#signinDiv h1 {
+  margin-top: 0;
+  margin-bottom: 3vh; }
+
+#signinDiv h5 {
+  margin-bottom: .3vh; }
+
+#signinDiv input {
+  margin: 0;
+  width: 20vw;
+  height: 4vh; }
+
+#signinDiv input[type=submit] {
+  background: #4c96d7;
+  margin-top: 3vh; }
+
 header.masthead {
   background-color: #EBEBEB;
   -webkit-box-shadow: 0px 1.5px 3px 0px rgba(0, 0, 0, 0.6);

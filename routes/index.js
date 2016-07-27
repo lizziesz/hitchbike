@@ -35,22 +35,25 @@ router.get('/api/bikes/:location/:startTime/:endTime', function(req, res, next) 
   var end = Date.parse(req.params.endTime.slice(1,11));
   console.log("Short start: " + start);
   console.log("Short end: " + end);
-  knex('bikes').fullOuterJoin('requested_bikes', 'bike_id', 'bikes.id').where(function() {
+  knex('bikes').fullOuterJoin('requested_bikes', 'requested_bikes.bike_id', 'bikes.id').where(function() {
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
-  }).where('is_available', 'true')
-  // .whereNotBetween('borrow_start_time', [start, end])
-  .whereNotBetween('startDate', [start, end])
-  .whereNotBetween('endDate', [start, end])
+  })
+  .where('is_available', 'true')
   .then(function(data) {
-    console.log(data);
-    res.json(data);
+    dataToSend = [];
+    for(var i=0; i<data.length; i++) {
+      if(start < data[i].startDate && end < data[i].startDate) {
+        dataToSend.push(data[i]);
+      }
+      else if(start > data[i].endDate) {
+        dataToSend.push(data[i]);
+      }
+      else if(!data[i].startDate || !data[i].endDate) {
+        dataToSend.push(data[i]);
+      }
+    }
+    res.json(dataToSend);
   });
-  // knex('bikes').where(function() {
-  //   this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
-  // }).where('is_available', 'true').then(function(data) {
-  //   console.log(data);
-  //   res.json(data);
-  // });
 });
 
 router.get('/api/requestedbikes', function(req, res, next) {
@@ -126,5 +129,7 @@ router.post('/api/signup', function(req, res, next) {
     }
   })
 })
+
+
 
 module.exports = router;
