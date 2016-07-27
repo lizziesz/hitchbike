@@ -39,11 +39,20 @@ router.get('/api/bikes/:location/:startTime/:endTime', function(req, res, next) 
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
   })
   .where('is_available', 'true')
-  .whereNotBetween('startDate', [start, end])
-  // .whereNotBetween(147294720000, [start, end])
   .then(function(data) {
-    console.log(data);
-    res.json(data);
+    dataToSend = [];
+    for(var i=0; i<data.length; i++) {
+      if(start < data[i].startDate && end < data[i].startDate) {
+        dataToSend.push(data[i]);
+      }
+      else if(start > data[i].endDate) {
+        dataToSend.push(data[i]);
+      }
+      else if(!data[i].startDate || !data[i].endDate) {
+        dataToSend.push(data[i]);
+      }
+    }
+    res.json(dataToSend);
   });
 });
 
