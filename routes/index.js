@@ -5,12 +5,16 @@ var knex = require('../db/knex');
 var bcrypt = require('bcrypt');
 var jwt = require('jsonwebtoken');
 var bearerToken = require('express-bearer-token');
+var jwtDecode = require('jwt-decode');
 var token;
 
 function protect(req,res,next) {
-  console.log("REQ.JWT: " + req.token);
+  // var decoded = jwtDecode(req.token);
+  // console.log(decoded);
+  // console.log("REQ.JWT: " + req.token);
   jwt.verify(req.token, process.env.SECRET, function (err,decoded) {
     if (!err) {
+
       next();
     } else {
       res.status(400).send('Bad Request');

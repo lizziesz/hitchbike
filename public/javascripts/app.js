@@ -88,15 +88,21 @@ app.config(function($routeProvider, $httpProvider){
     })
     .otherwise( { redirectTo: '/' } );
   });
-
+  //
   app.run(function($rootScope, $location) {
-    if ($location.search().hasOwnProperty( 'token' ) ) {
-     localStorage.token = $location.search().token;
-     $location.search('token',null);
-    }
+    // if ($location.search().hasOwnProperty( 'token' ) ) {
+    //  localStorage.jwt = $location.search().jwt;
+    //  $location.search('token',null);
+    // }
 
     if (localStorage.jwt) {
       $rootScope.user = jwt_decode(localStorage.jwt);
       console.log("USER: " + $rootScope.user);
     }
   });
+//
+//   self.parseJwt = function(token) {
+//   var base64Url = token.split('.')[1];
+//   var base64 = base64Url.replace('-', '+').replace('_', '/');
+//   return JSON.parse($window.atob(base64));
+// }

@@ -14,6 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.1/angular-moment.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
   <script type="text/javascript" src="javascripts/app.js"></script>
+  <script type="text/javascript" src="javascripts/jwt-decode.js"></script>
   <script type="text/javascript" src="javascripts/services/services.js"></script>
   <script type="text/javascript" src="javascripts/controllers/controllers.js"></script>
   <script type="text/javascript" src="javascripts/directives/directives.js"></script>
@@ -37,7 +38,7 @@
 
       </div>
 
-      <p>{{user}}</p>
+      <p>{{user.id}}</p>
       <div class="account-cta">
         <a ng-href="/#/signup">Sign Up</a>
         <a ng-href="/#/signin">Sign In</a>
