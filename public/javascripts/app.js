@@ -31,11 +31,11 @@ app.config(function($routeProvider){
       templateUrl: 'views/bikes.html',
       controller: "HitchBikeController"
     })
-    .when('/bikes/:location', {
+    .when('/bikes/search/:location', {
       templateUrl: 'views/bikes.html',
       controller: "BikesSearchController"
     })
-    .when('/bikes/:location/:startTime/:endTime', {
+    .when('/bikes/search/:location/:startTime/:endTime', {
       templateUrl: 'views/bikes.html',
       controller: "BikesSearchDateController"
     })

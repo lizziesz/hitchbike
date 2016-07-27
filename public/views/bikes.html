@@ -7,8 +7,8 @@
         <input class="form-control date" type="date" id="startTime" name="startTime" ng-model="startTime">
         <input class="form-control date" type="date" id="endTime" name="endTime" ng-model="endTime">
         <!-- <input class="form-control submit" type="submit" value="Display Results"> -->
-        <a href="/#/bikes/{{location}}"><button class="form-control submit" type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="!startTime">Search!</button></a>
-        <a href="/#/bikes/{{location}}/{{startTime}}/{{endTime}}"><button class="form-control submit" type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="startTime">Search!</button></a>
+        <a href="/#/bikes/search/{{location}}"><button class="form-control submit" type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="!startTime">Search!</button></a>
+        <a href="/#/bikes/search/{{location}}/{{startTime}}/{{endTime}}"><button class="form-control submit" type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="startTime">Search!</button></a>
       </form>
     </div>
     <div class="bike-sort">

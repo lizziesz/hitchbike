@@ -1,26 +1,27 @@
 <div class='addBike'>
   <div id ="topDiv">
   <div id ="leftDiv">
+  <form>
   <h1>Add Bike</h1>
   <h4>Title</h4>
-  <input type="text" placeholder="Enter Title">
+  <input type="text" placeholder="Enter Title" name="title" ng-model="title">
   <h4>Image URL</h4>
-  <input type="text" placeholder = "Enter Image Url">
+  <input type="text" placeholder = "Enter Image Url" name="image" ng-model="image">
   <h4>Price/Day</h4>
-  <input type="text" placeholder="Price/Day">
+  <input type="text" placeholder="Price/Day" name="priceday" ng-model="priceday">
   <h4>Price/Hour</h4>
-  <input type="text" placeholder="Price/Hour">
+  <input type="text" placeholder="Price/Hour" name="pricehour" ng-model="pricehour">
 </div>
 
   <div id="rightdiv">
     <h4>Bike Type</h4>
-    <select placeholder="Bike Type">
+    <select name="type" ng-model="type">
       <option value="mountain">mountain</option>
       <option value="street">street</option>
       <option value="cruiser">cruiser</option>
     </select>
     <h4>Condition</h4>
-    <select>
+    <select name="condition" ng-model="condition">
       <option value="poor">poor</option>
       <option value="fair">fair</option>
       <option value="good">good</option>
@@ -28,15 +29,16 @@
     </select>
       <h4>Pickup Instructions</h4>
       <h6>Individuals who rent your bike will see this message upon your acceptance of the bike loan request.</h6>
-      <input type ="text" id="pickupIns" placeholder="Enter pickup Instructions.">
+      <input type ="text" id="pickupIns" placeholder="Enter pickup Instructions." name="instructions" ng-model="instructions">
     </div>
   </div>
   <div id = "bottomDiv">
     <h4>Bike Description</h4>
-    <input type="text" placeholder="Enter Description" id="description">
+    <input type="text" placeholder="Enter Description" id="description" name="description" ng-model="description">
   </div>
   <div id = "buttonDiv">
     <input type="submit" value="Cancel" id="cancel">
-    <input type="submit" value="Post Bike" id="postBike">
+    <input type="submit" value="Post Bike" id="postBike" ng-click="view.addBike()">
   </div>
+</form>
 </div>
