@@ -240,14 +240,13 @@ div.bike-frame section {
 }
 
 #editUsersButton {
-  display: flex;
+  align-self: center;
   margin-top: 10px;
   justify-content: center;
   color: white;
   background-color: #4c96d7;
   border: none;
 }
-
 // BIKES SIGNUP PAGE
 
 .signup {

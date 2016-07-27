@@ -197,7 +197,7 @@ div.bike-frame section {
   margin-top: 20px; }
 
 #editUsersButton {
-  display: flex;
+  align-self: center;
   margin-top: 10px;
   justify-content: center;
   color: white;
