@@ -14,6 +14,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-moment/0.10.1/angular-moment.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.js"></script>
   <script type="text/javascript" src="javascripts/app.js"></script>
+  <script type="text/javascript" src="javascripts/jwt-decode.js"></script>
   <script type="text/javascript" src="javascripts/services/services.js"></script>
   <script type="text/javascript" src="javascripts/controllers/controllers.js"></script>
   <script type="text/javascript" src="javascripts/directives/directives.js"></script>
@@ -22,20 +23,22 @@
 <body ng-controller="HitchBikeController">
 
     <header class="masthead">
-      <p>{{user}}</p>
+      <!-- <p>{{user.id}}</p> -->
       <div class="head-logo">
         <a href="/#/">
           <img class="head-logo" src="/images/HitchBike.png" alt="logo">
         </a>
       </div>
 
-      <a ng-href="/#/bikes/addbike">
-      <h1>ADD BIKES</h1>
-      </a>
+      <a ng-href="/#/bikes/addbike" ng-show="user"><h1>ADD BIKES</h1></a>
 
     <div class="account-cta">
-      <a ng-href="/#/signup">Sign Up</a>
-      <a ng-href="/#/signin">Sign In</a>
+      <a ng-href="/#/signup" ng-show="!user">Sign Up</a>
+      <a ng-href="/#/signin" ng-show="!user">Sign In</a>
+      <!-- <a ng-href="/#/signout" ng-show="user">Sign Out</a> -->
+      <a ng-href="/#/dashboard" ng-show="user">{{user.username}}'s dashboard</a>
+      <button ng-click="view.signOut()" ng-show="user">Sign Out</button>
+
     </div>
 
   </header>

@@ -194,12 +194,12 @@ div.bike-frame section {
   padding: 20px; }
 
 .dashboardBikeFrame {
+  padding: 15px;
   display: flex;
   justify-content: space-between;
   height: auto;
   width: 100%;
-  border: 1px solid black;
-  padding: 15px; }
+  border: 1px solid black; }
   .dashboardBikeFrame img {
     width: 200px;
     height: 200px;
@@ -209,7 +209,33 @@ div.bike-frame section {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 79%; }
+  width: 79%;
+  margin-left: 15px; }
+
+.dashboardBikeFrameContent2 {
+  display: flex;
+  justify-content: space-between;
+  width: 79%;
+  margin-left: 15px; }
+
+.myBikesColumn {
+  width: 60vw; }
+
+.myBikesColumn2 {
+  width: 25vw;
+  margin-left: 15px; }
+
+#myBikesAvailable {
+  width: 100px;
+  background-color: green;
+  color: white;
+  border: none; }
+
+#myBikesEdit {
+  width: 100px;
+  background-color: #4c96d7;
+  color: white;
+  border: none; }
 
 .bikeFrameHeading {
   display: flex;
@@ -224,6 +250,48 @@ div.bike-frame section {
 .bikeFrameTimeWindow {
   display: flex;
   flex-direction: column; }
+
+.dashboardSpecialInstructions {
+  width: 60%;
+  margin-left: 15px; }
+
+#uniqueP {
+  margin-top: 20px; }
+
+#editUsersButton {
+  align-self: center;
+  margin-top: 10px;
+  justify-content: center;
+  color: white;
+  background-color: #4c96d7;
+  border: none; }
+
+.pendingRequests {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border-bottom: 1px solid black; }
+
+.requestSection {
+  width: 30vw;
+  margin-left: 15px; }
+
+.requestSection1 {
+  width: 50vw;
+  margin-left: 15px; }
+
+#confirmRequestButton {
+  width: 100px;
+  color: white;
+  background-color: green;
+  border: none; }
+
+#denyRequestButton {
+  width: 100px;
+  color: white;
+  background-color: red;
+  border: none; }
 
 .signup {
   top: 20vh;
@@ -341,7 +409,7 @@ div.bike-frame section {
   border-style: solid;
   border-width: .5px;
   width: 59vw;
-  height: 86vh;
+  height: 79vh;
   margin: auto;
   margin-top: 2vh;
   padding: 18px;
@@ -369,7 +437,7 @@ div.bike-frame section {
 #rightdiv {
   float: right;
   width: 28vw;
-  margin-top: -41vh; }
+  margin-top: -37vh; }
 
 #pickupins {
   height: 11vh;
@@ -402,7 +470,8 @@ div.bike-frame section {
 
 #addbikeDesc {
   height: 12vh;
-  width: 54.5vw; }
+  width: 55.25vw;
+  margin-bottom: 1.5vh; }
 
 #addbikeButtons input {
   width: 15vw;
