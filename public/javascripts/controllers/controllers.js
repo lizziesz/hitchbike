@@ -117,14 +117,7 @@ app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$loc
   HitchBikeService.searchBikesDate($routeParams.location, $routeParams.startTime, $routeParams.endTime).then(function(data) {
     // console.log(data);
     $scope.view.bikes = data.data;
-    // for(var i=0, j=0; i<$scope.view.bikes, j<$scope.view.requestedBikes; i++, j++) {
-    //   if($scope.view.bikes[i].id === $scope.view.requestedBikes[j].bike_id) {
-    //     console.log(data);
-    //   }
-    // }
   })
-
-
 
   HitchBikeService.users().then(function(data) {
     $scope.view.users = data.data;
@@ -140,3 +133,33 @@ app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$loc
   }
 
 }]);
+
+app.controller("dashboardController", function($scope){
+  $scope.showAccountInfo = false;
+  $scope.toggleAccount = function(){
+    if($scope.showAccountInfo === false){
+      $scope.showAccountInfo = true;
+    }
+    else {
+      $scope.showAccountInfo = false;
+    }
+  };
+  $scope.showBorrowedBikes = false;
+  $scope.toggleBorrowedBikes = function(){
+    if($scope.showBorrowedBikes === false){
+      $scope.showBorrowedBikes = true;
+    }
+    else {
+      $scope.showBorrowedBikes = false;
+    }
+  };
+  $scope.showMyBikes = false;
+  $scope.toggleMyBikes = function(){
+    if($scope.showMyBikes === false){
+      $scope.showMyBikes = true;
+    }
+    else {
+      $scope.showMyBikes = false;
+    }
+  };
+})
