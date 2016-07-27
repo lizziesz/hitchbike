@@ -133,3 +133,33 @@ app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$loc
   }
 
 }]);
+
+app.controller("dashboardController", function($scope){
+  $scope.showAccountInfo = false;
+  $scope.toggleAccount = function(){
+    if($scope.showAccountInfo === false){
+      $scope.showAccountInfo = true;
+    }
+    else {
+      $scope.showAccountInfo = false;
+    }
+  };
+  $scope.showBorrowedBikes = false;
+  $scope.toggleBorrowedBikes = function(){
+    if($scope.showBorrowedBikes === false){
+      $scope.showBorrowedBikes = true;
+    }
+    else {
+      $scope.showBorrowedBikes = false;
+    }
+  };
+  $scope.showMyBikes = false;
+  $scope.toggleMyBikes = function(){
+    if($scope.showMyBikes === false){
+      $scope.showMyBikes = true;
+    }
+    else {
+      $scope.showMyBikes = false;
+    }
+  };
+})
