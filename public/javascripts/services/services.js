@@ -62,4 +62,5 @@ app.service("HitchBikeInterceptor", function HitchBikeInterceptor() {
       }
       return config;
     }
+  }
 })

@@ -19,6 +19,52 @@ div.dark-background {
   border: 1px solid black;
 }
 
+// Styling for the Universal Header
+
+header.masthead {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  height: 10vh;
+  width: 100%;
+}
+
+a.post-bike-button {
+  margin-left: 50px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+div.head-logo {
+  width: 230px;
+  justify-content: center;
+}
+img.head-logo {
+  width: 170px;
+  height: 64px;
+}
+div.header-filler {
+  width: 850px;
+}
+div.account-cta {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin-right: 50px;
+  a {
+    color: black;
+  }
+}
+
+button#post-bike-button {
+  background-color: #3498DB;
+  color: white;
+  width: 100px;
+  margin-top: 22px;
+}
+
 // Landing Page Structure
 
 #landingContainer {
@@ -58,35 +104,6 @@ div.dark-background {
 }
 #landingSearchForm input {
   margin-right: 20px;
-}
-
-// Structure for the universal header
-
-header.masthead {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  height: 10vh;
-  width: 100%;
-}
-
-header div {
-  display: flex;
-  align-items: center;
-}
-div.head-logo {
-  width: 230px;
-  justify-content: center;
-}
-img.head-logo {
-  width: 170px;
-  height: 64px;
-}
-div.account-cta {
-  display: flex;
-  justify-content: space-around;
-  width: 200px;
-  margin-right: 50px;
 }
 
 // Bikes Page Structure
@@ -708,3 +725,4 @@ button {
     color: white;
     margin-bottom: 0;
   }
+}

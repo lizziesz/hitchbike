@@ -22,21 +22,26 @@
 <body ng-controller="HitchBikeController">
 
     <header class="masthead">
-      <p>{{user}}</p>
+
       <div class="head-logo">
         <a href="/#/">
           <img class="head-logo" src="/images/HitchBike.png" alt="logo">
         </a>
       </div>
 
-      <a ng-href="/#/bikes/addbike">
-      <h1>ADD BIKES</h1>
+      <a ng-href="/#/bikes/addbike" class="post-bike-button">
+        <button class="form-control" id="post-bike-button">Add Bike</button>
       </a>
 
-    <div class="account-cta">
-      <a ng-href="/#/signup">Sign Up</a>
-      <a ng-href="/#/signin">Sign In</a>
-    </div>
+      <div class="header-filler">
+
+      </div>
+
+      <p>{{user}}</p>
+      <div class="account-cta">
+        <a ng-href="/#/signup">Sign Up</a>
+        <a ng-href="/#/signin">Sign In</a>
+      </div>
 
   </header>
 
