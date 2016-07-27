@@ -106,7 +106,6 @@ app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$locatio
 
 }]);
 
-
 app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$location', '$routeParams', function($scope, HitchBikeService, $location, $routeParams){
   $scope.view = {};
 
