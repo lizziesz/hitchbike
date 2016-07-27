@@ -19,8 +19,8 @@ Wireframes
 
 Instructions to run on local machine:
 
-  1)
-  2)
-  3)
-  4)
-  5)
+  1) git clone to local machine
+  2) npm install
+  3) npm install nodemon -g
+  4) create PSQL Database called 'hitchbike'
+  5) run 'nodemon' in terminal

@@ -13,8 +13,10 @@ div.dark-background {
     height: 100vh;
 }
 
-.popup {
+.popup-window {
   position: absolute;
+  background-color: white;
+  border: 1px solid black;
 }
 
 // Landing Page Structure
@@ -480,13 +482,10 @@ height: 12vh;
   justify-content: space-between;
 }
 // SIGN IN PAGE
-.popup{
-  position: absolute;
-}
 
 #signinDiv{
   position: absolute;
-  top: 20vh;
+  top: 13vh;
   left: 67vh;
   height: 36vh;
   width: 30vw;
@@ -516,4 +515,134 @@ height: 12vh;
 #signinDiv input[type=submit]{
   background: #4c96d7;
   margin-top: 3vh;
+}
+
+// Confirm Request Approval Popup Window
+
+.no-margin {
+  margin: 0;
+}
+
+.bottom-margin {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+div.accept-request {
+  top: 20vh;
+  left: 30vw;
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  height: 58vh;
+  padding: 20px;
+}
+
+form.accept-request {
+  width: 80%;
+  input, select{
+    margin-top: 10px;
+  }
+}
+
+input#accept-request-street-address {
+}
+
+input#accept-request-city {
+  width: 36%;
+}
+
+select#accept-request-state {
+  width: 30%;
+  height: 34px;
+}
+
+input#accept-request-zip {
+  width: 24%;
+}
+
+input#accept-request-textarea {
+  height: 80px;
+  padding-bottom: 52px;
+}
+
+div#cr-inner-form-1 {
+  margin-bottom: 20px;
+}
+
+div#cr-inner-form-2 {
+  margin-bottom: 20px;
+}
+
+div#cr-inner-form-3 {
+  margin-bottom: 10px;
+}
+
+div#cr-inner-form-4 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+div.inner-form-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  &.btn {
+    color: white;
+  }
+  &.cancel-request {
+    width: 30%;
+    background-color: #3498DB;
+    margin-top: 0;
+  }
+  &.submit-request {
+    width: 40%;
+    background-color: #35DB43;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+}
+
+// Confirm Request Denial Popup Window
+
+div.deny-request {
+  top: 30vh;
+  left: 60vh;
+  display: flex;
+  flex-direction: column;
+  width: 34vw;
+  height: 26vh;
+  padding: 20px;
+}
+
+p.big-bottom-margin {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+div.inner-deny-request {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+button {
+  &.cancel-request {
+    width: 30%;
+    background-color: #3498DB;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  &.deny-request {
+    width: 20%;
+    background-color: #D65858;
+    color: white;
+    margin-bottom: 0;
+  }
 }
