@@ -574,3 +574,38 @@ margin-right: 2.75vw;
 #signinSubmit{
   color: white;
 }
+//DELETE BIKE view
+.deleteBike{
+  width: 50vw;
+  height: 30vh;
+  border-style: solid;
+  border-color: black;
+  border-width: .5px;
+  margin: auto;
+  margin-top: 10vh;
+  background: white;
+  padding: 2.5vw;
+}
+.deleteBike h1 {
+  margin-top: -2vh;
+  margin-bottom: -1vh;
+}
+#deleteButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+#deleteButtons input{
+  height: 5.25vh;
+  width: 20vw;
+  font-size: 1.5em;
+  padding-bottom: 1vh;
+}
+#deleteConfirm {
+  background: #4c96d7;
+  color: white;
+}
+#deleteCancel{
+  background: #FF4F51;
+  color: white;
+}
