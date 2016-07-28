@@ -96,6 +96,9 @@ main.bikes {
   min-height: 90vh;
   background-size: 1440px; }
 
+#bike-frame-image img {
+  max-height: 27vh; }
+
 section.bike-search-params {
   display: flex;
   align-items: center;
