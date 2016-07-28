@@ -128,7 +128,7 @@
           </p>
         </div>
         <div class="myBikesColumn2">
-          <button id="myBikesAvailable">{{bike.is_available | availability}}</button>
+          <button id="myBikesAvailable" ng-click="changeBikeAvailability()">{{bike.is_available | availability}}</button>
           <h4>Type: {{bike.type}}</h4>
           <h4>Condition: {{bike.condition}}</h4>
         </div>
@@ -139,21 +139,6 @@
         </div>
     </div>
   </div>
-  <!-- <div class="pendingRequests">
-    <div class="requestSection">
-      <p><strong>Request from:</strong> Person</p>
-      <p><strong>Start Date:</strong> June, 1 2016</p>
-      <p><strong>End Date:</strong> June 2, 2016 </p>
-    </div>
-    <div class="requestSection1">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt velit culpa quo perspiciatis nobis soluta</p>
-    </div>
-    <div class="requestSection">
-      <h4>Status: Status</h4>
-      <button id="confirmRequestButton">Confirm</button>
-      <button id="denyRequestButton">Deny</button>
-    </div>
-  </div> -->
 </div>
 
 <div id="myBikesBar" class="dashboardDivs" ng-click="view.showRequests = !view.showRequests">

@@ -89,7 +89,7 @@ router.get('/api/bikes/search/:location/:startTime/:endTime', function(req, res,
   })
   .where('is_available', 'true')
   .then(function(data) {
-    dataToSend = [];
+    var dataToSend = [];
     for(var i=0; i<data.length; i++) {
       if(start < data[i].startDate && end < data[i].startDate) {
         dataToSend.push(data[i]);

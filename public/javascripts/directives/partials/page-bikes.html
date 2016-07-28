@@ -2,11 +2,13 @@
 
   <section class="bike-search-params">
     <div class="location-date-search">
-      <form class="location-date-search form-group" ng-submit="">
-        <input class="form-control location" type="text" placeholder="city + state or zip">
-        <input class="form-control date" type="date" placeholder="start">
-        <input class="form-control date" type="date" placeholder="end">
-        <input class="form-control submit" type="submit" value="Display Results">
+      <form class="location-date-search form-group" >
+        <input type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
+        <input type="date" id="startTime" name="startTime" ng-model="startTime">
+        <input type="date" id="endTime" name="endTime" ng-model="endTime">
+        <a href="/#/bikes"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="!location">Search Bikes!</button></a>
+        <a href="/#/bikes/search/{{location}}"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="location && !startTime">Search Bikes!</button></a>
+        <a href="/#/bikes/search/{{location}}/{{startTime}}/{{endTime}}"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="startTime">Search Bikes!</button></a>
       </form>
     </div>
     <div class="bike-sort">
@@ -35,13 +37,13 @@
       <div class="bike-frame" ng-repeat="bike in view.bikes">
         <div id="bike-frame-image">
           <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
-          <h6>Daily Rate: {{bike.price_day | currency: "$"}}</h6>
-          <h6>Hourly Rate: {{bike.price_hour | currency: "$" | hourly}}</h6>
+          <h6>Daily Rate: {{bike.price_day | currency}}</h6>
+          <h6>Hourly Rate: {{bike.price_hour | currency | hourly}}</h6>
         </div>
 
         <section>
           <h5>{{bike.title}}</h5>
-          <h6>{{bike.is_available | inStock}}</h6>
+          <h6>{{bike.is_available | availability}}</h6>
           <h6>Type: {{bike.type}}</h6>
           <h6>Condition: {{bike.condition}}</h6>
           <text>Description: {{bike.description}}</text>
