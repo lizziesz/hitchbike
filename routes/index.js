@@ -67,7 +67,7 @@ router.get('/api/dashboard/requests/:id', function(req, res, next) {
 
 router.get('/api/confirmrequests/:id', function(req, res, next) {
 
-  knex('requested_bikes').where('requested_bikes.id', req.params.id)
+  knex('requested_bikes').where('requested_bikes.requestor_id', req.params.id)
     .fullOuterJoin('bikes', 'bikes.id', 'requested_bikes.bike_id')
     .fullOuterJoin('users', 'requested_bikes.requestor_id', 'users.id')
     .then(function(data) {
@@ -77,10 +77,17 @@ router.get('/api/confirmrequests/:id', function(req, res, next) {
 });
 
 router.post('/api/confirmrequest/:id', function(req, res, next) {
-  knex('requested_bikes').where('id', req.params.id).update({
+  knex('requested_bikes').where('requestor_id', req.params.id).update({
     message: req.body.message,
     status: 'confirmed'
   }).then(function(data) {
+    res.redirect('/');
+  });
+});
+
+router.get('/api/deleterequest/:id', function(req, res, next) {
+  console.log("DELTETETETETET");
+  knex('requested_bikes').where('requestor_id', req.params.id).delete().then(function(){
     res.redirect('/');
   });
 });
