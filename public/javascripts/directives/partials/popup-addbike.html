@@ -4,24 +4,24 @@
   <form>
   <h1>Add Bike</h1>
   <h5>Title</h5>
-  <input type="text" placeholder="Enter Title" name="title" ng-model="view.addBikeTitle">
+  <input type="text" placeholder="Enter Title" name="title" ng-model="view.addBikeTitle" required>
   <h5>Image URL</h5>
-  <input type="text" placeholder = "Enter Image Url" name="image" ng-model="view.addBikeImage">
-  <h5>Price/Day</h5>
+  <input type="text" placeholder = "Enter Image Url" name="image" ng-model="view.addBikeImage" required>
+  <h5>Price/Day (optional)</h5>
   <input type="text" placeholder="Price/Day" name="priceday" ng-model="view.addBikePriceday">
   <h5>Price/Hour</h5>
-  <input type="text" placeholder="Price/Hour" name="pricehour" ng-model="view.addBikePricehour">
+  <input type="text" placeholder="Price/Hour" name="pricehour" ng-model="view.addBikePricehour" required>
 </div>
 
   <div id="rightdiv">
     <h5>Bike Type</h5>
-    <select name="type" ng-model="view.addBikeType">
+    <select name="type" ng-model="view.addBikeType" required>
       <option value="mountain">mountain</option>
       <option value="street">street</option>
       <option value="cruiser">cruiser</option>
     </select>
     <h5>Condition</h5>
-    <select name="condition" ng-model="view.addBikeCondition">
+    <select name="condition" ng-model="view.addBikeCondition" required>
       <option value="poor">poor</option>
       <option value="fair">fair</option>
       <option value="good">good</option>
@@ -29,22 +29,22 @@
     </select>
 <h5>Pickup Instructions</h5>
 <p>The renter will see this message when you confirm the request to loan your bike.</p>
-<input type="text" id="pickupins" ng-model="view.addBikeInstructions">
+<input type="text" id="pickupins" ng-model="view.addBikeInstructions" required>
 </div>
 
 <h5>Bike Location</h5>
 <div id="addbikeLocation">
-  <input type="text" id="streetAddress" placeholder="street address" ng-model="view.addBikeStreet_address">
-  <input type="text" placeholder="city" id="addbikeCity" ng-model="view.addBikeCity">
-  <input type="text" placeholder="state" id="addbikestate" ng-model="view.addBikeState">
-  <input type="text" id="addbikezip" placeholder="zip" ng-model="view.addBikeZip_code">
+  <input type="text" id="streetAddress" placeholder="street address" ng-model="view.addBikeStreet_address" required>
+  <input type="text" placeholder="city" id="addbikeCity" ng-model="view.addBikeCity" required>
+  <input type="text" placeholder="state" id="addbikestate" ng-model="view.addBikeState" required>
+  <input type="text" id="addbikezip" placeholder="zip" ng-model="view.addBikeZip_code" required>
 </div>
 
 <h5>Bike Description</h5>
-  <input type="text" id="addbikeDesc" ng-model="view.addBikeDescription">
+  <input type="text" id="addbikeDesc" ng-model="view.addBikeDescription" required>
 
 <div id="addbikeButtons">
-  <input type="submit" id="addbikecancel" value="cancel">
+  <input type="submit" ng-click="closePopUp()" id="addbikecancel" value="cancel">
   <input type="submit" id="postBike" value="Post Bike" ng-click="view.addBike(user.id)">
 </div>
 

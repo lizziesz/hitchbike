@@ -2,9 +2,9 @@
   <form ng-submit="view.signIn()" name="signInForm">
     <h1>Sign In</h1>
     <h5>Username</h5>
-    <input type="text" name="username" ng-model="view.username" placeholder="username">
+    <input type="text" name="username" ng-model="view.username" placeholder="username" required>
     <h5>Password</h5>
-    <input type="password" name="password" ng-model="view.password" placeholder="password">
+    <input type="password" name="password" ng-model="view.password" placeholder="password" required>
     <br>
     <input type="submit" id="signinSubmit">
   </form>

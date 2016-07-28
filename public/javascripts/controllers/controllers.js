@@ -49,14 +49,6 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     $window.location.reload();
   }
 
-  $scope.logoNav = function() {
-    if (user.id) {
-      $location.path('/bikes')
-    } else {
-      $location.path('/')
-    }
-  }
-
   $scope.requestBike = function() {
     return $location.path('/bikes/request')
   }

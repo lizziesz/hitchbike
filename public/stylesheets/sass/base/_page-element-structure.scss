@@ -374,7 +374,7 @@ div.bike-frame section {
   background-color: red;
   border: none;
 }
-// BIKES SIGNUP PAGE
+// SIGNUP PAGE
 
 .signup {
   top: 20vh;
@@ -411,6 +411,10 @@ div.bike-frame section {
   justify-content: space-between;
 }
 .signupAddress input{
+  width: 120px;
+}
+.signupAddress select {
+  margin-top: 13px;
   width: 120px;
 }
 .signup input[type=submit]{
