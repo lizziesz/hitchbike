@@ -76,7 +76,7 @@
   </div>
 
   <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
-    <h3>Currently Borrowed Bikes</h3>
+    <h3>Requested Bikes ({{view.borrowedBikes.length}})</h3>
   </div>
   <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
 
@@ -89,6 +89,7 @@
         <div class="bikeFrameHeading">
           <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
           <h5 class="bikeFrameHeadingElement">Owned By: {{bike.username}}</h5>
+          <h5 class="bikeFrameHeadingElement">Status: {{bike.status}}</h5>
         </div>
 
         <div class="bikeFrameTimeWindow">
