@@ -162,6 +162,13 @@ router.post('/api/updatebike', function(req, res, next) {
   }
 });
 
+router.get('/api/deletebike/:id', function(req, res, next) {
+  console.log("DELETE");
+  knex('bikes').where('id', req.params.id).delete().then(function(){
+    res.redirect('/');
+  });
+});
+
 router.post('/api/signin', function(req, res, next) {
   console.log("POSTING");
   knex('users')

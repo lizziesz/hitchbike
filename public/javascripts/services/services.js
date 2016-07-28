@@ -54,6 +54,9 @@ app.factory('HitchBikeService', function($http, $location) {
       updateBike.zip_code = zip_code;
       return $http.post('/api/updatebike', updateBike);
     },
+    deleteBike: function(id) {
+      return $http.get('/api/deletebike/' + id);
+    },
     signIn: function(username, password) {
       var user = {};
       user.username = username.toLowerCase();
