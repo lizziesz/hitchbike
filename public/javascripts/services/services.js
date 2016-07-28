@@ -26,18 +26,18 @@ app.factory('HitchBikeService', function($http, $location) {
     },
     signIn: function(username, password) {
       var user = {};
-      user.username = username;
+      user.username = username.toLowerCase();
       user.password = password;
       return $http.post('/api/signin', user);
     },
     signUp: function(array, username, password, email, street_address, city, state, zip_code) {
       var newUser = {};
-      newUser.username = username;
+      newUser.username = username.toLowerCase();
       newUser.password = password;
       newUser.email = email;
       newUser.street_address = street_address;
-      newUser.city = city;
-      newUser.state = state;
+      newUser.city = city.toLowerCase();
+      newUser.state = state.toLowerCase();
       newUser.zip_code = zip_code;
       array.push(newUser);
       return $http.post('/api/signup', newUser);
@@ -54,8 +54,8 @@ app.factory('HitchBikeService', function($http, $location) {
       newBike.instructions = instructions;
       newBike.description = description;
       newBike.street_address = street_address;
-      newBike.city = city;
-      newBike.state = state;
+      newBike.city = city.toLowerCase();
+      newBike.state = state.toLowerCase();
       newBike.zip_code = zip_code;
       array.push(newBike);
       return $http.post('/api/addbike', newBike);
