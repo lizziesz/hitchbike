@@ -14,7 +14,7 @@ exports.seed = function(knex, Promise) {
         instructions: 'Pick it up out back by the canoe',
         street_address: '123 Packers Lane',
         city: 'milwaukee',
-        state: 'wi',
+        state: 'WI',
         zip_code: '53202'
     }),
     knex('bikes').insert({
@@ -29,7 +29,7 @@ exports.seed = function(knex, Promise) {
         instructions: 'On the side of the house by the ladder',
         street_address: '44 Mountain Drive',
         city: 'dillon',
-        state: 'co',
+        state: 'CO',
         zip_code: '80435'
     }),
     knex('bikes').insert({
@@ -45,7 +45,7 @@ exports.seed = function(knex, Promise) {
         is_borrowed: true,
         street_address: '4500 North St.',
         city: 'philadelphia',
-        state: 'pa',
+        state: 'PA',
         zip_code: '19019'
     }),
     knex('bikes').insert({
@@ -59,7 +59,7 @@ exports.seed = function(knex, Promise) {
         instructions: 'Knock three times on the rock near the waterfall in the canyon',
         street_address: '2500 Pine St.',
         city: "boulder",
-        state: 'co',
+        state: 'CO',
         zip_code: '80302'
     }),
     knex('bikes').insert({
@@ -76,7 +76,7 @@ exports.seed = function(knex, Promise) {
         is_borrowed: true,
         street_address: '220 Brightwood St.',
         city: "san antonio",
-        state: 'texas',
+        state: 'TX',
         zip_code: '78209'
     })
   );

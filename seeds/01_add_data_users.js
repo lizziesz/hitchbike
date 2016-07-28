@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
         email: "westaa@colorado.edu",
         street_address: '220 Brightwood St.',
         city: "san antonio",
-        state: "tx",
+        state: "TX",
         zip_code: '78209',
         is_admin: true
     }),
@@ -21,7 +21,7 @@ exports.seed = function(knex, Promise) {
         email: "medders.jeffrey@gmail.com",
         street_address: '2500 Pine St.',
         city: "boulder",
-        state: "co",
+        state: "CO",
         zip_code: '80302',
         is_admin: true
     }),
@@ -31,7 +31,7 @@ exports.seed = function(knex, Promise) {
         email: "made.up@gmail.com",
         street_address: '4500 North St.',
         city: "philadelphia",
-        state: "pa",
+        state: "PA",
         zip_code: '19019',
         is_admin: true
     }),
@@ -41,7 +41,7 @@ exports.seed = function(knex, Promise) {
         email: "dont.know@gmail.com",
         street_address: '405 Robinhood St.',
         city: "lafayette",
-        state: "co",
+        state: "CO",
         zip_code: '80026',
         is_admin: true
     }),
@@ -51,7 +51,7 @@ exports.seed = function(knex, Promise) {
         email: "caseyisnotcool@gmail.com",
         street_address: '609 Beer St.',
         city: "milwaukee",
-        state: "wi",
+        state: "WI",
         zip_code: '53202',
         is_admin: true
     })
