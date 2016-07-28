@@ -252,6 +252,21 @@ router.post('/api/addbike', protect,function(req, res, next) {
   });
 });
 
+router.post('/api/newrequest', protect,function(req, res, next) {
+  knex('requested_bikes').insert({
+    requestor_id: req.body.requestor_id,
+    owner_id: req.body.owner_id,
+    bike_id: req.body.bike_id,
+    request_time_stamp: req.body.request_time_stamp,
+    borrow_start_time: req.body.borrow_start_time,
+    borrow_end_time: req.body.borrow_end_time,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    message: req.body.message
+  }).then(function() {
+    res.redirect('/#/');
+  });
+});
 
 
 module.exports = router;

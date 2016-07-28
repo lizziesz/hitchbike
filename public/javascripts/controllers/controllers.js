@@ -148,6 +148,11 @@ app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$locatio
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
   }
 
+  $scope.view.submitRequest = function(user_id, message, startDate, endDate) {
+    HitchBikeService.submitRequest(user_id, $routeParams.id, $routeParams.ownerid, message, startDate, endDate);
+    $location.path('/dashboard/' + user_id);
+  }
+
 }]);
 
 app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$location', '$routeParams', function($scope, HitchBikeService, $location, $routeParams){
@@ -218,6 +223,12 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
 
   HitchBikeService.borrowedBikes($routeParams.id).then(function(data) {
     $scope.view.borrowedBikes = data.data;
+    $scope.view.pendingCount = 0;
+    for(var i=0; i<$scope.view.borrowedBikes; i++) {
+      if($scope.view.borrowedBikes[i].status === 'pending') {
+        $scope.view.pendingCount = $scope.view.pendingCount + 1;
+      }
+    }
   })
 
   HitchBikeService.requests($routeParams.id).then(function(data) {
