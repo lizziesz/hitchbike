@@ -96,8 +96,50 @@ main.bikes {
   min-height: 90vh;
   background-size: 1440px; }
 
+#bikeInfo h4 {
+  margin-left: -1vw; }
+
 #bike-frame-image img {
-  max-height: 27vh; }
+  max-height: 2  5vh;
+  width: 21vw;
+  margin: 1vw;
+  margin-top: -1vh;
+  border-width: .2vw;
+  border-style: solid;
+  border-color: lightgrey; }
+
+#pricing {
+  margin-top: -2.7vh;
+  margin-left: 1.1vw; }
+
+#bikeInfo {
+  margin-left: -2vw;
+  margin-top: -4vh; }
+
+#titleAndAvailability {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 1vw; }
+
+#bikeAvailability {
+  color: green; }
+
+#bikeInfo input[type=button] {
+  background: lightgreen;
+  width: 10vw;
+  font-size: 1.4em;
+  color: white;
+  text-align: middle;
+  align-items: middle;
+  padding-bottom: 5vh;
+  padding-right: 10vw;
+  float: right;
+  float: bottom;
+  margin-right: 1vw;
+  max-top: 10vh;
+  margin: 1vh; }
 
 section.bike-search-params {
   display: flex;
@@ -130,10 +172,13 @@ div.bike-frame {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 42.7vw;
-  height: 37.28vh;
+  width: 43.7vw;
+  height: 41.28vh;
   margin-bottom: 40px;
-  padding-top: 20px; }
+  padding-top: 20px;
+  border-style: solid;
+  border-width: .2vw;
+  border-color: lightgrey; }
 
 div.location-date-search {
   display: flex;

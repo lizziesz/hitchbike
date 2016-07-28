@@ -37,19 +37,25 @@
       <div class="bike-frame" ng-repeat="bike in view.bikes">
         <div id="bike-frame-image">
           <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
-          <h6>Daily Rate: {{bike.price_day | currency}}</h6>
-          <h6>Hourly Rate: {{bike.price_hour | currency | hourly}}</h6>
+          <section id="pricing">
+            <h5>Daily Rate: {{bike.price_day | currency}}</h5>
+            <h5>Hourly Rate: {{bike.price_hour | currency | hourly}}</h5>
+          </section>
         </div>
 
-        <section>
-          <h5>{{bike.title}}</h5>
-          <h6>{{bike.is_available | availability}}</h6>
-          <h6>Type: {{bike.type}}</h6>
-          <h6>Condition: {{bike.condition}}</h6>
+        <section id="bikeInfo">
+          <div id="titleAndAvailability">
+            <h4>{{bike.title}}</h4>
+            <h5 id="bikeAvailability">{{bike.is_available | availability}}</h5>
+          </div>
+          <h5>Type: {{bike.type}}</h5>
+          <h5>Condition: {{bike.condition}}</h5>
           <text>Description: {{bike.description}}</text>
-          <input class="form-control" type="submit" ng-click="" value="Request Bike">
+            <input class="form-control" type="button" ng-click="" value="Request Bike">
         </section>
+        <!-- <input class="form-control" type="button" ng-click="" value="Request Bike"> -->
       </div>
+
     </section>
   </section>
 
