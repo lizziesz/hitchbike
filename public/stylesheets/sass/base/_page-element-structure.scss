@@ -116,12 +116,64 @@ main.bikes {
   min-height: 90vh;
   background-size: 1440px;
 }
-
-#bike-frame-image img {
-  max-height: 27vh;
+#bikeInfo h4 {
+  margin-left: -1vw;
+  margin-bottom: -2vh;
 }
-.bike-results {
-
+#bikeInfo h5 {
+  margin-bottom: -7.5vh;
+}
+ #bike-frame-image img {
+  max-height: 2  5vh;
+  width: 21vw;
+  margin: 1vw;
+  margin-top: -1vh;
+  border-width: .2vw;
+  border-style: solid;
+  border-color: lightgrey;
+}
+#pricing {
+  margin-top: -2.7vh;
+  margin-left: 1.1vw;
+}
+#bikeInfo {
+  margin-left: -2vw;
+  margin-top: -4vh;
+  margin-right: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#titleAndAvailability {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  margin: 1vw;
+  margin-bottom: -5vh;
+}
+#bikeAvailability {
+  color: green;
+}
+#bikeType {
+  margin-bottom: -28vh;
+}
+#bikeInfo input[type=button]{
+  background: lightgreen;
+  width: 15vw;
+  font-size: 1.4em;
+  color: white;
+  text-align: center;
+  padding-bottom: 5vh;
+  padding-right: 6.5vw;
+  padding-left: 3vw;
+  float: right;
+  float: bottom;
+  max-top: 10vh;
+  margin: 2vh;
+}
+#bikeInfo text{
+  padding-top: 2vh;
 }
 
 section.bike-search-params {
@@ -159,10 +211,13 @@ div.bike-frame {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 42.7vw;
-  height: 37.28vh;
+  width: 43.7vw;
+  height: 41.28vh;
   margin-bottom: 40px;
   padding-top: 20px;
+  border-style: solid;
+  border-width: .2vw;
+  border-color: lightgrey;
 }
 
 div.location-date-search {
@@ -381,8 +436,8 @@ div.bike-frame section {
   left: 50vh;
   display: flex;
   flex-direction: column;
-  width: 600px;
-  height: 400px;
+  width: 50vw;
+  height: 70vh;
   border-color: black;
   border-width: .5px;
   border-style: solid;
@@ -401,7 +456,7 @@ div.bike-frame section {
 }
 .signup input {
   margin-top: 12px;
-  text-align: center;
+  padding-left: 1vw;
   height: 35px;
   font-size: 1.5em;
 }
@@ -411,7 +466,13 @@ div.bike-frame section {
   justify-content: space-between;
 }
 .signupAddress input{
-  width: 120px;
+  width: 14vw;
+}
+.signupAddress select{
+  height: 4.5vh;
+  width: 6vw;
+  margin-top: 2vh;
+  font-size: 1.5em;
 }
 .signupAddress select {
   margin-top: 13px;
@@ -429,7 +490,10 @@ div.bike-frame section {
   height: 90vh;
   padding-top:50px;
 }
-
+.signupError{
+  color:red;
+  font-size: 1.5em;
+}
 // SIGNUPSUCCESS PAGE
 
 .signupSuccess {
@@ -447,6 +511,7 @@ div.bike-frame section {
   margin: 50px;
   padding: 20px;
 }
+
 .signupSuccess input[type=submit]{
   background: #4c96d7;
   float: right;
@@ -485,6 +550,9 @@ div.bike-frame section {
   height: 4vh;
   color: white;
   background: #4c96d7;
+}
+#signupDiv h2{
+  margin-bottom: -2vh;
 }
 // SIGN UP SUCCESS VIEWS
 .signupSuccess input[type=submit]{
@@ -668,7 +736,7 @@ margin-right: 2.75vw;
   position: absolute;
   top: 13vh;
   left: 67vh;
-  height: 36vh;
+  height: 41vh;
   width: 30vw;
   margin:auto;
   margin-top: 20vh;

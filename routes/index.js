@@ -7,6 +7,7 @@ var jwt = require('jsonwebtoken');
 var bearerToken = require('express-bearer-token');
 var jwtDecode = require('jwt-decode');
 var token;
+var errors;
 
 function protect(req,res,next) {
   // var decoded = jwtDecode(req.token);
@@ -51,14 +52,22 @@ router.get('/api/dashboard/borrowedbikes/:id', function(req, res, next) {
 });
 
 router.get('/api/dashboard/requests/:id', function(req, res, next) {
-  // knex('bikes')
-  //   .fullOuterJoin('requested_bikes', 'bikes.id', 'requested_bikes.bike_id')
-  //   .fullOuterJoin('users', 'requested_bikes.requestor_id', 'users.id')
-  //   .then(function(data) {
-  //     console.log(data);
-  //     res.json(data);
-  //   });
-  knex('requested_bikes').where('requested_bikes.owner_id', req.params.id)
+
+  knex('requested_bikes')
+  // .select('requested_bikes.id as newId')
+  .where('requested_bikes.owner_id', req.params.id)
+    .fullOuterJoin('bikes', 'bikes.id', 'requested_bikes.bike_id')
+    .fullOuterJoin('users', 'requested_bikes.requestor_id', 'users.id')
+    .then(function(data) {
+      console.log(data);
+      // console.log(requested_bikes.owner_id);
+      res.json(data);
+    });
+});
+
+router.get('/api/confirmrequests/:id', function(req, res, next) {
+
+  knex('requested_bikes').where('requested_bikes.id', req.params.id)
     .fullOuterJoin('bikes', 'bikes.id', 'requested_bikes.bike_id')
     .fullOuterJoin('users', 'requested_bikes.requestor_id', 'users.id')
     .then(function(data) {
@@ -67,13 +76,22 @@ router.get('/api/dashboard/requests/:id', function(req, res, next) {
     });
 });
 
+router.post('/api/confirmrequest/:id', function(req, res, next) {
+  knex('requested_bikes').where('id', req.params.id).update({
+    message: req.body.message,
+    status: 'confirmed'
+  }).then(function(data) {
+    res.redirect('/');
+  });
+});
+
 router.get('/api/bikes/search/:location', function(req, res, next) {
   console.log("PARAMS: " + req.params.location);
   knex('bikes').where(function() {
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
   }).where('is_available', 'true').then(function(data) {
     // console.log(data);
-    res.json(data);
+    res.json(data);``
   });
 });
 
@@ -89,7 +107,7 @@ router.get('/api/bikes/search/:location/:startTime/:endTime', function(req, res,
   })
   .where('is_available', 'true')
   .then(function(data) {
-    var dataToSend = [];
+    dataToSend = [];
     for(var i=0; i<data.length; i++) {
       if(start < data[i].startDate && end < data[i].startDate) {
         dataToSend.push(data[i]);
@@ -118,6 +136,62 @@ router.get('/api/users', function(req, res, next) {
   });
 });
 
+router.get('/api/userinfo/:id', function(req, res, next) {
+  knex('users').where('id', req.params.id).then(function(data) {
+    res.json(data);
+  });
+});
+
+router.post('/api/updateaddress/:id', function(req, res, next) {
+  knex('users').where('id', req.params.id).update({
+    street_address: req.body.street_address,
+    city: req.body.city,
+    state: req.body.state,
+    zip_code: req.body.zip_code
+  }).then(function(){
+    res.redirect('/');
+  });
+});
+
+router.post('/api/updatebikestatus/:id/:status', function(req, res, next) {
+  knex('bikes').where('id', req.params.id).update({
+    is_available: req.params.status
+  }).then(function(){
+    res.redirect('/');
+  });
+});
+
+router.post('/api/updatebike', function(req, res, next) {
+  console.log("Posting update");
+  try{
+    knex('bikes').where('id', req.body.id).update({
+      title: req.body.title,
+      description: req.body.description,
+      instructions: req.body.instructions,
+      type: req.body.type,
+      condition: req.body.condition,
+      price_day: req.body.price_day,
+      price_hour: req.body.price_hour,
+      street_address: req.body.street_address,
+      city: req.body.city,
+      state: req.body.state,
+      zip_code: req.body.zip_code
+    }).then(function() {
+      res.redirect('/');
+    });
+
+  } catch(err){
+    console.log(err);
+  }
+});
+
+router.get('/api/deletebike/:id', function(req, res, next) {
+  console.log("DELETE");
+  knex('bikes').where('id', req.params.id).delete().then(function(){
+    res.redirect('/');
+  });
+});
+
 router.post('/api/signin', function(req, res, next) {
   console.log("POSTING");
   knex('users')
@@ -126,36 +200,36 @@ router.post('/api/signin', function(req, res, next) {
   })
   .first()
   .then(function(data) {
-    console.log(data);
     if(!data) {
-      console.log("username doesn't exist");
+      res.json({errors: 'username or password is incorrect'})
     }
     else if(bcrypt.compareSync(req.body.password, data.password)) {
-      console.log("Password correct");
       token = jwt.sign({ id: data.id, username: data.username, is_admin: data.is_admin }, process.env.SECRET);
       res.json({token:token});
       console.log("token token: " + token);
       // res.redirect('/bikes');
+    } else{
+      console.log('username or password is incorrect');
+      res.json({errors: 'username or password is incorrect'});
     }
   }).catch(function(err) {
+    console.log(err);
     next(err)
   })
 });
 
 router.post('/api/signup', function(req, res, next) {
   var password = bcrypt.hashSync(req.body.password, 8);
-  console.log(req.body.zip_code);
-  console.log(typeof(req.body.zip_code));
+
   var zip = parseInt(req.body.zip_code);
-  console.log(req.body.street_address);
-  console.log("ZIPPY: " + zip);
+
   knex('users')
   .where({
     username: req.body.username
   })
   .then(function(data) {
     if(data.length > 0) {
-      console.log("Username is already taken");
+      res.json({errors: "username is already taken"});
     }
     else {
       knex('users')
@@ -201,6 +275,21 @@ router.post('/api/addbike', protect,function(req, res, next) {
   });
 });
 
+router.post('/api/newrequest', protect,function(req, res, next) {
+  knex('requested_bikes').insert({
+    requestor_id: req.body.requestor_id,
+    owner_id: req.body.owner_id,
+    bike_id: req.body.bike_id,
+    request_time_stamp: req.body.request_time_stamp,
+    borrow_start_time: req.body.borrow_start_time,
+    borrow_end_time: req.body.borrow_end_time,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    message: req.body.message
+  }).then(function() {
+    res.redirect('/#/');
+  });
+});
 
 
 module.exports = router;

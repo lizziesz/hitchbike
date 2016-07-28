@@ -1,14 +1,32 @@
 <div class="popup-window accept-request" ng-show="view.popUp">
-  <form class="form-group accept-request">
+  <form class="form-group accept-request" ng-repeat="request in view.requests">
     <div id="cr-inner-form-1">
       <h2 class="bottom-margin">Confirm Request Approval</h2>
       <p>All other pending requests which overlap with the time window of this request will automatically denied upon request acceptance, and users will be notified immediately.</p>
     </div>
+<<<<<<< HEAD
     <h4>Confirm pickup address</h4>
     <input type="text" name="address" value="(preloaded street address)" id="accept-request-street-address" class="form-control" required>
     <div class="inner-form-div" id="cr-inner-form-2">
       <input type="text" value="(preloaded city)" id="accept-request-city" class="form-control" required>
       <select name="state" id="accept-request-state" class="form-control" required>
+=======
+  <div id="cr-inner-form-3">
+    <h4>Optional Message for Requester</h4>
+    <input type="textarea" id="accept-request-textarea" class="form-control" ng-model="request.message">
+  </div>
+  <div class="no-margin" id="cr-inner-form-4">
+    <a href="/#/dashboard/{{user.id}}"><button class="cancel-request btn">Cancel</button></a>
+    <input type="submit" class="submit-request btn" value="Accept Request" ng-click="view.updateRequest(request.message)">
+  </div>
+</form>
+</div>
+    <!-- <h4>Confirm pickup address</h4>
+    <input type="text" name="address" value={{request.street_address}} id="accept-request-street-address" class="form-control" ng-model="request.street_address">
+    <div class="inner-form-div" id="cr-inner-form-2">
+      <input type="text" value={{request.city}} id="accept-request-city" class="form-control" ng-model="request.city">
+      <select name="state" id="accept-request-state" class="form-control" ng-model="view.requestState" ng-init="view.requestState = request.state">
+>>>>>>> 5c23d5b7d104d11b18a40e5d5a442defa22ea3d1
       	<option value="AL">Alabama</option>
       	<option value="AK">Alaska</option>
       	<option value="AZ">Arizona</option>
@@ -61,6 +79,7 @@
       	<option value="WI">Wisconsin</option>
       	<option value="WY">Wyoming</option>
       </select>
+<<<<<<< HEAD
     <input type="number" autocomplete="postal-code" id="accept-request-zip" class="form-control" required>
     </div>
     <div id="cr-inner-form-3">
@@ -73,3 +92,6 @@
     </div>
   </form>
 </div>
+=======
+    <input type="string" id="accept-request-zip" class="form-control" value={{request.zip_code}} ng-model="request.zip_code"> -->
+>>>>>>> 5c23d5b7d104d11b18a40e5d5a442defa22ea3d1

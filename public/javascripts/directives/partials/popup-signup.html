@@ -1,6 +1,7 @@
-<div class="popup-window signup" ng-show="view.popUp">
+<div class="popup-window signup" ng-show="view.popUp" id="signupDiv">
   <form ng-submit="view.signUp()" name="signUpForm">
     <h2>Sign Up</h2>
+<!-- <<<<<<< HEAD
     <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" required>
     <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" required>
     <input type="email" name="email" ng-model="view.emailSignup" placeholder="email" required>
@@ -62,7 +63,30 @@
     	<option value="WY">Wyoming</option>
     </select>
     <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" autocomplete="postal-code" required>
+======= -->
+    <h5>{{view.error}}</h5>
+    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" ng-maxlength="20">
+
+    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" ng-minlength="5">
+
+    <input type="email" name="email" ng-model="view.emailSignup" placeholder="email">
+    <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address">
+
+  <div class="signupAddress">
+    <input type="text" name="city" ng-model="view.citySignup" placeholder="city">
+
+    <select class="form-control">
+      <option ng-repeat="state in view.states" value="ng-repeat='state in view.state'">{{state}}</option>
+    </select>
+
+    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" ng-maxlength="5">
   </div>
+  <div ng-hide = "signUpForm.zip_code.$valid" class="signupError">
+  Please enter a five digit zip code.
+<!-- >>>>>>> 5c23d5b7d104d11b18a40e5d5a442defa22ea3d1 -->
+  </div>
+  <div ng-hide="signUpForm.password.$valid" class="signupError">Your Password must be at least five characters.</div>
+  <div ng-hide="signUpForm.username.$valid" class="signupError">This field cannot be longer than twenty characters.</div>
 
   <input type="submit" value="Submit">
 

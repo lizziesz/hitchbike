@@ -56,8 +56,9 @@ app.config(function($routeProvider, $httpProvider){
     .when('/bikes/signin', {
       templateUrl: 'views/bikes-signin.html'
     })
-    .when('/bikes/request', {
-      templateUrl: 'views/bikes-request.html'
+    .when('/bikes/request/bike/:id/:ownerid', {
+      templateUrl: 'views/bikes-request.html',
+      controller: 'BikesSearchController'
     })
     .when('/bikes/authoption', {
       templateUrl: 'views/bikes-authoption.html'
@@ -81,10 +82,11 @@ app.config(function($routeProvider, $httpProvider){
     .when('/dashboard/mybikes', {
       templateUrl: 'views/dashboard-mybikes.html'
     })
-    .when('/dashboard/mybikes/confirmaccept', {
-      templateUrl: 'views/dashboard-confirmaccept.html'
+    .when('/dashboard/mybikes/confirmaccept/:id', {
+      templateUrl: 'views/dashboard-confirmaccept.html',
+      controller: 'requestController'
     })
-    .when('/dashboard/mybikes/confirmdeny', {
+    .when('/dashboard/mybikes/confirmdeny/:id', {
       templateUrl: 'views/dashboard-confirmdeny.html'
     })
     .when('/dashboard/mybikes/deleteconfirm', {
@@ -94,10 +96,7 @@ app.config(function($routeProvider, $httpProvider){
   });
   //
   app.run(function($rootScope, $location) {
-    // if ($location.search().hasOwnProperty( 'token' ) ) {
-    //  localStorage.jwt = $location.search().jwt;
-    //  $location.search('token',null);
-    // }
+
 
     if (localStorage.jwt) {
       $rootScope.user = jwt_decode(localStorage.jwt);
