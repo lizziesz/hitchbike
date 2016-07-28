@@ -199,7 +199,9 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
   };
 
   $scope.view = {};
+  var vm = this;
   $scope.view.showRequests = false;
+  $scope.view.editBike = false;
   HitchBikeService.dashboardBikes($routeParams.id).then(function(data) {
     console.log(data);
     $scope.view.bikes = data.data;
@@ -231,6 +233,19 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     console.log(newStatus);
     HitchBikeService.updateBikeAvailability(id, newStatus);
     $window.location.reload();
+  }
+
+  $scope.view.updateBikeInfo = function(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code) {
+    console.log(id);
+    // console.log($scope);
+    // console.log(form);
+    // console.log(bike);
+    // console.log(updateBikeForm.title);
+    console.log(description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
+    HitchBikeService.updateBikeInfo(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
+    // .then(function(){
+      $window.location.reload();
+    // });
   }
 
 }])
