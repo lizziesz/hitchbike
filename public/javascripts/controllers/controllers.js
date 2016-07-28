@@ -28,18 +28,27 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
 
   $scope.view.signIn = function() {
     HitchBikeService.signIn($scope.view.username, $scope.view.password).then(function (res) {
-      localStorage.jwt = res.data.token;
-      $location.path('/bikes');
-      $window.location.reload();
+      if(res.data.errors){
+        $scope.view.error = res.data.errors;
+      }
+      else{
+        localStorage.jwt = res.data.token;
+        $location.path('/bikes');
+        $window.location.reload();
+      }
     });
   }
 
   $scope.view.signUp = function() {
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
     .then(function(res) {
-      localStorage.jwt = res.data.token;
-      $location.path('/bikes');
-      $window.location.reload();
+      if(res.data.errors){
+        $scope.view.error = res.data.errors;
+      }else {
+        localStorage.jwt = res.data.token;
+        $location.path('/bikes');
+        $window.location.reload();
+      }
     });
   }
 
@@ -199,7 +208,9 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
   };
 
   $scope.view = {};
+  var vm = this;
   $scope.view.showRequests = false;
+  $scope.view.editBike = false;
   HitchBikeService.dashboardBikes($routeParams.id).then(function(data) {
     console.log(data);
     $scope.view.bikes = data.data;
@@ -231,6 +242,19 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     console.log(newStatus);
     HitchBikeService.updateBikeAvailability(id, newStatus);
     $window.location.reload();
+  }
+
+  $scope.view.updateBikeInfo = function(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code) {
+    console.log(id);
+    // console.log($scope);
+    // console.log(form);
+    // console.log(bike);
+    // console.log(updateBikeForm.title);
+    console.log(description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
+    HitchBikeService.updateBikeInfo(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
+    // .then(function(){
+      $window.location.reload();
+    // });
   }
 
 }])
