@@ -18,11 +18,25 @@ app.factory('HitchBikeService', function($http, $location) {
     users: function() {
       return $http.get('/api/users');
     },
+    userInfo: function(id) {
+      return $http.get('/api/userinfo/' + id);
+    },
     searchBikes: function(locationInput) {
       return $http.get('/api/bikes/search/' + locationInput);
     },
     searchBikesDate: function(locationInput, startInput, endInput) {
       return $http.get('/api/bikes/search/' + locationInput + '/' + startInput + '/' + endInput)
+    },
+    updateAddress: function(id, street_address, city, state, zip_code) {
+      var newAddress = {};
+      newAddress.street_address = street_address;
+      newAddress.city = city;
+      newAddress.state = state;
+      newAddress.zip_code = zip_code;
+      return $http.post('/api/updateaddress/' + id, newAddress);
+    },
+    updateBikeAvailability: function(id, status) {
+      return $http.post('/api/updatebikestatus/' + id + '/' + status);
     },
     signIn: function(username, password) {
       var user = {};
