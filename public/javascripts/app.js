@@ -58,7 +58,7 @@ app.config(function($routeProvider, $httpProvider){
     .when('/bikes/bikes-request', {
       templateUrl: 'views/bikes-request.html'
     })
-    .when('/dashboard', {
+    .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',
       controller: 'dashboardController'
     })
