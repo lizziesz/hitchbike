@@ -3,11 +3,12 @@
   <div id="accountSettingBar" class="dashboardDivs" ng-click="toggleAccount()">
     <h3>Account Settings</h3>
   </div>
-  <div ng-show="showAccountInfo === true" class="dashboardDrop">
-    <p>Adress</p>
-    <input type="text" value="{{user.address}}">
-    <input type="text" value="{{user.city}}">
-    <select name="state">
+  <div ng-show="showAccountInfo === true" class="dashboardDrop" ng-repeat="data in view.userData">
+    <p>Address</p>
+    <form ng-model="view.updateAddressForm" name="updateAddressForm">
+    <input type="text" value="{{data.street_address}}" name="street_address">
+    <input type="text" value="{{data.city}}" name="city">
+    <select name="state" ng-model="view.updateState" ng-init="view.updateState = data.state">
     	<option value="AL">Alabama</option>
     	<option value="AK">Alaska</option>
     	<option value="AZ">Arizona</option>
@@ -60,17 +61,18 @@
     	<option value="WI">Wisconsin</option>
     	<option value="WY">Wyoming</option>
     </select>
-    <input type="text" value="{{user.zip_code}}">
-    <p id="uniqueP">Search Bike Radius</p>
+    <input type="text" value="{{data.zip_code}}" name="zip_code">
+    <!-- <p id="uniqueP">Search Bike Radius</p>
     <select name="" id="">
       <option value="1 Mile">1 Mile</option>
       <option value="5 Miles">5 Miles</option>
       <option value="10 Miles">10 Miles</option>
       <option value="15 Miles">15 Miles</option>
       <option value="25 Miles">25 Miles</option>
-    </select>
+    </select> -->
     <br>
-    <input type="button" value="Save Updates" id="editUsersButton">
+    <input type="button" value="Save Updates" id="editUsersButton" ng-click="view.updateAddress(user.id)">
+  </form>
   </div>
 
   <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
@@ -128,7 +130,7 @@
           </p>
         </div>
         <div class="myBikesColumn2">
-          <button id="myBikesAvailable" ng-click="changeBikeAvailability()">{{bike.is_available | availability}}</button>
+          <button id="myBikesAvailable" ng-click="view.changeBikeAvailability(bike.id, bike.is_available)">{{bike.is_available | availability}}</button>
           <h4>Type: {{bike.type}}</h4>
           <h4>Condition: {{bike.condition}}</h4>
         </div>

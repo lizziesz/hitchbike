@@ -118,6 +118,10 @@ main.bikes {
 }
 #bikeInfo h4 {
   margin-left: -1vw;
+  margin-bottom: -2vh;
+}
+#bikeInfo h5 {
+  margin-bottom: -7.5vh;
 }
  #bike-frame-image img {
   max-height: 2  5vh;
@@ -135,6 +139,10 @@ main.bikes {
 #bikeInfo {
   margin-left: -2vw;
   margin-top: -4vh;
+  margin-right: 1vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 #titleAndAvailability {
   display: flex;
@@ -142,26 +150,31 @@ main.bikes {
   justify-content: space-between;
   align-content: center;
   margin: 1vw;
+  margin-bottom: -5vh;
 }
 #bikeAvailability {
   color: green;
 }
+#bikeType {
+  margin-bottom: -28vh;
+}
 #bikeInfo input[type=button]{
   background: lightgreen;
-  width: 10vw;
+  width: 15vw;
   font-size: 1.4em;
   color: white;
-  text-align: middle;
-  align-items: middle;
+  text-align: center;
   padding-bottom: 5vh;
-  padding-right: 10vw;
+  padding-right: 6.5vw;
+  padding-left: 3vw;
   float: right;
   float: bottom;
-  margin-right: 1vw;
   max-top: 10vh;
-  margin: 1vh;
+  margin: 2vh;
 }
-
+#bikeInfo text{
+  padding-top: 2vh;
+}
 
 section.bike-search-params {
   display: flex;

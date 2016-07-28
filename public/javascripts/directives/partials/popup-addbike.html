@@ -1,7 +1,7 @@
 <div class='addBike popup-window' class="addBike">
 
   <div id ="leftDiv">
-    <form>
+  <form>
   <h1>Add Bike</h1>
   <h5>Title</h5>
   <input type="text" placeholder="Enter Title" name="title" ng-model="view.addBikeTitle">
@@ -29,23 +29,23 @@
     </select>
 <h5>Pickup Instructions</h5>
 <p>The renter will see this message when you confirm the request to loan your bike.</p>
-<input type="text" id="pickupins">
+<input type="text" id="pickupins" ng-model="view.addBikeInstructions">
 </div>
 
 <h5>Bike Location</h5>
 <div id="addbikeLocation">
-  <input type="text" id="streetAddress" placeholder="street address">
-  <input type="text" placeholder="city" id="addbikeCity">
-  <input type="text" placeholder="state" id="addbikestate">
-  <input type="text" id="addbikezip" placeholder="zip">
+  <input type="text" id="streetAddress" placeholder="street address" ng-model="view.addBikeStreet_address">
+  <input type="text" placeholder="city" id="addbikeCity" ng-model="view.addBikeCity">
+  <input type="text" placeholder="state" id="addbikestate" ng-model="view.addBikeState">
+  <input type="text" id="addbikezip" placeholder="zip" ng-model="view.addBikeZip_code">
 </div>
 
 <h5>Bike Description</h5>
-  <input type="text" id="addbikeDesc">
+  <input type="text" id="addbikeDesc" ng-model="view.addBikeDescription">
 
 <div id="addbikeButtons">
   <input type="submit" id="addbikecancel" value="cancel">
-  <input type="submit" id="postBike" value="post bike">
+  <input type="submit" id="postBike" value="Post Bike" ng-click="view.addBike(user.id)">
 </div>
 
 </form>

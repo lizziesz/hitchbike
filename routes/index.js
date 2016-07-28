@@ -118,6 +118,31 @@ router.get('/api/users', function(req, res, next) {
   });
 });
 
+router.get('/api/userinfo/:id', function(req, res, next) {
+  knex('users').where('id', req.params.id).then(function(data) {
+    res.json(data);
+  });
+});
+
+router.post('/api/updateaddress/:id', function(req, res, next) {
+  knex('users').where('id', req.params.id).update({
+    street_address: req.body.street_address,
+    city: req.body.city,
+    state: req.body.state,
+    zip_code: req.body.zip_code
+  }).then(function(){
+    res.redirect('/');
+  });
+});
+
+router.post('/api/updatebikestatus/:id/:status', function(req, res, next) {
+  knex('bikes').where('id', req.params.id).update({
+    is_available: req.params.status
+  }).then(function(){
+    res.redirect('/');
+  });
+});
+
 router.post('/api/signin', function(req, res, next) {
   console.log("POSTING");
   knex('users')

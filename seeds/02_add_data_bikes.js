@@ -3,7 +3,6 @@ exports.seed = function(knex, Promise) {
     knex('bikes').del(),
     // Inserts seed entries
     knex('bikes').insert({
-        id: 1,
         owner_id: 5,
         title: "Cool bike for rent!",
         description: 'The bike works great, check it out before it\'s gone',
@@ -14,12 +13,11 @@ exports.seed = function(knex, Promise) {
         price_day: 10,
         instructions: 'Pick it up out back by the canoe',
         street_address: '123 Packers Lane',
-        city: 'Milwaukee',
+        city: 'milwaukee',
         state: 'WI',
         zip_code: '53202'
     }),
     knex('bikes').insert({
-        id: 2,
         owner_id: 4,
         title: "Decent bike for rent",
         description: 'It squeaks but she\'ll get you where you\'re going',
@@ -30,12 +28,11 @@ exports.seed = function(knex, Promise) {
         price_day: 25,
         instructions: 'On the side of the house by the ladder',
         street_address: '44 Mountain Drive',
-        city: 'Dillon',
+        city: 'dillon',
         state: 'CO',
         zip_code: '80435'
     }),
     knex('bikes').insert({
-        id: 3,
         owner_id: 3,
         title: 'Fine mountain bike',
         description: 'Roll down the mountains in style',
@@ -47,12 +44,11 @@ exports.seed = function(knex, Promise) {
         is_available: false,
         is_borrowed: true,
         street_address: '4500 North St.',
-        city: 'Philadelphia',
+        city: 'philadelphia',
         state: 'PA',
         zip_code: '19019'
     }),
     knex('bikes').insert({
-        id: 4,
         owner_id: 2,
         title: "Coolest bike on this site, without question.",
         description: 'This bike was manufactured in the forest by small gnomes. They worked tirelessly to complete this bike. They were paid, that\'s for sure. Good benefits. Really wonderful bike with no imperfections anywhere',
@@ -62,12 +58,11 @@ exports.seed = function(knex, Promise) {
         price_day: 2,
         instructions: 'Knock three times on the rock near the waterfall in the canyon',
         street_address: '2500 Pine St.',
-        city: "Boulder",
+        city: "boulder",
         state: 'CO',
         zip_code: '80302'
     }),
     knex('bikes').insert({
-        id: 5,
         owner_id: 1,
         title: "Granny bike",
         description: "Slow, but proud",
@@ -80,8 +75,8 @@ exports.seed = function(knex, Promise) {
         is_available: false,
         is_borrowed: true,
         street_address: '220 Brightwood St.',
-        city: "San Antonio",
-        state: 'Texas',
+        city: "san antonio",
+        state: 'TX',
         zip_code: '78209'
     })
   );

@@ -25,7 +25,10 @@
     <header class="masthead">
 
       <div class="head-logo">
-        <a href="/#/">
+        <a ng-href="/#/" ng-show="!user.id">
+          <img class="head-logo" src="/images/HitchBike.png" alt="logo">
+        </a>
+        <a ng-href="/#/bikes" ng-show="user.id">
           <img class="head-logo" src="/images/HitchBike.png" alt="logo">
         </a>
       </div>
