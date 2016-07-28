@@ -80,7 +80,7 @@ app.factory('HitchBikeService', function($http, $location) {
 app.service("HitchBikeInterceptor", function HitchBikeInterceptor() {
   return {
     request: function(config){
-      console.log(localStorage.jwt);
+      // console.log(localStorage.jwt);
       if (localStorage.jwt) {
         config.headers.Authorization = 'Bearer ' + localStorage.jwt;
       }

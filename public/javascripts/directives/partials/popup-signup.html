@@ -1,7 +1,8 @@
 <div class="popup-window signup" ng-show="view.popUp">
   <form ng-submit="view.signUp()" name="signUpForm">
     <h2>Sign Up</h2>
-    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" >
+    {{view.error}}
+    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username">
     <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password">
     <input type="email" name="email" ng-model="view.emailSignup" placeholder="email">
     <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address">

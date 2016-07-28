@@ -91,10 +91,7 @@ app.config(function($routeProvider, $httpProvider){
   });
   //
   app.run(function($rootScope, $location) {
-    // if ($location.search().hasOwnProperty( 'token' ) ) {
-    //  localStorage.jwt = $location.search().jwt;
-    //  $location.search('token',null);
-    // }
+
 
     if (localStorage.jwt) {
       $rootScope.user = jwt_decode(localStorage.jwt);
