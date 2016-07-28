@@ -28,18 +28,27 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
 
   $scope.view.signIn = function() {
     HitchBikeService.signIn($scope.view.username, $scope.view.password).then(function (res) {
-      localStorage.jwt = res.data.token;
-      $location.path('/bikes');
-      $window.location.reload();
+      if(res.data.errors){
+        $scope.view.error = res.data.errors;
+      }
+      else{
+        localStorage.jwt = res.data.token;
+        $location.path('/bikes');
+        $window.location.reload();
+      }
     });
   }
 
   $scope.view.signUp = function() {
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
     .then(function(res) {
-      localStorage.jwt = res.data.token;
-      $location.path('/bikes');
-      $window.location.reload();
+      if(res.data.errors){
+        $scope.view.error = res.data.errors;
+      }else {
+        localStorage.jwt = res.data.token;
+        $location.path('/bikes');
+        $window.location.reload();
+      }
     });
   }
 

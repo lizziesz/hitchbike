@@ -28,16 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use(function (req,res,next) {
-//   console.log("REQ.JWT: " + req.token);
-//   jwt.verify(req.token, process.env.SECRET, function (err,decoded) {
-//     if (!err) {
-//       next();
-//     } else {
-//       res.status(400).send('Bad Request');
-//     }
-//   });
-// });
+
 
 app.use('/', routes);
 app.use('/users', users);
