@@ -18,14 +18,14 @@ app.config(function($routeProvider, $httpProvider){
       controller: "HitchBikeController"
     })
     .when('/signup', {
-      templateUrl: '/views/signup.html',
+      templateUrl: '/views/landing-signup.html',
       controller: "HitchBikeController"
     })
     .when('/signupsuccess', {
-      templateUrl: 'views/signupsuccess.html'
+      templateUrl: 'views/landing-signupsuccess.html'
     })
     .when('/signin', {
-      templateUrl: 'views/signin.html',
+      templateUrl: 'views/landing-signin.html',
       controller: "HitchBikeController"
     })
     .when('/bikes', {
@@ -41,10 +41,10 @@ app.config(function($routeProvider, $httpProvider){
       controller: "BikesSearchDateController"
     })
     .when('/bikes/addbike', {
-      templateUrl: 'views/addbike.html'
+      templateUrl: 'views/bikes-addbike.html'
     })
     .when('/bikes/addbikesuccess', {
-      templateUrl: 'views/addbikesuccess.html'
+      templateUrl: 'views/bikes-addbikesuccess.html'
     })
     .when('/bikes/signup', {
       templateUrl: 'views/bikes-signup.html'
@@ -55,11 +55,8 @@ app.config(function($routeProvider, $httpProvider){
     .when('/bikes/signin', {
       templateUrl: 'views/bikes-signin.html'
     })
-    .when('/bikes/request', {
-      templateUrl: 'views/request.html'
-    })
-    .when('/dashboard/confirmdeny', {
-      templateUrl: 'views/confirmdeny.html'
+    .when('/bikes/bikes-request', {
+      templateUrl: 'views/bikes-request.html'
     })
     .when('/dashboard', {
       templateUrl: 'views/dashboard.html',
@@ -74,20 +71,20 @@ app.config(function($routeProvider, $httpProvider){
     .when('/dashboard/settings', {
       templateUrl: 'views/dashboard.html'
     })
-    .when('/dashboard/mybikes', {
-      templateUrl: 'views/mybikes.html'
-    })
-    .when('/dashboard/mybikes/confirmaccept', {
-      templateUrl: 'views/confirmaccept.html'
-    })
-    .when('/dashboard/mybikes/confirmdeny', {
-      templateUrl: 'views/confirmdeny.html'
-    })
-    .when('/dashboard/mybikes/deleteconfirm', {
-      templateUrl: 'views/bikedelete.html'
-    })
     .when('/dashboard/borrowed', {
       templateUrl: 'views/borrowedbikes.html'
+    })
+    .when('/dashboard/mybikes', {
+      templateUrl: 'views/dashboard-mybikes.html'
+    })
+    .when('/dashboard/mybikes/confirmaccept', {
+      templateUrl: 'views/dashboard-confirmaccept.html'
+    })
+    .when('/dashboard/mybikes/confirmdeny', {
+      templateUrl: 'views/dashboard-confirmdeny.html'
+    })
+    .when('/dashboard/mybikes/deleteconfirm', {
+      templateUrl: 'views/dashboard-bikedelete.html'
     })
     .otherwise( { redirectTo: '/' } );
   });

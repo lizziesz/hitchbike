@@ -13,8 +13,56 @@ div.dark-background {
     height: 100vh;
 }
 
-.popup {
+.popup-window {
   position: absolute;
+  background-color: white;
+  border: 1px solid black;
+}
+
+// Styling for the Universal Header
+
+header.masthead {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  height: 10vh;
+  width: 100%;
+}
+
+a.post-bike-button {
+  margin-left: 50px;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+}
+div.head-logo {
+  width: 230px;
+  justify-content: center;
+}
+img.head-logo {
+  width: 170px;
+  height: 64px;
+}
+div.header-filler {
+  width: 900px;
+}
+div.account-cta {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin-right: 50px;
+  a {
+    color: black;
+  }
+}
+
+button#post-bike-button {
+  background-color: #3498DB;
+  color: white;
+  width: 100px;
+  margin-top: 22px;
 }
 
 // Landing Page Structure
@@ -56,35 +104,6 @@ div.dark-background {
 }
 #landingSearchForm input {
   margin-right: 20px;
-}
-
-// Structure for the universal header
-
-header.masthead {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  height: 10vh;
-  width: 100%;
-}
-
-header div {
-  display: flex;
-  align-items: center;
-}
-div.head-logo {
-  width: 230px;
-  justify-content: center;
-}
-img.head-logo {
-  width: 170px;
-  height: 64px;
-}
-div.account-cta {
-  display: flex;
-  justify-content: space-around;
-  width: 200px;
-  margin-right: 50px;
 }
 
 // Bikes Page Structure
@@ -403,6 +422,8 @@ div.bike-frame section {
 // SIGNUPSUCCESS PAGE
 
 .signupSuccess {
+  top: 20vh;
+  left: 20vw;
   height: 160px;
   width: 650px;
   background: white;
@@ -429,7 +450,9 @@ div.bike-frame section {
   margin-top: -10px;
 }
 // ADD BIKES SUCCESS VIEW
-.addbikesSuccess {
+.addbikeSuccess {
+  top: 20vh;
+  left: 20vw;
   height: 160px;
   width: 650px;
   background: white;
@@ -469,6 +492,8 @@ div.bike-frame section {
 // ADD BIKE VIEW
 
 .addBike {
+  top: 20vh;
+  left: 20vw;
   border-color: black;
   border-style: solid;
   border-width: .5px;
@@ -501,7 +526,7 @@ div.bike-frame section {
 #rightdiv {
   float: right;
   width: 28vw;
-  margin-top: -39vh;
+  margin-top: -40.5vh;
 }
 #pickupins {
   height: 11vh;
@@ -541,15 +566,20 @@ div.bike-frame section {
 #addbikeButtons input{
   width: 15vw;
   height: 4.5vh;
-  margin-left: 2.5vw;
-  margin-top: 1vh;
+  margin-left: 3vw;
+  margin-top: 0vh;
+  font-size: 1.8em;
+  padding-bottom: 1.4em;
 }
 #addbikeButtons{
   display: flex;
   justify-content: flex-end;
+  margin-right: -0.25vw;
 }
 // REQUEST page
 .confirm {
+  top: 20vh;
+  left: 20vw;
   height: 64vh;
   width: 49vw;
   border-width: .25vh;
@@ -618,12 +648,14 @@ margin-right: 2.75vw;
   color: white;
 }
 // SIGN IN PAGE
-.popup{
+
+.popup {
   position: absolute;
 }
+
 #signinDiv{
   position: absolute;
-  top: 20vh;
+  top: 13vh;
   left: 67vh;
   height: 36vh;
   width: 30vw;
@@ -654,11 +686,145 @@ margin-right: 2.75vw;
   background: #4c96d7;
   margin-top: 3vh;
 }
+
 #signinSubmit{
   color: white;
 }
+
+// Confirm Request Approval Popup Window
+
+.no-margin {
+  margin: 0;
+}
+
+.bottom-margin {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+div.accept-request {
+  top: 20vh;
+  left: 30vw;
+  display: flex;
+  flex-direction: column;
+  width: 35vw;
+  height: 58vh;
+  padding: 20px;
+}
+
+form.accept-request {
+  width: 80%;
+  input, select{
+    margin-top: 10px;
+  }
+}
+
+input#accept-request-street-address {
+}
+
+input#accept-request-city {
+  width: 36%;
+}
+
+select#accept-request-state {
+  width: 30%;
+  height: 34px;
+}
+
+input#accept-request-zip {
+  width: 24%;
+}
+
+input#accept-request-textarea {
+  height: 80px;
+  padding-bottom: 52px;
+}
+
+div#cr-inner-form-1 {
+  margin-bottom: 20px;
+}
+
+div#cr-inner-form-2 {
+  margin-bottom: 20px;
+}
+
+div#cr-inner-form-3 {
+  margin-bottom: 10px;
+}
+
+div#cr-inner-form-4 {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+div.inner-form-div {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  &.btn {
+    color: white;
+  }
+  &.cancel-request {
+    width: 30%;
+    background-color: #3498DB;
+    margin-top: 0;
+  }
+  &.submit-request {
+    width: 40%;
+    background-color: #35DB43;
+    margin-top: 0;
+    margin-left: 10px;
+  }
+}
+
+// Confirm Request Denial Popup Window
+
+div.deny-request {
+  top: 30vh;
+  left: 60vh;
+  display: flex;
+  flex-direction: column;
+  width: 34vw;
+  height: 26vh;
+  padding: 20px;
+}
+
+p.big-bottom-margin {
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+div.inner-deny-request {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+button {
+  &.cancel-request {
+    width: 30%;
+    background-color: #3498DB;
+    color: white;
+    margin-left: 10px;
+    margin-bottom: 0;
+  }
+  &.deny-request {
+    width: 20%;
+    background-color: #D65858;
+    color: white;
+    margin-bottom: 0;
+  }
+}
+
 //DELETE BIKE view
 .deleteBike{
+  top: 20vh;
+  left: 20vw;
   width: 50vw;
   height: 30vh;
   border-style: solid;
@@ -688,7 +854,7 @@ margin-right: 2.75vw;
   background: #4c96d7;
   color: white;
 }
-#deleteCancel{
+#deleteCancel {
   background: #FF4F51;
   color: white;
 }

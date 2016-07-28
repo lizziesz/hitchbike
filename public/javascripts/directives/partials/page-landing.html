@@ -1,0 +1,20 @@
+<div id="landingContainer">
+  <div id="slogan">
+    <p>Rent a bike anytime,</p>
+    <p>anywhere, from anyone.</p>
+  </div>
+  <div id="instructions">
+    <p>Enter your location</p>
+    <p>and when you need a bike</p>
+  </div>
+  <div id="landingSearchForm">
+    <form>
+      <input type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
+      <input type="date" id="startTime" name="startTime" ng-model="startTime">
+      <input type="date" id="endTime" name="endTime" ng-model="endTime">
+      <a href="/#/bikes/search/{{location}}"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="!startTime">Search Bikes!</button></a>
+      <a href="/#/bikes/search/{{location}}/{{startTime}}/{{endTime}}"><button type="submit" ng-click="searchBikes()" id="landingSearch" ng-show="startTime">Search Bikes!</button></a>
+    </form>
+  </div>
+
+</div>

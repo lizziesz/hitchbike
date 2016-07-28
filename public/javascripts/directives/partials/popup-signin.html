@@ -1,0 +1,11 @@
+<div id ="signinDiv" class="popup" ng-show="view.popUp">
+  <form ng-submit="view.signIn()" name="signInForm">
+    <h1>Sign In</h1>
+    <h5>Username</h5>
+    <input type="text" name="username" ng-model="view.username" placeholder="username">
+    <h5>Password</h5>
+    <input type="password" name="password" ng-model="view.password" placeholder="password">
+    <br>
+    <input type="submit" id="signinSubmit">
+  </form>
+</div>
