@@ -47,7 +47,8 @@
           <h6>Type: {{bike.type}}</h6>
           <h6>Condition: {{bike.condition}}</h6>
           <text>Description: {{bike.description}}</text>
-          <input class="form-control" type="submit" ng-click="requestBike()" value="Request Bike">
+          <a class="form-control" type="button" value="Request Bike" ng-show="user.id" ng-href="/#/bikes/request" ng-click="openPopUp()">Request Bike</a>
+          <a class="form-control" type="button" value="Request Bike" ng-show="!user.id" ng-href="/#/bikes/authoption" ng-click="openPopUp()">Request Bike</a>
         </section>
       </div>
     </section>

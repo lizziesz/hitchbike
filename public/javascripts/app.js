@@ -15,22 +15,22 @@ app.config(function($routeProvider, $httpProvider){
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',
-      controller: "HitchBikeController"
+      // controller: "HitchBikeController"
     })
     .when('/signup', {
       templateUrl: '/views/landing-signup.html',
-      controller: "HitchBikeController"
+      // controller: "HitchBikeController"
     })
     .when('/signupsuccess', {
       templateUrl: 'views/landing-signupsuccess.html'
     })
     .when('/signin', {
       templateUrl: 'views/landing-signin.html',
-      controller: "HitchBikeController"
+      // controller: "HitchBikeController"
     })
     .when('/bikes', {
       templateUrl: 'views/bikes.html',
-      controller: "HitchBikeController"
+      // controller: "HitchBikeController"
     })
     .when('/bikes/search/:location', {
       templateUrl: 'views/bikes.html',
@@ -42,7 +42,7 @@ app.config(function($routeProvider, $httpProvider){
     })
     .when('/bikes/addbike', {
       templateUrl: 'views/bikes-addbike.html',
-      controller: "HitchBikeController"
+      // controller: "HitchBikeController"
     })
     .when('/bikes/addbikesuccess', {
       templateUrl: 'views/bikes-addbikesuccess.html'
@@ -58,6 +58,9 @@ app.config(function($routeProvider, $httpProvider){
     })
     .when('/bikes/request', {
       templateUrl: 'views/bikes-request.html'
+    })
+    .when('/bikes/authoption', {
+      templateUrl: 'views/bikes-authoption.html'
     })
     .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',

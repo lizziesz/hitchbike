@@ -1,11 +1,16 @@
-app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', '$window', function($scope, HitchBikeService, $location, $http, $window){
+app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location', '$http', '$window', '$route', '$routeParams', function($scope, HitchBikeService, $location, $http, $window, $route, $routeParams){
+
+  $scope.$on('$routeChangeSuccess', function() {
+    $scope.authPath();
+  });
+
   $scope.view = {};
-  // this should technically be false, but works as true for some reason..
+
   $scope.view.popUp = true;
   $scope.view.time = ['7am', '730am', '8am', '830am', '9am', '930am', '10am', '1030am', '11am', '1130am', '12pm', '1230pm', '1pm', '130pm', '2pm', '230pm', '3pm', '330pm','4pm', '430pm', '5pm', '530pm', '6pm', '630pm', '7pm', '730pm', '8pm', '830pm', '9pm', '930pm', '10pm'];
 
   HitchBikeService.bikes().then(function(data) {
-    // console.log(data);
+    console.log(data);
     $scope.view.bikes = data.data;
   });
 
@@ -49,8 +54,34 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     $window.location.reload();
   }
 
+  $scope.displayAuthOption = function() {
+    $scope.openPopUp();
+    return $location.path('/bikes/authoption');
+  }
+
+  $scope.directToSignup = function() {
+    $scope.openPopUp();
+    return $location.path('/bikes/signup');
+  }
+
+  $scope.directToSignin = function() {
+    $scope.openPopUp();
+    return $location.path('/bikes/signin');
+  }
+
+  $scope.authPath = function() {
+    // console.log('route changed successfully');
+    var path = $route.current.$$route.originalPath;
+    // console.log(path);
+    if ( (path === '/bikes') || (path === '/bikes/authoption') || (path === '/bikes/signup') || (path === '/bikes/signin') ) {
+      $scope.view.onBikes = true;
+    } else {
+      $scope.view.onBikes = false;
+    }
+  }
+
   $scope.requestBike = function() {
-    return $location.path('/bikes/request')
+    return $location.path('/bikes/request');
   }
 
   $scope.openPopUp = function() {
@@ -60,7 +91,7 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
 
   $scope.closePopUp = function() {
     $scope.view.popUp = false;
-    var path = $location.path();
+    var path = $route.current.$$route.originalPath;
     if (path === '/signup') {
       return $location.path('/');
     }
@@ -86,6 +117,9 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
       return $location.path('/bikes');
     }
     else if (path === '/bikes/request') {
+      return $location.path('/bikes');
+    }
+    else if (path === '/bikes/authoption') {
       return $location.path('/bikes');
     }
     else if (path === '/dashboard/addbike') {

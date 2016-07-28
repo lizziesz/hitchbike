@@ -757,6 +757,26 @@ button.deny-request {
   background: #FF4F51;
   color: white; }
 
+.authoption {
+  top: 30vh;
+  left: 31vw;
+  width: 35vw;
+  height: 16vh;
+  padding: 20px; }
+
+div.authoption-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 26px; }
+
+button.authoption-btn {
+  width: 30%;
+  margin-left: 15px;
+  color: white;
+  background-color: #4c96d7; }
+button.margin-right {
+  margin-right: 23px; }
+
 header.masthead {
   background-color: #EBEBEB;
   -webkit-box-shadow: 0px 1.5px 3px 0px rgba(0, 0, 0, 0.6);
