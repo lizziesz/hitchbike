@@ -18,11 +18,25 @@ app.factory('HitchBikeService', function($http, $location) {
     users: function() {
       return $http.get('/api/users');
     },
+    userInfo: function(id) {
+      return $http.get('/api/userinfo/' + id);
+    },
     searchBikes: function(locationInput) {
       return $http.get('/api/bikes/search/' + locationInput);
     },
     searchBikesDate: function(locationInput, startInput, endInput) {
       return $http.get('/api/bikes/search/' + locationInput + '/' + startInput + '/' + endInput)
+    },
+    updateAddress: function(id, street_address, city, state, zip_code) {
+      var newAddress = {};
+      newAddress.street_address = street_address;
+      newAddress.city = city;
+      newAddress.state = state;
+      newAddress.zip_code = zip_code;
+      return $http.post('/api/updateaddress/' + id, newAddress);
+    },
+    updateBikeAvailability: function(id, status) {
+      return $http.post('/api/updatebikestatus/' + id + '/' + status);
     },
     signIn: function(username, password) {
       var user = {};
@@ -37,7 +51,7 @@ app.factory('HitchBikeService', function($http, $location) {
       newUser.email = email;
       newUser.street_address = street_address;
       newUser.city = city.toLowerCase();
-      newUser.state = state.toLowerCase();
+      newUser.state = state.toUpperCase();
       newUser.zip_code = zip_code;
       array.push(newUser);
       return $http.post('/api/signup', newUser);
@@ -55,7 +69,7 @@ app.factory('HitchBikeService', function($http, $location) {
       newBike.description = description;
       newBike.street_address = street_address;
       newBike.city = city.toLowerCase();
-      newBike.state = state.toLowerCase();
+      newBike.state = state.toUpperCase();
       newBike.zip_code = zip_code;
       array.push(newBike);
       return $http.post('/api/addbike', newBike);
