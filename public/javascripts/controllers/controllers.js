@@ -189,4 +189,8 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     console.log(data);
     $scope.view.bikes = data.data;
   })
+
+  HitchBikeService.borrowedBikes($routeParams.id).then(function(data) {
+    $scope.view.borrowedBikes = data.data;
+  })
 }])

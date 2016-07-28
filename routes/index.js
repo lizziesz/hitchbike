@@ -35,11 +35,25 @@ router.get('/api/bikes', function(req, res, next) {
 });
 
 router.get('/api/dashboard/:id', function(req, res, next) {
-  knex('bikes').where('owner_id', req.params.id).then(function(data) {
-    console.log(data);
+  // knex('bikes').where('owner_id', req.params.id).then(function(data) {
+  //   console.log(data);
+  //   res.json(data);
+  // });
+  knex('bikes').then(function(data) {
+    // console.log(data);
     res.json(data);
   });
 });
+
+router.get('/api/dashboard/borrowedbikes/:id', function(req, res, next) {
+  knex('requested_bikes').where('requestor_id', req.params.id)
+    .fullOuterJoin('bikes', 'bikes.id', 'requested_bikes.bike_id')
+    .fullOuterJoin('users', 'requested_bikes.owner_id', 'users.id')
+    .then(function(data) {
+      console.log(data);
+      res.json(data);
+  })
+})
 
 router.get('/api/bikes/search/:location', function(req, res, next) {
   console.log("PARAMS: " + req.params.location);
