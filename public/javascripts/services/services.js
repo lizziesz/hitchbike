@@ -21,6 +21,20 @@ app.factory('HitchBikeService', function($http, $location) {
     userInfo: function(id) {
       return $http.get('/api/userinfo/' + id);
     },
+    submitRequest: function(user_id, bike_id, owner_id, message, startDate, endDate) {
+      var newRequest = {};
+      newRequest.requestor_id = user_id;
+      newRequest.owner_id = owner_id;
+      newRequest.bike_id = bike_id;
+      newRequest.request_time_stamp = new Date();
+      newRequest.borrow_start_time = startDate;
+      newRequest.borrow_end_time = endDate;
+      newRequest.startDate = Date.parse(startDate);
+      newRequest.endDate = Date.parse(endDate);
+      newRequest.message = message;
+      // array.push(newRequest);
+      return $http.post('/api/newrequest', newRequest);
+    },
     searchBikes: function(locationInput) {
       return $http.get('/api/bikes/search/' + locationInput);
     },
@@ -37,6 +51,25 @@ app.factory('HitchBikeService', function($http, $location) {
     },
     updateBikeAvailability: function(id, status) {
       return $http.post('/api/updatebikestatus/' + id + '/' + status);
+    },
+    updateBikeInfo: function(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code) {
+      var updateBike = {};
+      updateBike.id = id;
+      updateBike.title = title;
+      updateBike.description = description;
+      updateBike.instructions = instructions;
+      updateBike.type = type;
+      updateBike.condition = condition;
+      updateBike.price_day = price_day;
+      updateBike.price_hour = price_hour;
+      updateBike.street_address = street_address;
+      updateBike.city = city;
+      updateBike.state = state;
+      updateBike.zip_code = zip_code;
+      return $http.post('/api/updatebike', updateBike);
+    },
+    deleteBike: function(id) {
+      return $http.get('/api/deletebike/' + id);
     },
     signIn: function(username, password) {
       var user = {};

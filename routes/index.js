@@ -138,6 +138,37 @@ router.post('/api/updatebikestatus/:id/:status', function(req, res, next) {
   });
 });
 
+router.post('/api/updatebike', function(req, res, next) {
+  console.log("Posting update");
+  try{
+    knex('bikes').where('id', req.body.id).update({
+      title: req.body.title,
+      description: req.body.description,
+      instructions: req.body.instructions,
+      type: req.body.type,
+      condition: req.body.condition,
+      price_day: req.body.price_day,
+      price_hour: req.body.price_hour,
+      street_address: req.body.street_address,
+      city: req.body.city,
+      state: req.body.state,
+      zip_code: req.body.zip_code
+    }).then(function() {
+      res.redirect('/');
+    });
+
+  } catch(err){
+    console.log(err);
+  }
+});
+
+router.get('/api/deletebike/:id', function(req, res, next) {
+  console.log("DELETE");
+  knex('bikes').where('id', req.params.id).delete().then(function(){
+    res.redirect('/');
+  });
+});
+
 router.post('/api/signin', function(req, res, next) {
   console.log("POSTING");
   knex('users')
@@ -221,6 +252,21 @@ router.post('/api/addbike', protect,function(req, res, next) {
   });
 });
 
+router.post('/api/newrequest', protect,function(req, res, next) {
+  knex('requested_bikes').insert({
+    requestor_id: req.body.requestor_id,
+    owner_id: req.body.owner_id,
+    bike_id: req.body.bike_id,
+    request_time_stamp: req.body.request_time_stamp,
+    borrow_start_time: req.body.borrow_start_time,
+    borrow_end_time: req.body.borrow_end_time,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
+    message: req.body.message
+  }).then(function() {
+    res.redirect('/#/');
+  });
+});
 
 
 module.exports = router;

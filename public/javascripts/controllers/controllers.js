@@ -149,6 +149,11 @@ app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$locatio
     HitchBikeService.signUp($scope.view.users, $scope.view.usernameSignup, $scope.view.passwordSignup, $scope.view.emailSignup, $scope.view.street_addressSignup, $scope.view.citySignup, $scope.view.stateSignup, $scope.view.zip_codeSignup)
   }
 
+  $scope.view.submitRequest = function(user_id, message, startDate, endDate) {
+    HitchBikeService.submitRequest(user_id, $routeParams.id, $routeParams.ownerid, message, startDate, endDate);
+    $location.path('/dashboard/' + user_id);
+  }
+
 }]);
 
 app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$location', '$routeParams', function($scope, HitchBikeService, $location, $routeParams){
@@ -209,7 +214,9 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
   };
 
   $scope.view = {};
+  var vm = this;
   $scope.view.showRequests = false;
+  $scope.view.editBike = false;
   HitchBikeService.dashboardBikes($routeParams.id).then(function(data) {
     console.log(data);
     $scope.view.bikes = data.data;
@@ -217,6 +224,12 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
 
   HitchBikeService.borrowedBikes($routeParams.id).then(function(data) {
     $scope.view.borrowedBikes = data.data;
+    $scope.view.pendingCount = 0;
+    for(var i=0; i<$scope.view.borrowedBikes; i++) {
+      if($scope.view.borrowedBikes[i].status === 'pending') {
+        $scope.view.pendingCount = $scope.view.pendingCount + 1;
+      }
+    }
   })
 
   HitchBikeService.requests($routeParams.id).then(function(data) {
@@ -241,6 +254,27 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     console.log(newStatus);
     HitchBikeService.updateBikeAvailability(id, newStatus);
     $window.location.reload();
+  }
+
+  $scope.view.updateBikeInfo = function(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code) {
+    console.log(id);
+    // console.log($scope);
+    // console.log(form);
+    // console.log(bike);
+    // console.log(updateBikeForm.title);
+    console.log(description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
+    HitchBikeService.updateBikeInfo(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
+    // .then(function(){
+      $window.location.reload();
+    // });
+  }
+
+  $scope.view.deleteBike = function(id) {
+    console.log("DELETE");
+    HitchBikeService.deleteBike(id);
+    $window.location.reload();
+
+
   }
 
 }])

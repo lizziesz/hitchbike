@@ -76,7 +76,7 @@
   </div>
 
   <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
-    <h3>Currently Borrowed Bikes</h3>
+    <h3>Requested Bikes ({{view.borrowedBikes.length}})</h3>
   </div>
   <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
 
@@ -89,6 +89,7 @@
         <div class="bikeFrameHeading">
           <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
           <h5 class="bikeFrameHeadingElement">Owned By: {{bike.username}}</h5>
+          <h5 class="bikeFrameHeadingElement">Status: {{bike.status}}</h5>
         </div>
 
         <div class="bikeFrameTimeWindow">
@@ -117,9 +118,11 @@
   </div>
   <div ng-show="showMyBikes === true" class="dashboardDrop">
     <div class="dashboardBikeFrame" ng-repeat="bike in view.bikes" ng-show="bike.owner_id === user.id">
-      <img ng-src={{bike.picture}} alt="{{bike.title}}">
-      <div class="dashboardBikeFrameContent2">
+
+      <div class="dashboardBikeFrameContent2" ng-show="!view.editBike">
+        <img ng-src={{bike.picture}} alt="{{bike.title}}">
         <div class="myBikesColumn">
+
           <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
           <!-- <h5 class="bikeFrameHeadingElement">owner name</h5> -->
           <h4>Description: </h4>
@@ -131,15 +134,110 @@
         </div>
         <div class="myBikesColumn2">
           <button id="myBikesAvailable" ng-click="view.changeBikeAvailability(bike.id, bike.is_available)">{{bike.is_available | availability}}</button>
-          <h4>Type: {{bike.type}}</h4>
+          <h4 >Type: {{bike.type}}</h4>
           <h4>Condition: {{bike.condition}}</h4>
+
         </div>
         <div class="myBikesColumn2">
-          <button id="myBikesEdit">Edit Info</button>
+          <button id="myBikesEdit" ng-click="view.editBike = !view.editBike">Edit Info</button>
+          <br>
+          <p></p>
+          <button id="myBikesEdit" ng-click="view.deleteBike(bike.id)">Delete Bike</button>
           <h4>{{bike.price_day | currency}}/day</h4>
           <h4 ng-show="bike.price_hour">{{bike.price_hour | currency}}/hour</h4>
+          <h4>Street Address: {{bike.street_address}}</h4>
+          <h4>City: {{bike.city}}</h4>
+          <h4>State: {{bike.state}}</h4>
+          <h4>Zip Code: {{bike.zip_code}}</h4>
         </div>
     </div>
+    <form ng-show="view.editBike" name="updateBikeForm" ng-model="view.updateBikeForm" ng-submit="view.updateBikeInfo(bike.id, bike.title, bike.description, bike.instructions, view.updateBikeType, view.updateBikeCondition, bike.price_day, bike.price_hour, bike.street_address, bike.city, view.updateBikeState, bike.zip_code)">
+      <label for="title">Title</label>
+      <input type="text" value={{bike.title}} name="title" ng-model="bike.title">
+      <label for="description">Description</label>
+      <input type="text" value={{bike.description}} name="description" ng-model="bike.description">
+      <label for="instructions">Instructions</label>
+      <input type="text" value={{bike.instructions}} name="instructions" ng-model="bike.instructions">
+      <label for="type">Type</label>
+      <select name="type" ng-model="view.updateBikeType" ng-init="view.updateBikeType = bike.type">
+        <option value="mountain">mountain</option>
+        <option value="street">street</option>
+        <option value="cruiser">cruiser</option>
+      </select>
+      <label for="condition">Condition</label>
+      <select name="condition" ng-model="view.updateBikeCondition" ng-init="view.updateBikeCondition = bike.condition">
+        <option value="poor">poor</option>
+        <option value="fair">fair</option>
+        <option value="good">good</option>
+        <option value="excellent">excellent</option>
+      </select>
+      <label for="price_day">Price/Day</label>
+      <input type="text" name="price_day" value="{{bike.price_day}}" ng-model="bike.price_day">
+      <label for="price_hour">Price/Hour</label>
+      <input type="text" name="price_hour" value="{{bike.price_hour}}" ng-model="bike.price_hour">
+      <label for="street_address">Street Address</label>
+      <input type="text" value={{bike.street_address}} name="street_address" ng-model="bike.street_address">
+      <label for="city">City</label>
+      <input type="text" value={{bike.city}} name="city" ng-model="bike.city">
+      <label for="state">State</label>
+      <select name="state" ng-model="view.updateBikeState" ng-init="view.updateBikeState = bike.state">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="DC">District of Columbia</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+      </select>
+      <label for="zip_code">Zip Code</label>
+      <input type="text" value={{bike.zip_code}} name="zip_code" ng-model="bike.zip_code">
+      <button id="myBikesEdit" ng-click="view.editBike = !view.editBike">Cancel</button>
+      <input type="submit" id="myBikesEdit" value="Save Info">
+    </form>
   </div>
 </div>
 
