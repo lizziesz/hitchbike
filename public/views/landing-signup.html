@@ -1,47 +1,5 @@
+<landing-page></landing-page>
 
-<!-- LANDING PAGE -->
+<popup-overlay></popup-overlay>
 
-<div id="landingContainer">
-  <div id="slogan">
-    <p>Rent a bike anytime,</p>
-    <p>anywhere, from anyone.</p>
-  </div>
-  <div id="instructions">
-    <p>Enter your location</p>
-    <p>and when you need a bike</p>
-  </div>
-  <div id="landingSearchForm">
-    <form>
-      <input type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
-      <input type="date" value="Start Time" id="startTime" name="startTime" ng-model="startTime">
-      <input type="date" value="End Time" id="endTime" name="endTime" ng-model="endTime">
-      <!-- <a href="/#/bikes/{{location}}/{{startTime}}/{{endTime}}"><button type="submit" ng-click="searchBikes()" id="landingSearch">Search Bikes!</button></a> -->
-      <a href="/#/bikes/{{location}}"><button type="submit" ng-click="searchBikes()" id="landingSearch">Search Bikes!</button></a>
-    </form>
-  </div>
-
-</div>
-
-
-<!-- SIGN UP POP UP -->
-
-<div class="dark-background" ng-click="closePopUp()" ng-show="view.popUp"></div>
-
-<div class="signup popup-window" ng-show="view.popUp">
-  <form ng-submit="view.signUp()" name="signUpForm">
-    <h2>Sign Up</h2>
-    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username">
-    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password">
-    <input type="email" name="email" ng-model="view.emailSignup" placeholder="email">
-    <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address">
-
-  <div class="signupAddress">
-    <input type="text" name="city" ng-model="view.citySignup" placeholder="city">
-    <input type="text" name="state" ng-model="view.stateSignup" placeholder="state">
-    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code">
-  </div>
-
-  <input type="submit" value="Submit">
-
-  </form>
-</div>
+<sign-up></sign-up>
