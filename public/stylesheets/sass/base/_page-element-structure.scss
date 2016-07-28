@@ -436,8 +436,8 @@ div.bike-frame section {
   left: 50vh;
   display: flex;
   flex-direction: column;
-  width: 600px;
-  height: 400px;
+  width: 50vw;
+  height: 70vh;
   border-color: black;
   border-width: .5px;
   border-style: solid;
@@ -466,7 +466,13 @@ div.bike-frame section {
   justify-content: space-between;
 }
 .signupAddress input{
-  width: 120px;
+  width: 14vw;
+}
+.signupAddress select{
+  height: 6vh;
+  width: 6vw;
+  margin-top: 2vh;
+  font-size: 1.5em;
 }
 .signup input[type=submit]{
   background: #4c96d7;
@@ -480,7 +486,10 @@ div.bike-frame section {
   height: 90vh;
   padding-top:50px;
 }
-
+.signupError{
+  color:red;
+  font-size: 1.5em;
+}
 // SIGNUPSUCCESS PAGE
 
 .signupSuccess {
@@ -498,6 +507,7 @@ div.bike-frame section {
   margin: 50px;
   padding: 20px;
 }
+
 .signupSuccess input[type=submit]{
   background: #4c96d7;
   float: right;
@@ -536,6 +546,9 @@ div.bike-frame section {
   height: 4vh;
   color: white;
   background: #4c96d7;
+}
+#signupDiv h2{
+  margin-bottom: -2vh;
 }
 // SIGN UP SUCCESS VIEWS
 .signupSuccess input[type=submit]{
@@ -719,7 +732,7 @@ margin-right: 2.75vw;
   position: absolute;
   top: 13vh;
   left: 67vh;
-  height: 36vh;
+  height: 41vh;
   width: 30vw;
   margin:auto;
   margin-top: 20vh;

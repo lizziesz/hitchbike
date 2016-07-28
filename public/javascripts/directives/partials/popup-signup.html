@@ -1,17 +1,28 @@
-<div class="popup-window signup" ng-show="view.popUp">
+<div class="popup-window signup" ng-show="view.popUp" id="signupDiv">
   <form ng-submit="view.signUp()" name="signUpForm">
     <h2>Sign Up</h2>
-    {{view.error}}
-    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username">
-    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password">
+    <h5>{{view.error}}</h5>
+    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" ng-maxlength="20">
+
+    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" ng-minlength="5">
+
     <input type="email" name="email" ng-model="view.emailSignup" placeholder="email">
     <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address">
 
   <div class="signupAddress">
     <input type="text" name="city" ng-model="view.citySignup" placeholder="city">
-    <input type="text" name="state" ng-model="view.stateSignup" placeholder="state">
-    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code">
+
+    <select>
+      <option ng-repeat="state in view.states" value="ng-repeat='state in view.state'">{{state}}</option>
+    </select>
+
+    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" ng-maxlength="5">
   </div>
+  <div ng-hide = "signUpForm.zip_code.$valid" class="signupError">
+  Please enter a five digit zip code.
+  </div>
+  <div ng-hide="signUpForm.password.$valid" class="signupError">Your Password must be at least five characters.</div>
+  <div ng-hide="signUpForm.username.$valid" class="signupError">This field cannot be longer than twenty characters.</div>
 
   <input type="submit" value="Submit">
 
