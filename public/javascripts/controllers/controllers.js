@@ -155,7 +155,7 @@ app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$loc
 
 }]);
 
-app.controller("dashboardController", function($scope){
+app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routeParams', function($scope, HitchBikeService, $routeParams){
   $scope.showAccountInfo = false;
   $scope.toggleAccount = function(){
     if($scope.showAccountInfo === false){
@@ -183,4 +183,20 @@ app.controller("dashboardController", function($scope){
       $scope.showMyBikes = false;
     }
   };
-})
+
+  $scope.view = {};
+  $scope.view.showRequests = false;
+  HitchBikeService.dashboardBikes($routeParams.id).then(function(data) {
+    console.log(data);
+    $scope.view.bikes = data.data;
+  })
+
+  HitchBikeService.borrowedBikes($routeParams.id).then(function(data) {
+    $scope.view.borrowedBikes = data.data;
+  })
+
+  HitchBikeService.requests($routeParams.id).then(function(data) {
+    $scope.view.requests = data.data;
+  });
+
+}])

@@ -79,19 +79,19 @@
   </div>
   <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
 
-    <div class="dashboardBikeFrame">
+    <div class="dashboardBikeFrame" ng-repeat="bike in view.borrowedBikes">
 
-      <img ng-src="http://feelgrafix.com/data_images/out/28/979588-bike.jpg" alt="{{bike.title}}">
+      <img ng-src={{bike.picture}} alt="{{bike.title}}">
 
       <div class="dashboardBikeFrameContent">
 
         <div class="bikeFrameHeading">
-          <h1 class="bikeFrameHeadingElement">Post Title</h1>
-          <h5 class="bikeFrameHeadingElement">owner name</h5>
+          <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
+          <h5 class="bikeFrameHeadingElement">Owned By: {{bike.username}}</h5>
         </div>
 
         <div class="bikeFrameTimeWindow">
-          <h5>Bike Due June July 30th, 2016 at 10:00am</h5>
+          <h5>Bike Due {{bike.endDate | date}}</h5>
           <h5>in 17 hours and 54 minutes</h5>
         </div>
 
@@ -100,11 +100,11 @@
       <div class="dashboardSpecialInstructions">
         <h4>Special Instructions</h4>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet iusto dignissimos beatae neque, sapiente praesentium, ipsam, officia dolor maxime ratione architecto repellendus esse! Et quidem sunt modi, illo blanditiis.
+          {{bike.instructions}}
         </p>
         <h4>Return Address</h4>
         <h5>
-          3125 Raleigh St. Denver, CO 80212
+          {{bike.street_address}} {{bike.city}}, {{bike.state}} {{bike.zip_code}}
         </h5>
       </div>
 
@@ -115,30 +115,32 @@
     <h3>My Bikes</h3>
   </div>
   <div ng-show="showMyBikes === true" class="dashboardDrop">
-    <div class="dashboardBikeFrame">
-      <img ng-src="http://feelgrafix.com/data_images/out/28/979576-bike.jpg" alt="{{bike.title}}">
+    <div class="dashboardBikeFrame" ng-repeat="bike in view.bikes" ng-show="bike.owner_id === user.id">
+      <img ng-src={{bike.picture}} alt="{{bike.title}}">
       <div class="dashboardBikeFrameContent2">
         <div class="myBikesColumn">
-          <h1 class="bikeFrameHeadingElement">Post Title</h1>
-          <h5 class="bikeFrameHeadingElement">owner name</h5>
-          <h4>Special Instructions</h4>
+          <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
+          <!-- <h5 class="bikeFrameHeadingElement">owner name</h5> -->
+          <h4>Description: </h4>
+          <p>{{bike.description}}</p>
+          <h4>Special Instructions:</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet iusto dignissimos beatae neque, sapiente praesentium, ipsam, officia dolor maxime ratione architecto repellendus esse! Et quidem sunt modi, illo blanditiis.
+            {{bike.instructions}}
           </p>
         </div>
         <div class="myBikesColumn2">
-          <button id="myBikesAvailable">Available</button>
-          <h4>Bike Type</h4>
-          <h4>Bike Condition</h4>
+          <button id="myBikesAvailable">{{bike.is_available | availability}}</button>
+          <h4>Type: {{bike.type}}</h4>
+          <h4>Condition: {{bike.condition}}</h4>
         </div>
         <div class="myBikesColumn2">
           <button id="myBikesEdit">Edit Info</button>
-          <h4>Price/day</h4>
-          <h4>Price/hour</h4>
+          <h4>{{bike.price_day | currency}}/day</h4>
+          <h4 ng-show="bike.price_hour">{{bike.price_hour | currency}}/hour</h4>
         </div>
     </div>
   </div>
-  <div class="pendingRequests">
+  <!-- <div class="pendingRequests">
     <div class="requestSection">
       <p><strong>Request from:</strong> Person</p>
       <p><strong>Start Date:</strong> June, 1 2016</p>
@@ -152,5 +154,26 @@
       <button id="confirmRequestButton">Confirm</button>
       <button id="denyRequestButton">Deny</button>
     </div>
+  </div> -->
+</div>
+
+<div id="myBikesBar" class="dashboardDivs" ng-click="view.showRequests = !view.showRequests">
+  <h3>My Requests</h3>
+</div>
+<div class="pendingRequests" ng-show="view.showRequests" ng-repeat="request in view.requests">
+  <div class="requestSection">
+    <img ng-src={{request.picture}} alt="{{request.title}}">
+    <h3>{{request.title}}</h3>
+    <p><strong>Request from:</strong> {{request.username}}</p>
+    <p><strong>Start Date:</strong> {{request.startDate | date}}</p>
+    <p><strong>End Date:</strong> {{request.endDate | date}}</p>
+  </div>
+  <div class="requestSection1">
+    <p>{{request.message}}</p>
+  </div>
+  <div class="requestSection">
+    <h4>Status: {{request.status}}</h4>
+    <button id="confirmRequestButton">Confirm</button>
+    <button id="denyRequestButton">Deny</button>
   </div>
 </div>

@@ -61,7 +61,7 @@ app.config(function($routeProvider, $httpProvider){
     .when('/dashboard/confirmdeny', {
       templateUrl: 'views/confirmdeny.html'
     })
-    .when('/dashboard', {
+    .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',
       controller: 'dashboardController'
     })
