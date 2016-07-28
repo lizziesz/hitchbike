@@ -53,13 +53,36 @@ router.get('/api/dashboard/borrowedbikes/:id', function(req, res, next) {
 
 router.get('/api/dashboard/requests/:id', function(req, res, next) {
 
-  knex('requested_bikes').where('requested_bikes.owner_id', req.params.id)
+  knex('requested_bikes')
+  // .select('requested_bikes.id as newId')
+  .where('requested_bikes.owner_id', req.params.id)
+    .fullOuterJoin('bikes', 'bikes.id', 'requested_bikes.bike_id')
+    .fullOuterJoin('users', 'requested_bikes.requestor_id', 'users.id')
+    .then(function(data) {
+      console.log(data);
+      // console.log(requested_bikes.owner_id);
+      res.json(data);
+    });
+});
+
+router.get('/api/confirmrequests/:id', function(req, res, next) {
+
+  knex('requested_bikes').where('requested_bikes.id', req.params.id)
     .fullOuterJoin('bikes', 'bikes.id', 'requested_bikes.bike_id')
     .fullOuterJoin('users', 'requested_bikes.requestor_id', 'users.id')
     .then(function(data) {
       console.log(data);
       res.json(data);
     });
+});
+
+router.post('/api/confirmrequest/:id', function(req, res, next) {
+  knex('requested_bikes').where('id', req.params.id).update({
+    message: req.body.message,
+    status: 'confirmed'
+  }).then(function(data) {
+    res.redirect('/');
+  });
 });
 
 router.get('/api/bikes/search/:location', function(req, res, next) {

@@ -232,9 +232,24 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     }
   })
 
+
+  $scope.view.pendingRequests = [];
+
   HitchBikeService.requests($routeParams.id).then(function(data) {
     $scope.view.requests = data.data;
+    for(var i=0; i<$scope.view.requests.length; i++) {
+      if($scope.view.requests[i].status === 'pending') {
+        $scope.view.pendingRequests.push($scope.view.requests[i]);
+      }
+      else {
+        console.log("No pending");
+      }
+    }
   });
+
+
+
+
 
   HitchBikeService.userInfo($routeParams.id).then(function(data) {
     $scope.view.userData = data.data;
@@ -273,8 +288,22 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     console.log("DELETE");
     HitchBikeService.deleteBike(id);
     $window.location.reload();
-
-
   }
 
 }])
+
+app.controller("requestController", ['$scope', 'HitchBikeService', '$routeParams', '$window', function($scope, HitchBikeService, $routeParams, $window){
+
+  $scope.view = {};
+  $scope.view.popUp = true;
+  HitchBikeService.requestsToConfirm($routeParams.id).then(function(data) {
+    console.log(data);
+    $scope.view.requests = data.data;
+  });
+
+  $scope.view.updateRequest = function(message) {
+    // console.log(request_id);
+    HitchBikeService.confirmRequest($routeParams.id, message);
+  }
+
+}]);
