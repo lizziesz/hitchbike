@@ -18,6 +18,8 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     // console.log($scope.view.addBikeOwnerId);
     console.log(id);
     HitchBikeService.addBike($scope.view.bikes, $scope.view.addBikeTitle, $scope.view.addBikeImage, $scope.view.addBikePriceday, $scope.view.addBikePricehour, $scope.view.addBikeType, $scope.view.addBikeCondition, $scope.view.addBikeInstructions, $scope.view.addBikeDescription, $scope.view.addBikeStreet_address, $scope.view.addBikeCity, $scope.view.addBikeState, $scope.view.addBikeZip_code, id);
+    $location.path('/bikes');
+    $window.location.reload();
   }
 
   HitchBikeService.users().then(function(data) {

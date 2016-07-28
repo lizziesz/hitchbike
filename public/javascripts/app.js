@@ -41,7 +41,8 @@ app.config(function($routeProvider, $httpProvider){
       controller: "BikesSearchDateController"
     })
     .when('/bikes/addbike', {
-      templateUrl: 'views/bikes-addbike.html'
+      templateUrl: 'views/bikes-addbike.html',
+      controller: "HitchBikeController"
     })
     .when('/bikes/addbikesuccess', {
       templateUrl: 'views/bikes-addbikesuccess.html'
@@ -63,7 +64,7 @@ app.config(function($routeProvider, $httpProvider){
       controller: 'dashboardController'
     })
     .when('/dashboard/addbike', {
-      templateUrl: 'views/dashboard-addbike.html'
+      templateUrl: 'views/dashboard-addbike.html',
     })
     .when('/dashboard/addbikesuccess', {
       templateUrl: 'views/dashboard-addbikesuccess.html'
