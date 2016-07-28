@@ -1,1 +1,182 @@
+
 <dashboard-page></dashboard-page>
+
+
+<!-- <div id="dashboardContainer">
+
+  <div id="accountSettingBar" class="dashboardDivs" ng-click="toggleAccount()">
+    <h3>Account Settings</h3>
+  </div>
+  <div ng-show="showAccountInfo === true" class="dashboardDrop">
+    <p>Adress</p>
+    <input type="text" value="{{user.address}}">
+    <input type="text" value="{{user.city}}">
+    <select name="state">
+    	<option value="AL">Alabama</option>
+    	<option value="AK">Alaska</option>
+    	<option value="AZ">Arizona</option>
+    	<option value="AR">Arkansas</option>
+    	<option value="CA">California</option>
+    	<option value="CO">Colorado</option>
+    	<option value="CT">Connecticut</option>
+    	<option value="DE">Delaware</option>
+    	<option value="DC">District of Columbia</option>
+    	<option value="FL">Florida</option>
+    	<option value="GA">Georgia</option>
+    	<option value="HI">Hawaii</option>
+    	<option value="ID">Idaho</option>
+    	<option value="IL">Illinois</option>
+    	<option value="IN">Indiana</option>
+    	<option value="IA">Iowa</option>
+    	<option value="KS">Kansas</option>
+    	<option value="KY">Kentucky</option>
+    	<option value="LA">Louisiana</option>
+    	<option value="ME">Maine</option>
+    	<option value="MD">Maryland</option>
+    	<option value="MA">Massachusetts</option>
+    	<option value="MI">Michigan</option>
+    	<option value="MN">Minnesota</option>
+    	<option value="MS">Mississippi</option>
+    	<option value="MO">Missouri</option>
+    	<option value="MT">Montana</option>
+    	<option value="NE">Nebraska</option>
+    	<option value="NV">Nevada</option>
+    	<option value="NH">New Hampshire</option>
+    	<option value="NJ">New Jersey</option>
+    	<option value="NM">New Mexico</option>
+    	<option value="NY">New York</option>
+    	<option value="NC">North Carolina</option>
+    	<option value="ND">North Dakota</option>
+    	<option value="OH">Ohio</option>
+    	<option value="OK">Oklahoma</option>
+    	<option value="OR">Oregon</option>
+    	<option value="PA">Pennsylvania</option>
+    	<option value="RI">Rhode Island</option>
+    	<option value="SC">South Carolina</option>
+    	<option value="SD">South Dakota</option>
+    	<option value="TN">Tennessee</option>
+    	<option value="TX">Texas</option>
+    	<option value="UT">Utah</option>
+    	<option value="VT">Vermont</option>
+    	<option value="VA">Virginia</option>
+    	<option value="WA">Washington</option>
+    	<option value="WV">West Virginia</option>
+    	<option value="WI">Wisconsin</option>
+    	<option value="WY">Wyoming</option>
+    </select>
+    <input type="text" value="{{user.zip_code}}">
+    <p id="uniqueP">Search Bike Radius</p>
+    <select name="" id="">
+      <option value="1 Mile">1 Mile</option>
+      <option value="5 Miles">5 Miles</option>
+      <option value="10 Miles">10 Miles</option>
+      <option value="15 Miles">15 Miles</option>
+      <option value="25 Miles">25 Miles</option>
+    </select>
+    <br>
+    <input type="button" value="Save Updates" id="editUsersButton">
+  </div>
+
+  <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
+    <h3>Currently Borrowed Bikes</h3>
+  </div>
+  <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
+
+    <div class="dashboardBikeFrame" ng-repeat="bike in view.borrowedBikes">
+
+      <img ng-src={{bike.picture}} alt="{{bike.title}}">
+
+      <div class="dashboardBikeFrameContent">
+
+        <div class="bikeFrameHeading">
+          <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
+          <h5 class="bikeFrameHeadingElement">Owned By: {{bike.username}}</h5>
+        </div>
+
+        <div class="bikeFrameTimeWindow">
+          <h5>Bike Due {{bike.endDate | date}}</h5>
+          <h5>in 17 hours and 54 minutes</h5>
+        </div>
+
+      </div>
+
+      <div class="dashboardSpecialInstructions">
+        <h4>Special Instructions</h4>
+        <p>
+          {{bike.instructions}}
+        </p>
+        <h4>Return Address</h4>
+        <h5>
+          {{bike.street_address}} {{bike.city}}, {{bike.state}} {{bike.zip_code}}
+        </h5>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="myBikesBar" class="dashboardDivs" ng-click="toggleMyBikes()">
+    <h3>My Bikes</h3>
+  </div>
+  <div ng-show="showMyBikes === true" class="dashboardDrop">
+    <div class="dashboardBikeFrame" ng-repeat="bike in view.bikes" ng-show="bike.owner_id === user.id">
+      <img ng-src={{bike.picture}} alt="{{bike.title}}">
+      <div class="dashboardBikeFrameContent2">
+        <div class="myBikesColumn">
+          <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
+          <!-- <h5 class="bikeFrameHeadingElement">owner name</h5> -->
+          <!-- <h4>Description: </h4>
+          <p>{{bike.description}}</p>
+          <h4>Special Instructions:</h4>
+          <p>
+            {{bike.instructions}}
+          </p>
+        </div>
+        <div class="myBikesColumn2">
+          <button id="myBikesAvailable">{{bike.is_available | availability}}</button>
+          <h4>Type: {{bike.type}}</h4>
+          <h4>Condition: {{bike.condition}}</h4>
+        </div>
+        <div class="myBikesColumn2">
+          <button id="myBikesEdit">Edit Info</button>
+          <h4>{{bike.price_day | currency}}/day</h4>
+          <h4 ng-show="bike.price_hour">{{bike.price_hour | currency}}/hour</h4>
+        </div>
+    </div>
+  </div> -->
+  <!-- <div class="pendingRequests">
+    <div class="requestSection">
+      <p><strong>Request from:</strong> Person</p>
+      <p><strong>Start Date:</strong> June, 1 2016</p>
+      <p><strong>End Date:</strong> June 2, 2016 </p>
+    </div>
+    <div class="requestSection1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt velit culpa quo perspiciatis nobis soluta</p>
+    </div>
+    <div class="requestSection">
+      <h4>Status: Status</h4>
+      <button id="confirmRequestButton">Confirm</button>
+      <button id="denyRequestButton">Deny</button>
+    </div>
+  </div> -->
+<!-- </div>
+
+<div id="myBikesBar" class="dashboardDivs" ng-click="view.showRequests = !view.showRequests">
+  <h3>My Requests</h3>
+</div>
+<div class="pendingRequests" ng-show="view.showRequests" ng-repeat="request in view.requests">
+  <div class="requestSection">
+    <img ng-src={{request.picture}} alt="{{request.title}}">
+    <h3>{{request.title}}</h3>
+    <p><strong>Request from:</strong> {{request.username}}</p>
+    <p><strong>Start Date:</strong> {{request.startDate | date}}</p>
+    <p><strong>End Date:</strong> {{request.endDate | date}}</p>
+  </div>
+  <div class="requestSection1">
+    <p>{{request.message}}</p>
+  </div>
+  <div class="requestSection">
+    <h4>Status: {{request.status}}</h4>
+    <button id="confirmRequestButton">Confirm</button>
+    <button id="denyRequestButton">Deny</button>
+  </div>
+</div>  -->

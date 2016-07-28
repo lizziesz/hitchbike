@@ -13,3 +13,14 @@ app.filter('hourly', function(){
     } else {return input}
   }
 })
+
+app.filter('availability', function() {
+  return function(input) {
+    if(input === true) {
+      return "Available";
+    }
+    else {
+      return "Not Available";
+    }
+  }
+})

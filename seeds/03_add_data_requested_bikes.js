@@ -10,7 +10,8 @@ exports.seed = function(knex, Promise) {
         borrow_start_time: '2016-09-04T05:49:33.190Z',
         borrow_end_time: '2016-09-05T05:49:33.190Z',
         startDate: Date.parse('2016-09-04'),
-        endDate: Date.parse('2016-09-05')
+        endDate: Date.parse('2016-09-05'),
+        message: "Looking forward to having your bike!"
     }),
     knex('requested_bikes').insert({
         requestor_id: 1,
@@ -20,7 +21,8 @@ exports.seed = function(knex, Promise) {
         borrow_start_time: '2016-08-04T05:49:33.190Z',
         borrow_end_time: "2016-08-05T05:49:33.190Z",
         startDate: Date.parse('2016-08-04'),
-        endDate: Date.parse("2016-08-05")
+        endDate: Date.parse("2016-08-05"),
+        message: "Thanks in advance for letting me use your bike"
     })
   );
 };
