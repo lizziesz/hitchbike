@@ -37,7 +37,7 @@ app.factory('HitchBikeService', function($http, $location) {
       newUser.email = email;
       newUser.street_address = street_address;
       newUser.city = city.toLowerCase();
-      newUser.state = state.toLowerCase();
+      newUser.state = state.toUpperCase();
       newUser.zip_code = zip_code;
       array.push(newUser);
       return $http.post('/api/signup', newUser);
@@ -55,7 +55,7 @@ app.factory('HitchBikeService', function($http, $location) {
       newBike.description = description;
       newBike.street_address = street_address;
       newBike.city = city.toLowerCase();
-      newBike.state = state.toLowerCase();
+      newBike.state = state.toUpperCase();
       newBike.zip_code = zip_code;
       array.push(newBike);
       return $http.post('/api/addbike', newBike);
