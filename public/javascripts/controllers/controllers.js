@@ -249,8 +249,6 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
 
 
 
-
-
   HitchBikeService.userInfo($routeParams.id).then(function(data) {
     $scope.view.userData = data.data;
     console.log($scope.view.userData);
@@ -304,6 +302,11 @@ app.controller("requestController", ['$scope', 'HitchBikeService', '$routeParams
   $scope.view.updateRequest = function(message) {
     // console.log(request_id);
     HitchBikeService.confirmRequest($routeParams.id, message);
+  }
+
+  $scope.view.deleteRequest = function(id) {
+    HitchBikeService.deleteRequest($routeParams.id);
+    $location.path('/dashboard/' + id);
   }
 
 }]);

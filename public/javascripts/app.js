@@ -84,7 +84,8 @@ app.config(function($routeProvider, $httpProvider){
       controller: 'requestController'
     })
     .when('/dashboard/mybikes/confirmdeny/:id', {
-      templateUrl: 'views/dashboard-confirmdeny.html'
+      templateUrl: 'views/dashboard-confirmdeny.html',
+      controller: 'requestController'
     })
     .when('/dashboard/mybikes/deleteconfirm', {
       templateUrl: 'views/dashboard-bikedelete.html'
