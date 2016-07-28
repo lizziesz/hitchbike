@@ -38,6 +38,22 @@ app.factory('HitchBikeService', function($http, $location) {
     updateBikeAvailability: function(id, status) {
       return $http.post('/api/updatebikestatus/' + id + '/' + status);
     },
+    updateBikeInfo: function(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code) {
+      var updateBike = {};
+      updateBike.id = id;
+      updateBike.title = title;
+      updateBike.description = description;
+      updateBike.instructions = instructions;
+      updateBike.type = type;
+      updateBike.condition = condition;
+      updateBike.price_day = price_day;
+      updateBike.price_hour = price_hour;
+      updateBike.street_address = street_address;
+      updateBike.city = city;
+      updateBike.state = state;
+      updateBike.zip_code = zip_code;
+      return $http.post('/api/updatebike', updateBike);
+    },
     signIn: function(username, password) {
       var user = {};
       user.username = username.toLowerCase();

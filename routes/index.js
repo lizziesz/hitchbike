@@ -138,6 +138,30 @@ router.post('/api/updatebikestatus/:id/:status', function(req, res, next) {
   });
 });
 
+router.post('/api/updatebike', function(req, res, next) {
+  console.log("Posting update");
+  try{
+    knex('bikes').where('id', req.body.id).update({
+      title: req.body.title,
+      description: req.body.description,
+      instructions: req.body.instructions,
+      type: req.body.type,
+      condition: req.body.condition,
+      price_day: req.body.price_day,
+      price_hour: req.body.price_hour,
+      street_address: req.body.street_address,
+      city: req.body.city,
+      state: req.body.state,
+      zip_code: req.body.zip_code
+    }).then(function() {
+      res.redirect('/');
+    });
+
+  } catch(err){
+    console.log(err);
+  }
+});
+
 router.post('/api/signin', function(req, res, next) {
   console.log("POSTING");
   knex('users')
