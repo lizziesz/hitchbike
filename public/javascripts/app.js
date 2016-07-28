@@ -79,10 +79,11 @@ app.config(function($routeProvider, $httpProvider){
     .when('/dashboard/mybikes', {
       templateUrl: 'views/dashboard-mybikes.html'
     })
-    .when('/dashboard/mybikes/confirmaccept', {
-      templateUrl: 'views/dashboard-confirmaccept.html'
+    .when('/dashboard/mybikes/confirmaccept/:id', {
+      templateUrl: 'views/dashboard-confirmaccept.html',
+      controller: 'requestController'
     })
-    .when('/dashboard/mybikes/confirmdeny', {
+    .when('/dashboard/mybikes/confirmdeny/:id', {
       templateUrl: 'views/dashboard-confirmdeny.html'
     })
     .when('/dashboard/mybikes/deleteconfirm', {

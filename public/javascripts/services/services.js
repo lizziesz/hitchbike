@@ -15,6 +15,14 @@ app.factory('HitchBikeService', function($http, $location) {
     requests: function(id) {
       return $http.get('/api/dashboard/requests/' + id)
     },
+    requestsToConfirm: function(id) {
+      return $http.get('/api/confirmrequests/' + id);
+    },
+    confirmRequest: function(id, message) {
+      var updateRequest = {};
+      updateRequest.message = message;
+      return $http.post('/api/confirmrequest/' + id, updateRequest);
+    },
     users: function() {
       return $http.get('/api/users');
     },
