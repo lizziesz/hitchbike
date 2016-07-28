@@ -374,6 +374,24 @@ div.bike-frame section {
   background-color: red;
   border: none;
 }
+
+// Pending requests Styling
+
+.pendingRequests {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.pendingRequests img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 20px;
+}
+
 // BIKES SIGNUP PAGE
 
 .signup {

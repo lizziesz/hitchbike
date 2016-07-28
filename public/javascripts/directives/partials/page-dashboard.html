@@ -141,12 +141,12 @@
   </div>
 </div>
 
-<div id="myBikesBar" class="dashboardDivs" ng-click="view.showRequests = !view.showRequests">
+<div id="myRequestsBar" class="dashboardDivs" ng-click="view.showRequests = !view.showRequests">
   <h3>My Requests <span ng-show="view.requests.length > 0">({{view.requests.length}} pending)</span></h3>
 </div>
 <div class="pendingRequests" ng-show="view.showRequests" ng-repeat="request in view.requests">
+  <img ng-src={{request.picture}} alt="{{request.title}}">
   <div class="requestSection">
-    <img ng-src={{request.picture}} alt="{{request.title}}">
     <h3>{{request.title}}</h3>
     <p><strong>Request from:</strong> {{request.username}}</p>
     <p><strong>Start Date:</strong> {{request.startDate | date}}</p>
