@@ -128,6 +128,7 @@ main.bikes {
   width: 21vw;
   margin: 1vw;
   margin-top: -1vh;
+  margin-right: 3vw;
   border-width: .2vw;
   border-style: solid;
   border-color: lightgrey;
@@ -159,7 +160,7 @@ main.bikes {
   margin-bottom: -28vh;
 }
 #bikeInfo input[type=button]{
-  background: lightgreen;
+  background: green;
   width: 15vw;
   font-size: 1.4em;
   color: white;
@@ -212,7 +213,7 @@ div.bike-frame {
   flex-direction: row;
   justify-content: space-around;
   width: 43.7vw;
-  height: 41.28vh;
+  height: 46.5vh;
   margin-bottom: 40px;
   padding-top: 20px;
   border-style: solid;
@@ -548,7 +549,7 @@ div.bike-frame section {
   background: #4c96d7;
 }
 #signupDiv h2{
-  margin-bottom: -2vh;
+  margin-bottom: 0vh;
 }
 // SIGN UP SUCCESS VIEWS
 .signupSuccess input[type=submit]{
@@ -768,14 +769,14 @@ margin-right: 2.75vw;
 
 // Confirm Request Approval Popup Window
 
-.no-margin {
-  margin: 0;
-}
-
-.bottom-margin {
-  margin: 0;
-  margin-bottom: 10px;
-}
+// .no-margin {
+//   margin: 0;
+// }
+//
+// .bottom-margin {
+//   margin: 0;
+//   margin-bottom: 10px;
+// }
 
 div.accept-request {
   top: 20vh;
@@ -784,7 +785,9 @@ div.accept-request {
   flex-direction: column;
   width: 35vw;
   height: 58vh;
-  padding: 20px;
+  padding: 5vh;
+  padding-right: -12vw;
+  margin-bottom: 10vh;
 }
 
 form.accept-request {
@@ -849,13 +852,17 @@ input {
     margin-top: 0;
   }
   &.submit-request {
-    width: 40%;
     background-color: #35DB43;
     margin-top: 0;
     margin-left: 10px;
   }
 }
 
+#acceptDiv {
+  height: 90vh;
+  width: 40vw;
+  margin: auto;
+}
 // Confirm Request Denial Popup Window
 
 div.deny-request {
