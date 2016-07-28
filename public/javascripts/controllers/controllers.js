@@ -257,4 +257,12 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
     // });
   }
 
+  $scope.view.deleteBike = function(id) {
+    console.log("DELETE");
+    HitchBikeService.deleteBike(id);
+    $window.location.reload();
+
+
+  }
+
 }])
