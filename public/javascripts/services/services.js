@@ -6,6 +6,9 @@ app.factory('HitchBikeService', function($http, $location) {
     requestedbikes: function() {
       return $http.get('/api/requestedbikes')
     },
+    dashboardBikes: function(id) {
+      return $http.get('/api/dashboard/' + id)
+    },
     users: function() {
       return $http.get('/api/users');
     },

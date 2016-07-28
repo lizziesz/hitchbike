@@ -115,26 +115,28 @@
     <h3>My Bikes</h3>
   </div>
   <div ng-show="showMyBikes === true" class="dashboardDrop">
-    <div class="dashboardBikeFrame">
-      <img ng-src="http://feelgrafix.com/data_images/out/28/979576-bike.jpg" alt="{{bike.title}}">
+    <div class="dashboardBikeFrame" ng-repeat="bike in view.bikes">
+      <img ng-src={{bike.picture}} alt="{{bike.title}}">
       <div class="dashboardBikeFrameContent2">
         <div class="myBikesColumn">
-          <h1 class="bikeFrameHeadingElement">Post Title</h1>
-          <h5 class="bikeFrameHeadingElement">owner name</h5>
-          <h4>Special Instructions</h4>
+          <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
+          <!-- <h5 class="bikeFrameHeadingElement">owner name</h5> -->
+          <h4>Description: </h4>
+          <p>{{bike.description}}</p>
+          <h4>Special Instructions:</h4>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque amet iusto dignissimos beatae neque, sapiente praesentium, ipsam, officia dolor maxime ratione architecto repellendus esse! Et quidem sunt modi, illo blanditiis.
+            {{bike.instructions}}
           </p>
         </div>
         <div class="myBikesColumn2">
-          <button id="myBikesAvailable">Available</button>
-          <h4>Bike Type</h4>
-          <h4>Bike Condition</h4>
+          <button id="myBikesAvailable">{{bike.is_available | availability}}</button>
+          <h4>Type: {{bike.type}}</h4>
+          <h4>Condition: {{bike.condition}}</h4>
         </div>
         <div class="myBikesColumn2">
           <button id="myBikesEdit">Edit Info</button>
-          <h4>Price/day</h4>
-          <h4>Price/hour</h4>
+          <h4>{{bike.price_day | currency}}/day</h4>
+          <h4>{{bike.price_hour | currency}}/hour</h4>
         </div>
     </div>
   </div>

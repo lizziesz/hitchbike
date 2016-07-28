@@ -34,6 +34,13 @@ router.get('/api/bikes', function(req, res, next) {
   });
 });
 
+router.get('/api/dashboard/:id', function(req, res, next) {
+  knex('bikes').where('owner_id', req.params.id).then(function(data) {
+    console.log(data);
+    res.json(data);
+  });
+});
+
 router.get('/api/bikes/search/:location', function(req, res, next) {
   console.log("PARAMS: " + req.params.location);
   knex('bikes').where(function() {
