@@ -57,7 +57,7 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'views/bikes-signin.html'
     })
     .when('/bikes/request/bike/1/5', {
-      templateUrl: 'views/bikes-request.html'
+      templateUrl: 'views/bikes-request.html',
       controller: 'BikesSearchController'
     })
     .when('/bikes/authoption', {
@@ -85,14 +85,12 @@ app.config(function($routeProvider, $httpProvider){
     .when('/dashboard/mybikes/confirmaccept', {
       templateUrl: 'views/dashboard-confirmaccept.html'
     })
-<<<<<<< HEAD
-    .when('/dashboard/mybikes/confirmdeny', {
-      templateUrl: 'views/dashboard-confirmdeny.html'
-=======
+    // .when('/dashboard/mybikes/confirmdeny', {
+    //   templateUrl: 'views/dashboard-confirmdeny.html'
+    // })
     .when('/dashboard/mybikes/confirmdeny/:id', {
       templateUrl: 'views/dashboard-confirmdeny.html',
       controller: 'requestController'
->>>>>>> 4a98fb21c1e498bc40e601d6178331a21fcaebbb
     })
     .when('/dashboard/mybikes/deleteconfirm', {
       templateUrl: 'views/dashboard-bikedelete.html'
