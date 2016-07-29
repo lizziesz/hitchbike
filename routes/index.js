@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/bikes', function(req, res, next) {
-  knex('bikes').then(function(data) {
+  knex('bikes').where('is_available', true).then(function(data) {
     // console.log(data);
     res.json(data);
   });
