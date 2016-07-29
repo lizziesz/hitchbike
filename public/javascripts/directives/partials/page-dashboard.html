@@ -76,7 +76,11 @@
   </div>
 
   <div id="CurrentlyBorrowedBikeBar" class="dashboardDivs"  ng-click="toggleBorrowedBikes()">
-    <h3>Requested Bikes ({{view.borrowedBikes.length}})</h3>
+    <h3>Requested Bikes ({{view.borrowedBikes.length}} <ng-pluralize count="view.borrowedBikes.length"
+      when="{'1': 'bike',
+        'other': 'bikes'
+      }"
+    ></ng-pluralize>)</h3>
   </div>
   <div ng-show="showBorrowedBikes === true" class="dashboardDrop">
 
