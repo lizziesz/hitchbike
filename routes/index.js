@@ -29,7 +29,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/api/bikes', function(req, res, next) {
-  knex('bikes').then(function(data) {
+  knex('bikes').where('is_available', true).then(function(data) {
     // console.log(data);
     res.json(data);
   });
@@ -107,25 +107,51 @@ router.get('/api/bikes/search/:location/:startTime/:endTime', function(req, res,
   // console.log("START: " + req.params.startTime);
   var start = Date.parse(req.params.startTime.slice(1,11));
   var end = Date.parse(req.params.endTime.slice(1,11));
-  // console.log("Short start: " + start);
-  // console.log("Short end: " + end);
+  console.log("Short start: " + start);
+  console.log("Short end: " + end);
   knex('bikes').fullOuterJoin('requested_bikes', 'requested_bikes.bike_id', 'bikes.id').where(function() {
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
   })
   .where('is_available', 'true')
   .then(function(data) {
+    alreadyLookedAtBikes = [];
     dataToSend = [];
+    dataNotToSend = [];
     for(var i=0; i<data.length; i++) {
-      if(start < data[i].startDate && end < data[i].startDate) {
+      // alreadyLookedAtBikes.push(data[i].bike_id)
+      if((start < data[i].startDate && end < data[i].startDate) && alreadyLookedAtBikes.indexOf(data[i].bike_id) == -1) {
         dataToSend.push(data[i]);
+        alreadyLookedAtBikes.push(data[i].bike_id);
       }
-      else if(start > data[i].endDate) {
+      else if((start > data[i].endDate) && alreadyLookedAtBikes.indexOf(data[i].bike_id) == -1) {
         dataToSend.push(data[i]);
+        alreadyLookedAtBikes.push(data[i].bike_id);
       }
-      else if(!data[i].startDate || !data[i].endDate) {
+      else if((!data[i].startDate || !data[i].endDate) && alreadyLookedAtBikes.indexOf(data[i].bike_id) == -1) {
         dataToSend.push(data[i]);
+        alreadyLookedAtBikes.push(data[i].bike_id);
+      }
+      else if(start >= data[i].startDate && start <= data[i].endDate) {
+        dataNotToSend.push(data[i]);
+      }
+      else if(end >= data[i].startDate && end <= data[i].endDate) {
+        dataNotToSend.push(data[i]);
+      }
+      else if(data[i].startDate > start && data[i].endDate < end) {
+        dataNotToSend.push(data[i]);
       }
     }
+    console.log(dataToSend);
+    console.log(dataNotToSend);
+    console.log(alreadyLookedAtBikes);
+    for(var i=0; i<dataToSend.length; i++) {
+      for(var j=0; j<dataNotToSend.length; j++) {
+        if(dataToSend[i].bike_id === dataNotToSend[j].bike_id) {
+          dataToSend.splice(i, 1);
+        }
+      }
+    }
+    console.log(dataToSend);
     res.json(dataToSend);
   });
 });

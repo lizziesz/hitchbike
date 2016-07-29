@@ -174,17 +174,17 @@ main.bikes {
 }
 #bikeInfo input[type=button]{
   background: green;
-  width: 15vw;
-  font-size: 1.4em;
+  width: 10vw;
+  font-size: 1.0em;
   color: white;
   text-align: center;
-  padding-bottom: 5vh;
-  padding-right: 6.5vw;
-  padding-left: 3vw;
+  padding-bottom: 3vh;
+  padding-right: 6.75vw;
+  padding-left: 2vw;
   float: right;
   float: bottom;
   max-top: 10vh;
-  margin: 2vh;
+  margin-top: 2vh;
 }
 #bikeInfo text{
   padding-top: 2vh;
@@ -531,18 +531,15 @@ div.bike-frame section {
   justify-content: space-between;
 }
 .signupAddress input{
-  width: 14vw;
+  width: 12vw;
 }
 .signupAddress select{
-  height: 4.5vh;
+  height: 5.5vh;
   width: 6vw;
-  margin-top: 2vh;
   font-size: 1.5em;
+  margin-top: 1.7vh;
 }
-.signupAddress select {
-  margin-top: 13px;
-  width: 120px;
-}
+
 .signup input[type=submit]{
   background: #4c96d7;
   color: white;
@@ -636,13 +633,13 @@ div.bike-frame section {
 // ADD BIKE VIEW
 
 .addBike {
-  top: 20vh;
+  top: 10vh;
   left: 20vw;
   border-color: black;
   border-style: solid;
   border-width: .5px;
   width: 59vw;
-  height: 86vh;
+  height: 87vh;
   margin: auto;
   margin-top: 2vh;
   padding: 18px;
@@ -652,6 +649,7 @@ div.bike-frame section {
 .addBike h5{
   margin-bottom: 3px;
 }
+
 .addBike input[type=text]{
   width: 25vw;
   height: 6vh;
@@ -660,9 +658,10 @@ div.bike-frame section {
   padding-left:10px;
 }
 .addBike select {
-  height: 5vh;
-  width: 18vw;
+  height: 6vh;
+  width: 20vw;
   margin-top: .25vh;
+  font-size: 1.5em;
 }
 .addBike h1{
   margin-top: 5px;
@@ -674,7 +673,8 @@ div.bike-frame section {
 }
 #pickupins {
   height: 11vh;
-  width: 28vw
+  width: 28vw;
+  padding: 0 0 8vh 0;
 }
 #addbikecancel{
   background: #FF4F51;
@@ -706,6 +706,7 @@ div.bike-frame section {
   height: 12vh;
   width: 54.75vw;
   margin-bottom: 1.5vh;
+  padding: 0 0 8vh 0;
 }
 #addbikeButtons input{
   width: 15vw;
@@ -721,9 +722,10 @@ div.bike-frame section {
   margin-right: -0.25vw;
 }
 // REQUEST page
-.confirm {
-  top: 20vh;
-  left: 20vw;
+
+div.confirm {
+  top: 12vh;
+  left: 25vw;
   height: 64vh;
   width: 49vw;
   border-width: .25vh;
@@ -743,6 +745,11 @@ div.bike-frame section {
   height: 5vh;
   margin-top: 1vh;
   margin-bottom:1vh;
+}
+.confirm button {
+  width: 10vw;
+  height: 5vh;
+  margin: 1vh 1vh 1vh 25vh;
 }
 .confirm select {
   width: 7vw;
@@ -767,21 +774,26 @@ margin-bottom: 0;
   height: 12vh;
   width: 43.75vw;
   margin-bottom: 5vh;
+  padding: 0 0 8vh 1vw;
+  font-size: 1.5em;
 }
-#paymentDiv h5 {
-  margin-bottom: 0;
+#confirmBottomDiv input[type=date]{
+  width: 15.0vw;
 }
-#confirmButtonDiv input[type=submit]{
-  width: 18vw;
-  height: 5vh;
+#returndate {
+  margin-left: 1vw;
 }
-#confirmBottomDiv input{
-margin-right: 2.75vw;
+#pickupdate {
+  margin-left: .6vw;
+}
+#reviewh4 {
+  margin-top: -2.75vh;
 }
 #confirmButtonDiv{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  padding-bottom: 200vh;
 }
 #confirmSubmit {
   background: #4c96d7;
@@ -847,12 +859,12 @@ margin-right: 2.75vw;
 // }
 
 div.accept-request {
-  top: 20vh;
+  top: 15vh;
   left: 30vw;
   display: flex;
   flex-direction: column;
   width: 35vw;
-  height: 58vh;
+  height: 68vh;
   padding: 5vh;
   padding-right: -12vw;
   margin-bottom: 10vh;
@@ -945,9 +957,9 @@ p.big-bottom-margin {
 
 div.inner-deny-request {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
-  margin-bottom: 0;
+  justify-content: space-between;
+  width: 50%;
+  margin-left: 40%;
 }
 
 button {
@@ -958,10 +970,11 @@ button {
     margin: 10px 10px 0px 0px;
   }
   &.deny-request {
-    width: 20%;
+    width: 100%;
     background-color: #D65858;
     color: white;
     margin-bottom: 0;
+    margin-top: 9px;
   }
 }
 

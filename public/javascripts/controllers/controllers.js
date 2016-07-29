@@ -80,14 +80,14 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
   }
 
   $scope.authPath = function() {
-    // console.log('route changed successfully');
+    console.log($scope.view.onBikes);
     var path = $route.current.$$route.originalPath;
-    // console.log(path);
     if ( (path === '/bikes') || (path === '/bikes/authoption') || (path === '/bikes/signup') || (path === '/bikes/signin') ) {
       $scope.view.onBikes = true;
     } else {
       $scope.view.onBikes = false;
     }
+    console.log($scope.view.onBikes);
   }
 
   $scope.requestBike = function() {
@@ -126,7 +126,7 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     else if (path === '/bikes/addbikesuccess') {
       return $location.path('/bikes');
     }
-    else if (path === '/bikes/request') {
+    else if (path === '/bikes/request/bike/:id/:ownerid') {
       return $location.path('/bikes');
     }
     else if (path === '/bikes/authoption') {

@@ -1,5 +1,4 @@
-
-<div class="confirm popup-window" class="confirm">
+<div class="confirm popup-window">
 
   <h1>Confirm Bike Request</h1>
   <p>
@@ -7,18 +6,21 @@
   </p>
 
   <form name="requestForm">
-    <input type="text" placeholder="(Optional message to owner)" id="optionalMessage" ng-model="requestForm.message">
-    <p><h4>
+    <input type="textarea" placeholder="(Optional message to owner)" id="optionalMessage" ng-model="requestForm.message">
+    <h4 id="reviewh4">
       Please review the following information:
-    </h4></p>
+    </h4>
     <!-- <div id="paymentDiv">
       <h5>Payment Method</h5>
       <h5>Requested Duration</h5>
     </div> -->
     <div id ="confirmBottomDiv">
       <!-- <input type="text" placeholder="xxxx-xxxx-xxxx-4455"> -->
-      <input type="date" name="startDate" ng-model="requestForm.startDate">
-      <input type="date" name="endDate" ng-model="requestForm.endDate">
+      <label for="pickupdate">Bike Pick-up Date</label>
+      <input type="date" name="startDate" ng-model="requestForm.startDate" value="Bike Pickup Date" id="pickupdate">
+      <br>
+      <label for="returndate">Bike Return Date</label>
+      <input type="date" name="endDate" ng-model="requestForm.endDate" value="Bike Return Date" id="returndate">
     </div>
     <div id="confirmButtonDiv">
       <a href="/#/bikes"><button id="confirmCancel" ng-click="closePopUp()">Cancel</button></a>
