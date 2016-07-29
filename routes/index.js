@@ -114,18 +114,44 @@ router.get('/api/bikes/search/:location/:startTime/:endTime', function(req, res,
   })
   .where('is_available', 'true')
   .then(function(data) {
+    alreadyLookedAtBikes = [];
     dataToSend = [];
+    dataNotToSend = [];
     for(var i=0; i<data.length; i++) {
-      if(start < data[i].startDate && end < data[i].startDate) {
+      // alreadyLookedAtBikes.push(data[i].bike_id)
+      if((start < data[i].startDate && end < data[i].startDate) && alreadyLookedAtBikes.indexOf(data[i].bike_id) == -1) {
         dataToSend.push(data[i]);
+        alreadyLookedAtBikes.push(data[i].bike_id);
       }
-      else if(start > data[i].endDate) {
+      else if((start > data[i].endDate) && alreadyLookedAtBikes.indexOf(data[i].bike_id) == -1) {
         dataToSend.push(data[i]);
+        alreadyLookedAtBikes.push(data[i].bike_id);
       }
-      else if(!data[i].startDate || !data[i].endDate) {
+      else if((!data[i].startDate || !data[i].endDate) && alreadyLookedAtBikes.indexOf(data[i].bike_id) == -1) {
         dataToSend.push(data[i]);
+        alreadyLookedAtBikes.push(data[i].bike_id);
+      }
+      else if(start >= data[i].startDate && start <= data[i].endDate) {
+        dataNotToSend.push(data[i]);
+      }
+      else if(end >= data[i].startDate && end <= data[i].endDate) {
+        dataNotToSend.push(data[i]);
+      }
+      else if(data[i].startDate > start && data[i].endDate < end) {
+        dataNotToSend.push(data[i]);
       }
     }
+    console.log(dataToSend);
+    console.log(dataNotToSend);
+    console.log(alreadyLookedAtBikes);
+    for(var i=0; i<dataToSend.length; i++) {
+      for(var j=0; j<dataNotToSend.length; j++) {
+        if(dataToSend[i].bike_id === dataNotToSend[j].bike_id) {
+          dataToSend.splice(i, 1);
+        }
+      }
+    }
+    console.log(dataToSend);
     res.json(dataToSend);
   });
 });
