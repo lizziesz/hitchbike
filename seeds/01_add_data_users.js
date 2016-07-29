@@ -48,12 +48,72 @@ exports.seed = function(knex, Promise) {
     knex('users').insert({
         username: 'casey',
         password: bcrypt.hashSync('Casey', 8),
-        email: "caseyisnotcool@gmail.com",
-        street_address: '609 Beer St.',
+        email: "caseyisntcool@gmail.com",
+        street_address: '600 beer St.',
         city: "milwaukee",
         state: "WI",
         zip_code: '53202',
         is_admin: true
+    }),
+    knex('users').insert({
+        username: 'madona',
+        password: bcrypt.hashSync('Modona', 8),
+        email: "madona@gmail.com",
+        street_address: '1987 Vogue St',
+        city: "detroit",
+        state: "ME",
+        zip_code: '50212',
+        is_admin: false
+    }),
+    knex('users').insert({
+        username: 'paulyshore',
+        password: bcrypt.hashSync('Pauly', 8),
+        email: "PaulyShore@gmail.com",
+        street_address: '1992 Encino Blvd.',
+        city: "santa barbara",
+        state: "CA",
+        zip_code: '90212',
+        is_admin: false
+    }),
+    knex('users').insert({
+        username: 'andydick',
+        password: bcrypt.hashSync('Andy', 8),
+        email: "AndyDick@gmail.com",
+        street_address: '1234 Weird Rd.',
+        city: "spokane",
+        state: "WA",
+        zip_code: '97890',
+        is_admin: false
+    }),
+    knex('users').insert({
+        username: 'kennyg',
+        password: bcrypt.hashSync('Kenny', 8),
+        email: "KennyG@gmail.com",
+        street_address: '997 Saxaphone St.',
+        city: "new orleans",
+        state: "LA",
+        zip_code: '61234',
+        is_admin: false
+    }),
+    knex('users').insert({
+        username: 'snooki',
+        password: bcrypt.hashSync('Brendan', 8),
+        email: "Brendan@gmail.com",
+        street_address: '1425 Mummy Ave.',
+        city: "rand",
+        state: "WV",
+        zip_code: '31245',
+        is_admin: false
+    }),
+    knex('users').insert({
+        username: 'guyfierri',
+        password: bcrypt.hashSync('Guy', 8),
+        email: "Guy@gmail.com",
+        street_address: '1425 Unlikable Ave.',
+        city: "chicago",
+        state: "IL",
+        zip_code: '50012',
+        is_admin: false
     })
   );
 };
