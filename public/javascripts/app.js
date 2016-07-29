@@ -1,36 +1,26 @@
 var app = angular.module("hitchBikeApp", ['angularMoment', 'ngAnimate', 'ngRoute'])
 
-// app.directive('testDirective', function() {
-//   return {
-//     restrict: 'E',
-//     templateUrl: '/directives/test.html',
-//     link: function() {
-//       console.log('TEST DIRECTIVE');
-//     }
-//   }
-// })
-
 app.config(function($routeProvider, $httpProvider){
   $httpProvider.interceptors.push('HitchBikeInterceptor');
   $routeProvider
     .when('/', {
       templateUrl: 'views/landing.html',
-      // controller: "HitchBikeController"
+      controller: "HitchBikeController"
     })
     .when('/signup', {
       templateUrl: '/views/landing-signup.html',
-      // controller: "HitchBikeController"
+      controller: "HitchBikeController"
     })
     .when('/signupsuccess', {
       templateUrl: 'views/landing-signupsuccess.html'
     })
     .when('/signin', {
       templateUrl: 'views/landing-signin.html',
-      // controller: "HitchBikeController"
+      controller: "HitchBikeController"
     })
     .when('/bikes', {
       templateUrl: 'views/bikes.html',
-      // controller: "HitchBikeController"
+      controller: "HitchBikeController"
     })
     .when('/bikes/search/:location', {
       templateUrl: 'views/bikes.html',
@@ -56,12 +46,9 @@ app.config(function($routeProvider, $httpProvider){
     .when('/bikes/signin', {
       templateUrl: 'views/bikes-signin.html'
     })
-    .when('/bikes/request/bike/1/5', {
+    .when('/bikes/request/bike/:id/:ownerid', {
       templateUrl: 'views/bikes-request.html',
       controller: 'BikesSearchController'
-    })
-    .when('/bikes/authoption', {
-      templateUrl: 'views/bikes-authoption.html'
     })
     .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',
@@ -82,12 +69,10 @@ app.config(function($routeProvider, $httpProvider){
     .when('/dashboard/mybikes', {
       templateUrl: 'views/dashboard-mybikes.html'
     })
-    .when('/dashboard/mybikes/confirmaccept', {
-      templateUrl: 'views/dashboard-confirmaccept.html'
+    .when('/dashboard/mybikes/confirmaccept/:id', {
+      templateUrl: 'views/dashboard-confirmaccept.html',
+      controller: 'requestController'
     })
-    // .when('/dashboard/mybikes/confirmdeny', {
-    //   templateUrl: 'views/dashboard-confirmdeny.html'
-    // })
     .when('/dashboard/mybikes/confirmdeny/:id', {
       templateUrl: 'views/dashboard-confirmdeny.html',
       controller: 'requestController'
@@ -99,10 +84,7 @@ app.config(function($routeProvider, $httpProvider){
   });
   //
   app.run(function($rootScope, $location) {
-    // if ($location.search().hasOwnProperty( 'token' ) ) {
-    //  localStorage.jwt = $location.search().jwt;
-    //  $location.search('token',null);
-    // }
+
 
     if (localStorage.jwt) {
       $rootScope.user = jwt_decode(localStorage.jwt);
