@@ -107,8 +107,8 @@ router.get('/api/bikes/search/:location/:startTime/:endTime', function(req, res,
   // console.log("START: " + req.params.startTime);
   var start = Date.parse(req.params.startTime.slice(1,11));
   var end = Date.parse(req.params.endTime.slice(1,11));
-  // console.log("Short start: " + start);
-  // console.log("Short end: " + end);
+  console.log("Short start: " + start);
+  console.log("Short end: " + end);
   knex('bikes').fullOuterJoin('requested_bikes', 'requested_bikes.bike_id', 'bikes.id').where(function() {
     this.where({zip_code: req.params.location}).orWhere({city: req.params.location})
   })

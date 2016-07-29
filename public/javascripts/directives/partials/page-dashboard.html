@@ -148,7 +148,7 @@
           <h5>Zip Code: {{bike.zip_code}}</h5>
         </div>
     </div>
-    <form ng-show="view.editBike" name="updateBikeForm" ng-model="view.updateBikeForm" ng-submit="view.updateBikeInfo(bike.id, bike.title, bike.description, bike.instructions, view.updateBikeType, view.updateBikeCondition, bike.price_day, bike.price_hour, bike.street_address, bike.city, view.updateBikeState, bike.zip_code)">
+    <form ng-show="view.editBike" name="updateBikeForm" ng-model="view.updateBikeForm">
       <label for="title">Title</label>
       <input type="text" value={{bike.title}} name="title" ng-model="bike.title">
       <label for="description">Description</label>
@@ -233,7 +233,7 @@
       <label for="zip_code">Zip Code</label>
       <input type="text" value={{bike.zip_code}} name="zip_code" ng-model="bike.zip_code">
       <button id="myBikesEdit" ng-click="view.editBike = !view.editBike">Cancel</button>
-      <input type="submit" id="myBikesEdit" value="Save Info">
+      <input type="submit" id="myBikesEdit" value="Save Info" ng-click="view.updateBikeInfo(bike.id, bike.title, bike.description, bike.instructions, view.updateBikeType, view.updateBikeCondition, bike.price_day, bike.price_hour, bike.street_address, bike.city, view.updateBikeState, bike.zip_code)">
     </form>
   </div>
 </div>
