@@ -53,7 +53,7 @@ app.config(function($routeProvider, $httpProvider){
     })
     .when('/bikes/request/bike/:id/:ownerid', {
       templateUrl: 'views/bikes-request.html',
-      controller: 'HitchBikeController'
+      controller: 'BikesSearchController'
     })
     .when('/bikes/authoption', {
       templateUrl: 'views/bikes-authoption.html',

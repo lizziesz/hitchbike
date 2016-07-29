@@ -176,6 +176,7 @@ app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$locatio
   }
 
   $scope.view.submitRequest = function(user_id, message, startDate, endDate) {
+    console.log("SUBMIT");
     HitchBikeService.submitRequest(user_id, $routeParams.id, $routeParams.ownerid, message, startDate, endDate);
     $location.path('/dashboard/' + user_id);
   }
@@ -243,9 +244,19 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
   var vm = this;
   $scope.view.showRequests = false;
   $scope.view.editBike = false;
+
+
+
   HitchBikeService.dashboardBikes($routeParams.id).then(function(data) {
     console.log(data);
     $scope.view.bikes = data.data;
+    $scope.view.myBikeCount = 0;
+    for(var i=0; i<$scope.view.bikes; i++) {
+      if($scope.view.bikes[i].owner_id == $routeParams.id) {
+        $scope.view.myBikeCount = $scope.view.myBikeCount + 1;
+      }
+    }
+
   })
 
   HitchBikeService.borrowedBikes($routeParams.id).then(function(data) {
