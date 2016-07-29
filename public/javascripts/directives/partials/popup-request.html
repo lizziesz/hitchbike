@@ -1,29 +1,27 @@
-<div class="confirm popup-window">
+<div class="confirm popup-window" ng-show="view.popUp">
   <h1>Confirm Bike Request</h1>
   <p>
     Upon submitting this form, the bike owner will be immediately notified of your request and will have the option to confirm or deny. You will be notified of the owner's decision once it is made. Feel free to add any additional details, such as contact information, in the message below.
   </p>
-  <input type="text" value="(Optional message to owner)" id="optionalMessage">
-  <p><h4>
-    Please review the following information:
-  </h4></p>
-  <div id="paymentDiv">
-    <h5>Payment Method</h5>
-    <h5>Requested Time and Duration</h5>
-  </div>
-  <div id ="confirmBottomDiv">
-    <input type="text" placeholder="xxxx-xxxx-xxxx-4455">
-    <select>
-      <option>Start Time</option>
-      <option ng-repeat = "time in view.time">{{time}}</option>
-    </select>
-    <select>
-      <option>End Time</option>
-      <option ng-repeat = "time in view.time">{{time}}</option>
-    </select>
-  </div>
-  <div id="confirmButtonDiv">
-    <input type="submit" value="Cancel" id="confirmSubmit">
-    <input type="submit" value="Submit Request" id=confirmCancel>
-  </div>
+
+  <form name="requestForm">
+    <input type="text" placeholder="(Optional message to owner)" id="optionalMessage" ng-model="requestForm.message">
+    <p><h4>
+      Please review the following information:
+    </h4></p>
+    <div id="paymentDiv">
+      <h5>Payment Method</h5>
+      <h5>Requested Duration</h5>
+    </div>
+    <div id ="confirmBottomDiv">
+      <input type="text" placeholder="xxxx-xxxx-xxxx-4455">
+      <input type="date" name="startDate" ng-model="requestForm.startDate">
+      <input type="date" name="endDate" ng-model="requestForm.endDate">
+    </div>
+    <div id="confirmButtonDiv">
+      <a href="/#/bikes"><button id="confirmCancel" ng-click="closePopUp()">Cancel</button></a>
+      <input type="submit" value="Submit Request" id="confirmSubmit" ng-click="view.submitRequest(user.id, requestForm.message, requestForm.startDate, requestForm.endDate)">
+    </div>
+  </form>
+  
 </div>

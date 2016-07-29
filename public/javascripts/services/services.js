@@ -15,11 +15,37 @@ app.factory('HitchBikeService', function($http, $location) {
     requests: function(id) {
       return $http.get('/api/dashboard/requests/' + id)
     },
+    requestsToConfirm: function(id) {
+      return $http.get('/api/confirmrequests/' + id);
+    },
+    confirmRequest: function(id, message) {
+      var updateRequest = {};
+      updateRequest.message = message;
+      return $http.post('/api/confirmrequest/' + id, updateRequest);
+    },
+    deleteRequest: function(id) {
+      console.log('deleteinadslj a');
+      return $http.get('/api/deleterequest/' + id);
+    },
     users: function() {
       return $http.get('/api/users');
     },
     userInfo: function(id) {
       return $http.get('/api/userinfo/' + id);
+    },
+    submitRequest: function(user_id, bike_id, owner_id, message, startDate, endDate) {
+      var newRequest = {};
+      newRequest.requestor_id = user_id;
+      newRequest.owner_id = owner_id;
+      newRequest.bike_id = bike_id;
+      newRequest.request_time_stamp = new Date();
+      newRequest.borrow_start_time = startDate;
+      newRequest.borrow_end_time = endDate;
+      newRequest.startDate = Date.parse(startDate);
+      newRequest.endDate = Date.parse(endDate);
+      newRequest.message = message;
+      // array.push(newRequest);
+      return $http.post('/api/newrequest', newRequest);
     },
     searchBikes: function(locationInput) {
       return $http.get('/api/bikes/search/' + locationInput);
@@ -53,6 +79,9 @@ app.factory('HitchBikeService', function($http, $location) {
       updateBike.state = state;
       updateBike.zip_code = zip_code;
       return $http.post('/api/updatebike', updateBike);
+    },
+    deleteBike: function(id) {
+      return $http.get('/api/deletebike/' + id);
     },
     signIn: function(username, password) {
       var user = {};

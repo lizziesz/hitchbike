@@ -120,6 +120,7 @@ main.bikes {
   width: 21vw;
   margin: 1vw;
   margin-top: -1vh;
+  margin-right: 3vw;
   border-width: .2vw;
   border-style: solid;
   border-color: lightgrey; }
@@ -151,7 +152,7 @@ main.bikes {
   margin-bottom: -28vh; }
 
 #bikeInfo input[type=button] {
-  background: lightgreen;
+  background: green;
   width: 15vw;
   font-size: 1.4em;
   color: white;
@@ -199,7 +200,7 @@ div.bike-frame {
   flex-direction: row;
   justify-content: space-around;
   width: 43.7vw;
-  height: 41.28vh;
+  height: 46.5vh;
   margin-bottom: 40px;
   padding-top: 20px;
   border-style: solid;
@@ -424,8 +425,8 @@ div.bike-frame section {
   left: 50vh;
   display: flex;
   flex-direction: column;
-  width: 600px;
-  height: 400px;
+  width: 50vw;
+  height: 70vh;
   border-color: black;
   border-width: .5px;
   border-style: solid;
@@ -454,6 +455,16 @@ div.bike-frame section {
   justify-content: space-between; }
 
 .signupAddress input {
+  width: 14vw; }
+
+.signupAddress select {
+  height: 4.5vh;
+  width: 6vw;
+  margin-top: 2vh;
+  font-size: 1.5em; }
+
+.signupAddress select {
+  margin-top: 13px;
   width: 120px; }
 
 .signup input[type=submit] {
@@ -467,6 +478,10 @@ div.bike-frame section {
   width: 100vw;
   height: 90vh;
   padding-top: 50px; }
+
+.signupError {
+  color: red;
+  font-size: 1.5em; }
 
 .signupSuccess {
   top: 20vh;
@@ -520,6 +535,9 @@ div.bike-frame section {
   height: 4vh;
   color: white;
   background: #4c96d7; }
+
+#signupDiv h2 {
+  margin-bottom: 0vh; }
 
 .signupSuccess input[type=submit] {
   background: #4c96d7;
@@ -695,7 +713,7 @@ div.bike-frame section {
   position: absolute;
   top: 13vh;
   left: 67vh;
-  height: 36vh;
+  height: 41vh;
   width: 30vw;
   margin: auto;
   margin-top: 20vh;
@@ -730,10 +748,6 @@ div.bike-frame section {
 .no-margin {
   margin: 0; }
 
-.bottom-margin {
-  margin: 0;
-  margin-bottom: 10px; }
-
 div.accept-request {
   top: 20vh;
   left: 30vw;
@@ -741,7 +755,9 @@ div.accept-request {
   flex-direction: column;
   width: 35vw;
   height: 58vh;
-  padding: 20px; }
+  padding: 5vh;
+  padding-right: -12vw;
+  margin-bottom: 10vh; }
 
 form.accept-request {
   width: 80%; }
@@ -788,10 +804,14 @@ input.cancel-request {
   background-color: #3498DB;
   margin-top: 0; }
 input.submit-request {
-  width: 40%;
   background-color: #35DB43;
   margin-top: 0;
   margin-left: 10px; }
+
+#acceptDiv {
+  height: 90vh;
+  width: 40vw;
+  margin: auto; }
 
 div.deny-request {
   top: 30vh;
@@ -859,6 +879,26 @@ button.deny-request {
 #deleteCancel {
   background: #FF4F51;
   color: white; }
+
+.authoption {
+  top: 30vh;
+  left: 31vw;
+  width: 35vw;
+  height: 20vh;
+  padding: 20px; }
+
+div.authoption-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 26px; }
+
+button.authoption-btn {
+  width: 30%;
+  margin-left: 15px;
+  color: white;
+  background-color: #4c96d7; }
+button.margin-right {
+  margin-right: 23px; }
 
 header.masthead {
   background-color: #EBEBEB;

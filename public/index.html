@@ -41,8 +41,10 @@
       </div>
 
     <div class="account-cta">
-      <a ng-href="/#/signup" ng-show="!user">Sign Up</a>
-      <a ng-href="/#/signin" ng-show="!user">Sign In</a>
+      <a ng-href="/#/signup" ng-click="openPopUp()" ng-show="!user && !view.onBikes">Sign Up</a>
+      <a ng-href="/#/signin" ng-click="openPopUp()" ng-show="!user && !view.onBikes">Sign In</a>
+      <a ng-href="/#/bikes/signup" ng-click="openPopUp()" ng-show="!user && view.onBikes">Sign Up</a>
+      <a ng-href="/#/bikes/signin" ng-click="openPopUp()" ng-show="!user && view.onBikes">Sign In</a>
       <!-- <a ng-href="/#/signout" ng-show="user">Sign Out</a> -->
       <a ng-href="/#/dashboard/{{user.id}}" ng-show="user" id="userDashLink">{{user.username}}'s Dashboard</a>
       <button ng-click="view.signOut()" ng-show="user" id="signOutButton">Sign Out</button>

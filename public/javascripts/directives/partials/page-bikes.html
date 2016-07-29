@@ -2,7 +2,7 @@
 
   <section class="bike-search-params">
     <div class="location-date-search">
-      <form class="location-date-search form-group" >
+      <form class="location-date-search form-group">
         <input type="text" placeholder="Enter Location (city or zip)" id="locationInput" name="location" ng-model="location">
         <input type="date" id="startTime" name="startTime" ng-model="startTime">
         <input type="date" id="endTime" name="endTime" ng-model="endTime">
@@ -50,8 +50,14 @@
           </div>
           <h5>Type: {{bike.type}}</h5>
           <h5>Condition: {{bike.condition}}</h5>
-          <h6>Description: {{bike.description}}</h6>
-          <input class="form-control" type="button" ng-click="" value="Request Bike" id="bikeButton">
+          <h5>Description: {{bike.description}}</h5>
+
+          <a href="/#/bikes/request">
+            <input class="form-control" type="button" ng-show="user.id" ng-click="openPopUp()" value="Request Bike" id="bikeButton">
+          </a>
+          <a href="/#/bikes/authoption">
+            <input class="form-control" type="button" ng-show="!user.id" ng-click="openPopUp()" value="Request Bike" id="bikeButton">
+          </a>
         </section>
         <!-- <input class="form-control" type="button" ng-click="" value="Request Bike"> -->
       </div>
