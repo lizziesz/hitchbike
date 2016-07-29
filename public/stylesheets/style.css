@@ -690,17 +690,19 @@ div.bike-frame section {
 #optionalMessage {
   height: 12vh;
   width: 43.75vw;
-  margin-bottom: 5vh; }
+  margin-bottom: 5vh;
+  padding: 0 0 8vh 1vw;
+  font-size: 1.5em; }
 
 #paymentDiv h5 {
   margin-bottom: 0; }
 
 #confirmButtonDiv input[type=submit] {
-  width: 18vw;
+  width: 20vw;
   height: 5vh; }
 
-#confirmBottomDiv input {
-  margin-right: 2.75vw; }
+#confirmBottomDiv input[type=date] {
+  width: 21.0vw; }
 
 #confirmButtonDiv {
   display: flex;
