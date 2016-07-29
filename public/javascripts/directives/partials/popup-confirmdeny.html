@@ -3,6 +3,6 @@
   <p class="big-bottom-margin">Request will disappear from your dashboard and requester will be immediately notified of denial</p>
   <div class="inner-deny-request">
     <a href="/#/dashboard/{{user.id}}"><button class="btn form-control deny-request">Cancel</button></a>
-    <button class="btn form-control cancel-request" ng-click="view.deleteRequest(user.id)">Deny Request</button>
+    <a href="/#/dashboard/{{user.id}}"><button class="btn form-control cancel-request" ng-click="view.deleteRequest(user.id)">Deny Request</button></a>
   </div>
 </div>
