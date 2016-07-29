@@ -117,7 +117,11 @@
   </div>
 
   <div id="myBikesBar" class="dashboardDivs" ng-click="toggleMyBikes()">
-    <h3>My Bikes</h3>
+    <h3>My Bikes ({{view.bikes.length}} <ng-pluralize count="view.bikes.length"
+      when="{'1': 'bike',
+        'other': 'bikes'
+      }"
+    ></ng-pluralize>)</h3>
   </div>
   <div ng-show="showMyBikes === true" class="dashboardDrop">
     <div class="dashboardBikeFrame"   ng-show="bike.owner_id === user.id" ng-repeat="bike in view.bikes">
