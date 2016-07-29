@@ -833,11 +833,12 @@ div.inner-deny-request {
   margin-bottom: 0; }
 
 button.cancel-request {
-  width: 30%;
+  width: 100%;
   background-color: #3498DB;
   color: white;
   margin-left: 10px;
-  margin-bottom: 0; }
+  margin-bottom: 0;
+}
 button.deny-request {
   width: 20%;
   background-color: #D65858;
