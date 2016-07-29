@@ -57,7 +57,7 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'views/bikes-signin.html'
     })
     .when('/bikes/request/bike/1/5', {
-      templateUrl: 'views/bikes-request.html'
+      templateUrl: 'views/bikes-request.html',
       controller: 'BikesSearchController'
     })
     .when('/bikes/authoption', {
