@@ -1,15 +1,5 @@
 var app = angular.module("hitchBikeApp", ['angularMoment', 'ngAnimate', 'ngRoute'])
 
-// app.directive('testDirective', function() {
-//   return {
-//     restrict: 'E',
-//     templateUrl: '/directives/test.html',
-//     link: function() {
-//       console.log('TEST DIRECTIVE');
-//     }
-//   }
-// })
-
 app.config(function($routeProvider, $httpProvider){
   $httpProvider.interceptors.push('HitchBikeInterceptor');
   $routeProvider
@@ -83,6 +73,9 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'views/dashboard-confirmaccept.html',
       controller: 'requestController'
     })
+    // .when('/dashboard/mybikes/confirmdeny', {
+    //   templateUrl: 'views/dashboard-confirmdeny.html'
+    // })
     .when('/dashboard/mybikes/confirmdeny/:id', {
       templateUrl: 'views/dashboard-confirmdeny.html',
       controller: 'requestController'
