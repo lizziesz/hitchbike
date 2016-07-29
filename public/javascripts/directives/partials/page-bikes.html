@@ -34,7 +34,7 @@
       ></ng-pluralize></h2>
     </section>
     <section class="bike-results">
-      <div class="bike-frame" ng-repeat="bike in view.bikes">
+      <div class="bike-frame" ng-repeat="bike in view.bikes" ng-show="bike.is_available">
         <div id="bike-frame-image">
           <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
           <section id="pricing">
@@ -52,7 +52,7 @@
           <h5>Condition: {{bike.condition}}</h5>
           <h5>Description: {{bike.description}}</h5>
 
-          <a href="/#/bikes/request">
+          <a href="/#/bikes/request/bike/{{bike.id}}/{{bike.owner_id}}">
             <input class="form-control" type="button" ng-show="user.id" ng-click="openPopUp()" value="Request Bike" id="bikeButton">
           </a>
           <a href="/#/bikes/authoption">
@@ -61,8 +61,6 @@
         </section>
         <!-- <input class="form-control" type="button" ng-click="" value="Request Bike"> -->
       </div>
-
     </section>
   </section>
-
 </main>

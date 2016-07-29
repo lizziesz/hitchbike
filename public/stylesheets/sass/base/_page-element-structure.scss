@@ -65,6 +65,19 @@ button#post-bike-button {
   margin-top: 22px;
 }
 
+#signOutButton {
+  width: 150px;
+  color: white;
+  background-color: #4c96d7;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+}
+#userDashLink {
+  font-size: 16px;
+  text-transform: capitalize;
+}
+
 // Landing Page Structure
 
 #landingContainer {
@@ -293,7 +306,9 @@ div.bike-frame section {
 
 
 // Dashboard styling
-
+#addressP {
+  margin-right: 5px;
+}
 .dashboardDivs {
   display: flex;
   width: 80vw;
@@ -301,6 +316,7 @@ div.bike-frame section {
   margin: auto;
   margin-top: 20px;
   align-items: center;
+  cursor: pointer;
 }
 .dashboardDivs h3 {
   margin: 0;
@@ -318,15 +334,16 @@ div.bike-frame section {
 }
 
 .dashboardBikeFrame {
-  padding: 15px;
   display: flex;
   justify-content: space-between;
   height: auto;
   width: 100%;
-  border: 1px solid black;
+  margin-top: 20px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid black;
   img {
-    width: 200px;
-    height: 200px;
+    max-width: 150px;
+    max-height: 150px;
     border: 1px solid black;
   }
 }
@@ -341,15 +358,21 @@ div.bike-frame section {
 
 .dashboardBikeFrameContent2 {
   display: flex;
-  justify-content: space-between;
-  width: 79%;
+  justify-content: space-around;
+  width: 100%;
   margin-left: 15px;
 }
-.myBikesColumn {
-  width: 60vw;
+.myBikesColumn1 {
+  width: 40vw ;
+  margin-left: 15px;
+
 }
 .myBikesColumn2 {
-  width: 25vw;
+  width: 20vw;
+  margin-left: 15px;
+}
+.myBikesColumn3 {
+  width: 30vw;
   margin-left: 15px;
 }
 
@@ -430,7 +453,41 @@ div.bike-frame section {
   background-color: red;
   border: none;
 }
+
+
+// Pending requests Styling
+
+.pendingRequests {
+  display: flex;
+  margin: auto;
+  width: 80vw;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+.pendingRequests img {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  margin: 20px;
+}
+.requestSection{
+  width: 20vw;
+}
+.requestSection1{
+  width:25vw;
+  align-self: center;
+}
+.requestSection2 {
+  width: 35vw;
+  margin-right: 15px;
+  width: auto;
+}
+
+// BIKES SIGNUP PAGE
+
 // SIGNUP PAGE
+
 
 .signup {
   top: 20vh;
