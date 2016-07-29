@@ -1,70 +1,6 @@
 <div class="popup-window signup" ng-show="view.popUp" id="signupDiv">
   <form ng-submit="view.signUp()" name="signUpForm">
     <h2>Sign Up</h2>
-<!-- <<<<<<< HEAD
-    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" required>
-    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" required>
-    <input type="email" name="email" ng-model="view.emailSignup" placeholder="email" required>
-    <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address" autocomplete="street-address" required>
-
-  <div class="signupAddress">
-    <input type="text" name="city" ng-model="view.citySignup" placeholder="city" required>
-    <select name="state" class="form-control">
-    	<option value="AL">Alabama</option>
-    	<option value="AK">Alaska</option>
-    	<option value="AZ">Arizona</option>
-    	<option value="AR">Arkansas</option>
-    	<option value="CA">California</option>
-    	<option value="CO">Colorado</option>
-    	<option value="CT">Connecticut</option>
-    	<option value="DE">Delaware</option>
-    	<option value="DC">District of Columbia</option>
-    	<option value="FL">Florida</option>
-    	<option value="GA">Georgia</option>
-    	<option value="HI">Hawaii</option>
-    	<option value="ID">Idaho</option>
-    	<option value="IL">Illinois</option>
-    	<option value="IN">Indiana</option>
-    	<option value="IA">Iowa</option>
-    	<option value="KS">Kansas</option>
-    	<option value="KY">Kentucky</option>
-    	<option value="LA">Louisiana</option>
-    	<option value="ME">Maine</option>
-    	<option value="MD">Maryland</option>
-    	<option value="MA">Massachusetts</option>
-    	<option value="MI">Michigan</option>
-    	<option value="MN">Minnesota</option>
-    	<option value="MS">Mississippi</option>
-    	<option value="MO">Missouri</option>
-    	<option value="MT">Montana</option>
-    	<option value="NE">Nebraska</option>
-    	<option value="NV">Nevada</option>
-    	<option value="NH">New Hampshire</option>
-    	<option value="NJ">New Jersey</option>
-    	<option value="NM">New Mexico</option>
-    	<option value="NY">New York</option>
-    	<option value="NC">North Carolina</option>
-    	<option value="ND">North Dakota</option>
-    	<option value="OH">Ohio</option>
-    	<option value="OK">Oklahoma</option>
-    	<option value="OR">Oregon</option>
-    	<option value="PA">Pennsylvania</option>
-    	<option value="RI">Rhode Island</option>
-    	<option value="SC">South Carolina</option>
-    	<option value="SD">South Dakota</option>
-    	<option value="TN">Tennessee</option>
-    	<option value="TX">Texas</option>
-    	<option value="UT">Utah</option>
-    	<option value="VT">Vermont</option>
-    	<option value="VA">Virginia</option>
-    	<option value="WA">Washington</option>
-    	<option value="WV">West Virginia</option>
-    	<option value="WI">Wisconsin</option>
-    	<option value="WY">Wyoming</option>
-    </select>
-    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" autocomplete="postal-code" required>
-======= -->
-    <h5>{{view.error}}</h5>
     <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" ng-maxlength="20">
 
     <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" ng-minlength="5">
@@ -73,20 +9,21 @@
     <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address">
 
   <div class="signupAddress">
-    <input type="text" name="city" ng-model="view.citySignup" placeholder="city">
+    <input type="text" name="city" ng-model="view.citySignup" placeholder="city" ng-minlength="4">
 
-    <select class="form-control">
-      <option ng-repeat="state in view.states" value="ng-repeat='state in view.state'">{{state}}</option>
+    <select ng-model="view.stateSignup" >
+      <option value="{{state}}" ng-repeat="state in view.states">{{state}}</option>
     </select>
 
     <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" ng-maxlength="5">
+
   </div>
   <div ng-hide = "signUpForm.zip_code.$valid" class="signupError">
   Please enter a five digit zip code.
-<!-- >>>>>>> 5c23d5b7d104d11b18a40e5d5a442defa22ea3d1 -->
   </div>
   <div ng-hide="signUpForm.password.$valid" class="signupError">Your Password must be at least five characters.</div>
   <div ng-hide="signUpForm.username.$valid" class="signupError">This field cannot be longer than twenty characters.</div>
+  <div ng-hide="signUpForm.city.$valid" class="signupError">Please enter a valid city.</div>
 
   <input type="submit" value="Submit">
 
