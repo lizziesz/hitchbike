@@ -338,6 +338,12 @@ div.bike-frame section {
   color: white;
   border: none; }
 
+#myBikesDelete {
+  width: 100px;
+  background-color: #FF4F51;
+  color: white;
+  border: none; }
+
 .bikeFrameHeading {
   display: flex;
   flex-direction: column;
@@ -808,11 +814,6 @@ input.submit-request {
   margin-top: 0;
   margin-left: 10px; }
 
-#acceptDiv {
-  height: 90vh;
-  width: 40vw;
-  margin: auto; }
-
 div.deny-request {
   top: 30vh;
   left: 60vh;
@@ -833,11 +834,10 @@ div.inner-deny-request {
   margin-bottom: 0; }
 
 button.cancel-request {
-  width: 30%;
+  width: 100%;
   background-color: #3498DB;
   color: white;
-  margin-left: 10px;
-  margin-bottom: 0; }
+  margin: 10px 10px 0px 0px; }
 button.deny-request {
   width: 20%;
   background-color: #D65858;

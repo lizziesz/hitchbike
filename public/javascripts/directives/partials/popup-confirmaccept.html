@@ -61,7 +61,7 @@
         <option value="WI">Wisconsin</option>
         <option value="WY">Wyoming</option>
       </select>
-      <input type="number" autocomplete="postal-code" id="accept-request-zip" class="form-control" required>
+      <input type="text" autocomplete="postal-code" id="accept-request-zip" class="form-control" value="{{request.zip_code}}" ng-model="request.zip_code" required>
     </div>
     <div id="cr-inner-form-3">
       <h4>Optional Message for Requester</h4>

@@ -388,6 +388,13 @@ div.bike-frame section {
   color: white;
   border: none;
 }
+
+#myBikesDelete {
+  width: 100px;
+  background-color: #FF4F51;
+  color: white;
+  border: none;
+}
 .bikeFrameHeading {
   display: flex;
   flex-direction: column;
@@ -919,11 +926,6 @@ input {
   }
 }
 
-#acceptDiv {
-  height: 90vh;
-  width: 40vw;
-  margin: auto;
-}
 // Confirm Request Denial Popup Window
 
 div.deny-request {
@@ -950,11 +952,10 @@ div.inner-deny-request {
 
 button {
   &.cancel-request {
-    width: 30%;
+    width: 100%;
     background-color: #3498DB;
     color: white;
-    margin-left: 10px;
-    margin-bottom: 0;
+    margin: 10px 10px 0px 0px;
   }
   &.deny-request {
     width: 20%;
