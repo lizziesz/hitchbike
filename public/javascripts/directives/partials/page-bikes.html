@@ -52,7 +52,7 @@
           <h5>Condition: {{bike.condition}}</h5>
           <h5>Description: {{bike.description}}</h5>
 
-          <a href="/#/bikes/request">
+          <a href="/#/bikes/request/bike/{{bike.id}}/{{bike.owner_id}}">
             <input class="form-control" type="button" ng-show="user.id" ng-click="openPopUp()" value="Request Bike" id="bikeButton">
           </a>
           <a href="/#/bikes/authoption">
