@@ -138,6 +138,15 @@
         </div>
         <div class="myBikesColumn3">
           <button id="myBikesEdit" ng-click="view.editBike = !view.editBike">Edit Info</button>
+          <br>
+          <p></p>
+          <button id="myBikesEdit" ng-click="view.deleteBike(bike.id)">Delete Bike</button>
+          <h4>{{bike.price_day | currency}}/day</h4>
+          <h4 ng-show="bike.price_hour">{{bike.price_hour | currency}}/hour</h4>
+          <h4>Street Address: {{bike.street_address}}</h4>
+          <h4>City: {{bike.city}}</h4>
+          <h4>State: {{bike.state}}</h4>
+          <h4>Zip Code: {{bike.zip_code}}</h4>
           <h5>Street Address: {{bike.street_address}}</h5>
           <h5>City: {{bike.city}}</h5>
           <h5>State: {{bike.state}}</h5>
