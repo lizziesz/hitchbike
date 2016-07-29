@@ -34,7 +34,7 @@
       ></ng-pluralize></h2>
     </section>
     <section class="bike-results">
-      <div class="bike-frame" ng-repeat="bike in view.bikes">
+      <div class="bike-frame" ng-repeat="bike in view.bikes" ng-show="bike.is_available">
         <div id="bike-frame-image">
           <img ng-src="{{bike.picture}}" alt="{{bike.title}}">
           <section id="pricing">
