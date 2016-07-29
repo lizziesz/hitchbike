@@ -50,6 +50,10 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'views/bikes-request.html',
       controller: 'BikesSearchController'
     })
+    .when('/bikes/authoption', {
+      templateUrl: 'views/bikes-authoption.html',
+      controller: "HitchBikeController",
+    })
     .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',
       controller: 'dashboardController'
@@ -73,9 +77,6 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'views/dashboard-confirmaccept.html',
       controller: 'requestController'
     })
-    // .when('/dashboard/mybikes/confirmdeny', {
-    //   templateUrl: 'views/dashboard-confirmdeny.html'
-    // })
     .when('/dashboard/mybikes/confirmdeny/:id', {
       templateUrl: 'views/dashboard-confirmdeny.html',
       controller: 'requestController'
