@@ -1,4 +1,6 @@
-<div class="confirm popup-window" ng-show="view.popUp">
+
+<div class="confirm popup-window" class="confirm" ng-show="view.popup">
+
   <h1>Confirm Bike Request</h1>
   <p>
     Upon submitting this form, the bike owner will be immediately notified of your request and will have the option to confirm or deny. You will be notified of the owner's decision once it is made. Feel free to add any additional details, such as contact information, in the message below.
@@ -23,5 +25,5 @@
       <input type="submit" value="Submit Request" id="confirmSubmit" ng-click="view.submitRequest(user.id, requestForm.message, requestForm.startDate, requestForm.endDate)">
     </div>
   </form>
-  
+
 </div>
