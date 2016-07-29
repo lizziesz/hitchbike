@@ -461,17 +461,13 @@ div.bike-frame section {
   justify-content: space-between; }
 
 .signupAddress input {
-  width: 14vw; }
+  width: 12vw; }
 
 .signupAddress select {
-  height: 4.5vh;
+  height: 5.5vh;
   width: 6vw;
-  margin-top: 2vh;
-  font-size: 1.5em; }
-
-.signupAddress select {
-  margin-top: 13px;
-  width: 120px; }
+  font-size: 1.5em;
+  margin-top: 1.7vh; }
 
 .signup input[type=submit] {
   background: #4c96d7;
@@ -699,20 +695,23 @@ div.confirm {
   padding: 0 0 8vh 1vw;
   font-size: 1.5em; }
 
-#paymentDiv h5 {
-  margin-bottom: 0; }
-
-#confirmButtonDiv input[type=submit] {
-  width: 20vw;
-  height: 5vh; }
-
 #confirmBottomDiv input[type=date] {
-  width: 21.0vw; }
+  width: 15.0vw; }
+
+#returndate {
+  margin-left: 1vw; }
+
+#pickupdate {
+  margin-left: .6vw; }
+
+#reviewh4 {
+  margin-top: -2.75vh; }
 
 #confirmButtonDiv {
   display: flex;
   flex-direction: row;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding-bottom: 200vh; }
 
 #confirmSubmit {
   background: #4c96d7;
