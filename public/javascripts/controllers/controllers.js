@@ -328,11 +328,11 @@ app.controller("requestController", ['$scope', 'HitchBikeService', '$routeParams
   $scope.view.updateRequest = function(message) {
     // console.log(request_id);
     HitchBikeService.confirmRequest($routeParams.id, message);
+    $window.location.reload();
   }
 
   $scope.view.deleteRequest = function(id) {
     HitchBikeService.deleteRequest($routeParams.id);
-    $location.path('/dashboard/' + id);
+    $window.location.reload();
   }
-
 }]);

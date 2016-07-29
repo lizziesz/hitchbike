@@ -65,8 +65,17 @@ app.config(function($routeProvider, $httpProvider){
     })
     .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',
-      controller: 'dashboardController'
-    })
+      controller: 'dashboardController',
+    //   resolve: function($rootScope, $q, $location){
+    //     console.log('hilo');
+    //     var deferred = $q.defer();
+    //     deferred.resolve();
+    //     if($rootScope.user.id !== $routeParams.id){
+    //       $location.path('/bikes');
+    //     }
+    //     return deferred.promise
+    //   }
+    // })
     .when('/dashboard/addbike', {
       templateUrl: 'views/dashboard-addbike.html',
     })
