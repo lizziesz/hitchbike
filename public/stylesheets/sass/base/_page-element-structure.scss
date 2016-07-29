@@ -636,7 +636,7 @@ div.bike-frame section {
 // ADD BIKE VIEW
 
 .addBike {
-  top: 20vh;
+  top: 10vh;
   left: 20vw;
   border-color: black;
   border-style: solid;
@@ -725,9 +725,10 @@ div.bike-frame section {
   margin-right: -0.25vw;
 }
 // REQUEST page
-.confirm {
-  top: 20vh;
-  left: 20vw;
+
+div.confirm {
+  top: 12vh;
+  left: 25vw;
   height: 64vh;
   width: 49vw;
   border-width: .25vh;
@@ -747,6 +748,11 @@ div.bike-frame section {
   height: 5vh;
   margin-top: 1vh;
   margin-bottom:1vh;
+}
+.confirm button {
+  width: 10vw;
+  height: 5vh;
+  margin: 1vh 1vh 1vh 25vh;
 }
 .confirm select {
   width: 7vw;

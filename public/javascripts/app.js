@@ -12,7 +12,8 @@ app.config(function($routeProvider, $httpProvider){
       controller: "HitchBikeController"
     })
     .when('/signupsuccess', {
-      templateUrl: 'views/landing-signupsuccess.html'
+      templateUrl: 'views/landing-signupsuccess.html',
+      controller: "HitchBikeController"
     })
     .when('/signin', {
       templateUrl: 'views/landing-signin.html',
@@ -38,17 +39,20 @@ app.config(function($routeProvider, $httpProvider){
       templateUrl: 'views/bikes-addbikesuccess.html'
     })
     .when('/bikes/signup', {
-      templateUrl: 'views/bikes-signup.html'
+      templateUrl: 'views/bikes-signup.html',
+      controller: "HitchBikeController"
     })
     .when('/bikes/signupsuccess', {
-      templateUrl: 'views/bikes-signupsuccess.html'
+      templateUrl: 'views/bikes-signupsuccess.html',
+      controller: "HitchBikeController"
     })
     .when('/bikes/signin', {
-      templateUrl: 'views/bikes-signin.html'
+      templateUrl: 'views/bikes-signin.html',
+      controller: "HitchBikeController"
     })
     .when('/bikes/request/bike/:id/:ownerid', {
       templateUrl: 'views/bikes-request.html',
-      controller: 'BikesSearchController'
+      controller: 'HitchBikeController'
     })
     .when('/bikes/authoption', {
       templateUrl: 'views/bikes-authoption.html',
