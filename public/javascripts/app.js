@@ -1,5 +1,6 @@
 var app = angular.module("hitchBikeApp", ['angularMoment', 'ngAnimate', 'ngRoute'])
 
+
 app.config(function($routeProvider, $httpProvider){
   $httpProvider.interceptors.push('HitchBikeInterceptor');
   $routeProvider
@@ -56,7 +57,17 @@ app.config(function($routeProvider, $httpProvider){
     })
     .when('/dashboard/:id', {
       templateUrl: 'views/dashboard.html',
-      controller: 'dashboardController'
+      controller: 'dashboardController',
+      resolve: {
+        check: function($location, $rootScope, $route){
+            if($rootScope.user.id == $route.current.params.id){
+                console.log('you are good');//Do something
+            }else{
+                $location.path('/bikes');    //redirect user to home.
+                console.log("Nice try");
+            }
+        }
+      }
     })
     .when('/dashboard/addbike', {
       templateUrl: 'views/dashboard-addbike.html',
@@ -88,7 +99,6 @@ app.config(function($routeProvider, $httpProvider){
   });
   //
   app.run(function($rootScope, $location) {
-
 
     if (localStorage.jwt) {
       $rootScope.user = jwt_decode(localStorage.jwt);
