@@ -175,12 +175,12 @@ main.bikes {
 #bikeInfo input[type=button]{
   background: green;
   width: 15vw;
-  font-size: 1.4em;
+  font-size: 1.75em;
   color: white;
   text-align: center;
-  padding-bottom: 5vh;
-  padding-right: 6.5vw;
-  padding-left: 3vw;
+  padding-bottom: 6vh;
+  padding-right: 6.75vw;
+  padding-left: 2vw;
   float: right;
   float: bottom;
   max-top: 10vh;
@@ -531,13 +531,12 @@ div.bike-frame section {
   justify-content: space-between;
 }
 .signupAddress input{
-  width: 11.0vw;
+  width: 14vw;
 }
 .signupAddress select{
-  height: 5.5vh;
+  height: 4.5vh;
   width: 6vw;
   margin-top: 2vh;
-
   font-size: 1.5em;
 }
 .signupAddress select {
@@ -643,7 +642,7 @@ div.bike-frame section {
   border-style: solid;
   border-width: .5px;
   width: 59vw;
-  height: 88vh;
+  height: 87vh;
   margin: auto;
   margin-top: 2vh;
   padding: 18px;
@@ -653,6 +652,7 @@ div.bike-frame section {
 .addBike h5{
   margin-bottom: 3px;
 }
+
 .addBike input[type=text]{
   width: 25vw;
   height: 6vh;
@@ -661,9 +661,10 @@ div.bike-frame section {
   padding-left:10px;
 }
 .addBike select {
-  height: 5vh;
-  width: 18vw;
+  height: 6vh;
+  width: 20vw;
   margin-top: .25vh;
+  font-size: 1.5em;
 }
 .addBike h1{
   margin-top: 5px;
@@ -676,7 +677,6 @@ div.bike-frame section {
 #pickupins {
   height: 11vh;
   width: 28vw;
-  font-size: 1.4em;
   padding: 0 0 8vh 0;
 }
 #addbikecancel{
@@ -694,16 +694,13 @@ div.bike-frame section {
 }
 
 #streetAddress {
-  width: 21vw;
+  width: 20vw;
 }
 #addbikeCity {
-  width: 16.5vw;
+  width: 15vw;
 }
 #addbikestate {
-  width: 7vw;
-  font-size: 1.5em;
-  font-weight: 100;
-  height: 5.5vh;
+  width: 5vw;
 }
 #addbikezip{
   width : 7vw;
@@ -712,7 +709,6 @@ div.bike-frame section {
   height: 12vh;
   width: 54.75vw;
   margin-bottom: 1.5vh;
-  font-size: 1.5em;
   padding: 0 0 8vh 0;
 }
 #addbikeButtons input{
