@@ -44,8 +44,8 @@
       <a ng-href="/#/signup" ng-show="!user">Sign Up</a>
       <a ng-href="/#/signin" ng-show="!user">Sign In</a>
       <!-- <a ng-href="/#/signout" ng-show="user">Sign Out</a> -->
-      <a ng-href="/#/dashboard/{{user.id}}" ng-show="user">{{user.username}}'s dashboard</a>
-      <button ng-click="view.signOut()" ng-show="user">Sign Out</button>
+      <a ng-href="/#/dashboard/{{user.id}}" ng-show="user" id="userDashLink">{{user.username}}'s Dashboard</a>
+      <button ng-click="view.signOut()" ng-show="user" id="signOutButton">Sign Out</button>
 
     </div>
 

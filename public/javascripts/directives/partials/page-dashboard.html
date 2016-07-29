@@ -4,7 +4,7 @@
     <h3>Account Settings</h3>
   </div>
   <div ng-show="showAccountInfo === true" class="dashboardDrop" ng-repeat="data in view.userData">
-    <p>Address</p>
+    <p id="addressP">Address: </p>
     <form ng-model="view.updateAddressForm" name="updateAddressForm">
     <input type="text" value="{{data.street_address}}" name="street_address">
     <input type="text" value="{{data.city}}" name="city">
@@ -116,13 +116,11 @@
     <h3>My Bikes</h3>
   </div>
   <div ng-show="showMyBikes === true" class="dashboardDrop">
-    <div class="dashboardBikeFrame" ng-repeat="bike in view.bikes" ng-show="bike.owner_id === user.id">
-
+    <div class="dashboardBikeFrame"   ng-show="bike.owner_id === user.id" ng-repeat="bike in view.bikes">
       <div class="dashboardBikeFrameContent2" ng-show="!view.editBike">
         <img ng-src={{bike.picture}} alt="{{bike.title}}">
-        <div class="myBikesColumn">
-
-          <h1 class="bikeFrameHeadingElement">{{bike.title}}</h1>
+        <div class="myBikesColumn1">
+          <h3 class="bikeFrameHeadingElement">{{bike.title}}</h3>
           <!-- <h5 class="bikeFrameHeadingElement">owner name</h5> -->
           <h4>Description: </h4>
           <p>{{bike.description}}</p>
@@ -133,18 +131,16 @@
         </div>
         <div class="myBikesColumn2">
           <button id="myBikesAvailable" ng-click="view.changeBikeAvailability(bike.id, bike.is_available)">{{bike.is_available | availability}}</button>
-          <h4 >Type: {{bike.type}}</h4>
-          <h4>Condition: {{bike.condition}}</h4>
-
+          <h5>Type: {{bike.type}}</h5> ,a9q
+          <h5>{{bike.price_day | currency}}/day</h5>
+          <h5 ng-show="bike.price_hour">{{bike.price_hour | currency}}/hour</h5>
         </div>
-        <div class="myBikesColumn2">
+        <div class="myBikesColumn3">
           <button id="myBikesEdit" ng-click="view.editBike = !view.editBike">Edit Info</button>
-          <h4>{{bike.price_day | currency}}/day</h4>
-          <h4 ng-show="bike.price_hour">{{bike.price_hour | currency}}/hour</h4>
-          <h4>Street Address: {{bike.street_address}}</h4>
-          <h4>City: {{bike.city}}</h4>
-          <h4>State: {{bike.state}}</h4>
-          <h4>Zip Code: {{bike.zip_code}}</h4>
+          <h5>Street Address: {{bike.street_address}}</h5>
+          <h5>City: {{bike.city}}</h5>
+          <h5>State: {{bike.state}}</h5>
+          <h5>Zip Code: {{bike.zip_code}}</h5>
         </div>
     </div>
     <form ng-show="view.editBike" name="updateBikeForm" ng-model="view.updateBikeForm" ng-submit="view.updateBikeInfo(bike.id, bike.title, bike.description, bike.instructions, view.updateBikeType, view.updateBikeCondition, bike.price_day, bike.price_hour, bike.street_address, bike.city, view.updateBikeState, bike.zip_code)">
@@ -251,7 +247,7 @@
   <div class="requestSection1">
     <p>{{request.message}}</p>
   </div>
-  <div class="requestSection">
+  <div class="requestSection2">
     <h4>Status: {{request.status}}</h4>
     <button id="confirmRequestButton">Confirm</button>
     <button id="denyRequestButton">Deny</button>
