@@ -430,7 +430,7 @@ div.bike-frame section {
   background-color: red;
   border: none;
 }
-// BIKES SIGNUP PAGE
+// SIGNUP PAGE
 
 .signup {
   top: 20vh;
@@ -470,10 +470,14 @@ div.bike-frame section {
   width: 14vw;
 }
 .signupAddress select{
-  height: 6vh;
+  height: 4.5vh;
   width: 6vw;
   margin-top: 2vh;
   font-size: 1.5em;
+}
+.signupAddress select {
+  margin-top: 13px;
+  width: 120px;
 }
 .signup input[type=submit]{
   background: #4c96d7;
@@ -769,9 +773,9 @@ margin-right: 2.75vw;
 
 // Confirm Request Approval Popup Window
 
-// .no-margin {
-//   margin: 0;
-// }
+.no-margin {
+  margin: 0;
+}
 //
 // .bottom-margin {
 //   margin: 0;
@@ -939,4 +943,32 @@ button {
 #deleteCancel {
   background: #FF4F51;
   color: white;
+}
+
+// Request AuthOption window
+
+.authoption {
+  top: 30vh;
+  left: 31vw;
+  width: 35vw;
+  height: 20vh;
+  padding: 20px;
+}
+
+div.authoption-btn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 26px;
+}
+
+button {
+  &.authoption-btn {
+  width: 30%;
+  margin-left: 15px;
+  color: white;
+  background-color: #4c96d7;
+  }
+  &.margin-right {
+    margin-right: 23px;
+  }
 }

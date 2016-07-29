@@ -23,6 +23,10 @@ app.factory('HitchBikeService', function($http, $location) {
       updateRequest.message = message;
       return $http.post('/api/confirmrequest/' + id, updateRequest);
     },
+    deleteRequest: function(id) {
+      console.log('deleteinadslj a');
+      return $http.get('/api/deleterequest/' + id);
+    },
     users: function() {
       return $http.get('/api/users');
     },

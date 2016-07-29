@@ -52,6 +52,12 @@ app.directive('requestBike', function() {
     templateUrl: 'javascripts/directives/partials/popup-request.html'
   }
 })
+app.directive('authOption', function() {
+  return {
+    restrict: 'E',
+    templateUrl: 'javascripts/directives/partials/popup-authoption.html'
+  }
+})
 app.directive('signUp', function() {
   return {
     restrict: 'E',
