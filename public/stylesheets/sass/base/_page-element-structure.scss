@@ -175,12 +175,12 @@ main.bikes {
 #bikeInfo input[type=button]{
   background: green;
   width: 15vw;
-  font-size: 1.4em;
+  font-size: 1.75em;
   color: white;
   text-align: center;
-  padding-bottom: 5vh;
-  padding-right: 6.5vw;
-  padding-left: 3vw;
+  padding-bottom: 6vh;
+  padding-right: 6.75vw;
+  padding-left: 2vw;
   float: right;
   float: bottom;
   max-top: 10vh;
@@ -642,7 +642,7 @@ div.bike-frame section {
   border-style: solid;
   border-width: .5px;
   width: 59vw;
-  height: 86vh;
+  height: 87vh;
   margin: auto;
   margin-top: 2vh;
   padding: 18px;
@@ -652,6 +652,7 @@ div.bike-frame section {
 .addBike h5{
   margin-bottom: 3px;
 }
+
 .addBike input[type=text]{
   width: 25vw;
   height: 6vh;
@@ -660,9 +661,10 @@ div.bike-frame section {
   padding-left:10px;
 }
 .addBike select {
-  height: 5vh;
-  width: 18vw;
+  height: 6vh;
+  width: 20vw;
   margin-top: .25vh;
+  font-size: 1.5em;
 }
 .addBike h1{
   margin-top: 5px;
@@ -674,7 +676,8 @@ div.bike-frame section {
 }
 #pickupins {
   height: 11vh;
-  width: 28vw
+  width: 28vw;
+  padding: 0 0 8vh 0;
 }
 #addbikecancel{
   background: #FF4F51;
@@ -706,6 +709,7 @@ div.bike-frame section {
   height: 12vh;
   width: 54.75vw;
   margin-bottom: 1.5vh;
+  padding: 0 0 8vh 0;
 }
 #addbikeButtons input{
   width: 15vw;
