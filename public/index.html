@@ -20,7 +20,7 @@
   <script type="text/javascript" src="javascripts/directives/directives.js"></script>
   <script type="text/javascript" src="javascripts/filters/filters.js"></script>
 </head>
-<body ng-controller="HitchBikeController">
+<body>
 
     <header class="masthead">
 
@@ -40,12 +40,11 @@
       <div class="header-filler">
       </div>
 
-    <div class="account-cta">
+    <div class="account-cta" ng-controller="HitchBikeController">
       <a ng-href="/#/signup" ng-click="openPopUp()" ng-show="!user && !view.onBikes">Sign Up</a>
       <a ng-href="/#/signin" ng-click="openPopUp()" ng-show="!user && !view.onBikes">Sign In</a>
       <a ng-href="/#/bikes/signup" ng-click="openPopUp()" ng-show="!user && view.onBikes">Sign Up</a>
       <a ng-href="/#/bikes/signin" ng-click="openPopUp()" ng-show="!user && view.onBikes">Sign In</a>
-      <!-- <a ng-href="/#/signout" ng-show="user">Sign Out</a> -->
       <a ng-href="/#/dashboard/{{user.id}}" ng-show="user" id="userDashLink">{{user.username}}'s Dashboard</a>
       <button ng-click="view.signOut()" ng-show="user" id="signOutButton">Sign Out</button>
 
