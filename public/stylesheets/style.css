@@ -297,8 +297,8 @@ div.bike-frame section {
   padding-bottom: 10px;
   border-bottom: 1px solid black; }
   .dashboardBikeFrame img {
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
     border: 1px solid black; }
 
 .dashboardBikeFrameContent {
@@ -833,12 +833,11 @@ div.inner-deny-request {
   margin-bottom: 0; }
 
 button.cancel-request {
-  width: 100%;
+  width: 30%;
   background-color: #3498DB;
   color: white;
   margin-left: 10px;
-  margin-bottom: 0;
-}
+  margin-bottom: 0; }
 button.deny-request {
   width: 20%;
   background-color: #D65858;

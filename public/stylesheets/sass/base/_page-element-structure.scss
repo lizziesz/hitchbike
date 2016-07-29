@@ -342,8 +342,8 @@ div.bike-frame section {
   padding-bottom: 10px;
   border-bottom: 1px solid black;
   img {
-    width: 150px;
-    height: 150px;
+    max-width: 150px;
+    max-height: 150px;
     border: 1px solid black;
   }
 }
