@@ -223,7 +223,10 @@ router.post('/api/updatebike', function(req, res, next) {
 router.get('/api/deletebike/:id', function(req, res, next) {
   console.log("DELETE");
   knex('bikes').where('id', req.params.id).delete().then(function(){
-    res.redirect('/');
+    knex('requested_bikes').where('bike_id', req.params.id).delete().then(function(){
+      res.redirect('/');
+    })
+
   });
 });
 
