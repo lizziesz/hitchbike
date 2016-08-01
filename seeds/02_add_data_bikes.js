@@ -3,6 +3,7 @@ exports.seed = function(knex, Promise) {
     knex('bikes').del(),
     // Inserts seed entries
     knex('bikes').insert({
+        id: 1,
         owner_id: 5,
         title: "Cool bike for rent!",
         description: 'The bike works great, check it out before it\'s gone',
@@ -20,6 +21,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53202'
     }),
     knex('bikes').insert({
+        id: 2,
         owner_id: 4,
         title: "Decent bike for rent",
         description: 'It squeaks but she\'ll get you where you\'re going',
@@ -37,6 +39,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '80435'
     }),
     knex('bikes').insert({
+        id: 3,
         owner_id: 3,
         title: 'Fine mountain bike',
         description: 'Roll down the mountains in style',
@@ -53,6 +56,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '19019'
     }),
     knex('bikes').insert({
+        id: 4,
         owner_id: 2,
         title: "Coolest bike on this site, without question.",
         description: 'This bike was manufactured in the forest by small gnomes. They worked tirelessly to complete this bike. They were paid, that\'s for sure. Good benefits. Really wonderful bike with no imperfections anywhere',
@@ -69,6 +73,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '80302'
     }),
     knex('bikes').insert({
+        id: 5,
         owner_id: 1,
         title: "Granny bike",
         description: "Slow, but proud",
@@ -86,6 +91,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '78209'
     }),
     knex('bikes').insert({
+        id: 6,
         owner_id: 6,
         title: "Road Rash",
         description: "This bike is only for the Xtreme rider, who lives an Xtreme lifestyle",
@@ -103,6 +109,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53202'
     }),
     knex('bikes').insert({
+        id: 7,
         owner_id: 7,
         title: "Beach Rider",
         description: "If you want to be coolest person at the beach than this is your ride.",
@@ -120,6 +127,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '13904'
     }),
     knex('bikes').insert({
+        id: 8,
         owner_id: 8,
         title: "Suburban Low Rider",
         description: "John Candy rode this bike on the set of Uncle Buck.",
@@ -137,6 +145,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '80456'
     }),
     knex('bikes').insert({
+        id: 9,
         owner_id: 9,
         title: "Majestic Beast",
         description: "Glide through the countryside like a stallion roaming the great plains of Wyoming.",
@@ -171,6 +180,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '78209'
     }),
     knex('bikes').insert({
+        id: 10,
         owner_id: 1,
         title: "Old Junker",
         description: "A little beat up but still rolls.",
@@ -188,6 +198,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53202'
     }),
     knex('bikes').insert({
+        id: 11,
         owner_id: 3,
         title: "Decent Mountain Bike",
         description: "Rarely used works great.",
@@ -205,6 +216,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53202'
     }),
     knex('bikes').insert({
+        id: 12,
         owner_id: 3,
         title: "City Bike",
         description: "Great for getting around Brew City",
@@ -222,6 +234,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53202'
     }),
     knex('bikes').insert({
+        id: 13,
         owner_id: 4,
         title: "Bike For Rent",
         description: "I never use it, why don't you?",
@@ -239,6 +252,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '78209'
     }),
     knex('bikes').insert({
+        id: 14,
         owner_id: 6,
         title: "Get Mobile",
         description: "Live life on two wheels",
@@ -256,6 +270,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '53212'
     }),
     knex('bikes').insert({
+        id: 15,
         owner_id: 7,
         title: "Survive the Apocolypse",
         description: "The end is near. Make sure your equiped to survive.",
@@ -273,6 +288,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '90005'
     }),
     knex('bikes').insert({
+        id: 16,
         owner_id: 4,
         title: "Teach your kid to ride",
         description: "They grow out of bikes in a few years. Don't buy!",
@@ -290,6 +306,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '80212'
     }),
     knex('bikes').insert({
+        id: 17,
         owner_id: 3,
         title: "Get Vintage With It",
         description: "Your going to look like a member of Happy Days",
@@ -307,6 +324,7 @@ exports.seed = function(knex, Promise) {
         zip_code: '78209'
     }),
     knex('bikes').insert({
+        id: 18,
         owner_id: 9,
         title: "Custom Made Masterpiece",
         description: "Why fit in when you can stand out.",
