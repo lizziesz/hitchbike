@@ -1,18 +1,18 @@
 <div class="popup-window signup" ng-show="view.popUp" id="signupDiv">
   <form ng-submit="view.signUp()" name="signUpForm">
     <h2>Sign Up</h2>
-    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" ng-maxlength="20">
+    <input type="text" name="username" ng-model="view.usernameSignup" placeholder="username" ng-maxlength="20" required>
 
-    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" ng-minlength="5">
+    <input type="password" name="password" ng-model="view.passwordSignup" placeholder="password" ng-minlength="5" required>
 
-    <input type="email" name="email" ng-model="view.emailSignup" placeholder="email">
-    <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address">
+    <input type="email" name="email" ng-model="view.emailSignup" placeholder="email" required>
+    <input type="text" name="street_address" ng-model="view.street_addressSignup" placeholder="street address" required>
 
   <div class="signupAddress">
-    <input type="text" name="city" ng-model="view.citySignup" placeholder="city" ng-minlength="4">
+    <input type="text" name="city" ng-model="view.citySignup" placeholder="city" required>
 
-    <select ng-model="view.stateSignup" >
-      <option ng-selected="true">ST</option>
+    <select ng-model="view.stateSignup" name="state" required>
+      <option ng-selected="true" value="" disabled>ST</option>
       <option value="AL">Alabama</option>
       <option value="AK">Alaska</option>
       <option value="AZ">Arizona</option>
@@ -66,15 +66,16 @@
       <option value="WY">Wyoming</option>
     </select>
 
-    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" ng-maxlength="5">
+    <input type="text" name="zip_code" ng-model="view.zip_codeSignup" placeholder="zip code" ng-maxlength="5" required>
 
   </div>
-  <div ng-hide = "signUpForm.zip_code.$valid" class="signupError">
+  <div ng-show="signUpForm.zip_code.$invalid && signUpForm.zip_code.$dirty" class="signupError">
   Please enter a five digit zip code.
   </div>
-  <div ng-hide="signUpForm.password.$valid" class="signupError">Your Password must be at least five characters.</div>
-  <div ng-hide="signUpForm.username.$valid" class="signupError">This field cannot be longer than twenty characters.</div>
-  <div ng-hide="signUpForm.city.$valid" class="signupError">Please enter a valid city.</div>
+  <div ng-show="signUpForm.state === 'ST'" class="signupError">Please enter a state.</div>
+  <div ng-show="signUpForm.password.$invalid && signUpForm.password.$dirty" class="signupError">Your Password must be at least five characters.</div>
+  <div ng-show="signUpForm.username.$invalid && signUpForm.username.$dirty" class="signupError">This field cannot be longer than twenty characters and is required.</div>
+  <div ng-show="signUpForm.city.$invalid && signUpForm.city.$dirty" class="signupError">Please enter a valid city.</div>
 
   <input type="submit" value="Submit">
 
