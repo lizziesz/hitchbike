@@ -19,8 +19,6 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
   });
 
   $scope.view.addBike = function(id) {
-    // console.log($scope.view.addBikeOwnerId);
-    console.log(id);
     HitchBikeService.addBike($scope.view.bikes, $scope.view.addBikeTitle, $scope.view.addBikeImage, $scope.view.addBikePriceday, $scope.view.addBikePricehour, $scope.view.addBikeType, $scope.view.addBikeCondition, $scope.view.addBikeInstructions, $scope.view.addBikeDescription, $scope.view.addBikeStreet_address, $scope.view.addBikeCity, $scope.view.addBikeState, $scope.view.addBikeZip_code, id);
     $location.path('/bikes');
     $window.location.reload();
@@ -78,14 +76,12 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
   }
 
   $scope.authPath = function() {
-    console.log($scope.view.onBikes);
     var path = $route.current.$$route.originalPath;
     if ( (path === '/bikes') || (path === '/bikes/authoption') || (path === '/bikes/signup') || (path === '/bikes/signin') ) {
       $scope.view.onBikes = true;
     } else {
       $scope.view.onBikes = false;
     }
-    console.log($scope.view.onBikes);
   }
 
   $scope.requestBike = function() {
@@ -94,7 +90,6 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
 
   $scope.openPopUp = function() {
     $scope.view.popUp = true;
-    console.log('open');
   }
 
   $scope.closePopUp = function() {
@@ -142,7 +137,6 @@ app.controller("HitchBikeController", ['$scope', 'HitchBikeService', '$location'
     else if (path === '/dashboard/mybikes/confirmaccept') {
       return $location.path('/dashboard/mybikes');
     }
-    console.log('closed');
   }
 
 }]);
@@ -151,12 +145,10 @@ app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$locatio
   $scope.view = {};
 
   HitchBikeService.searchBikes($routeParams.location).then(function(data) {
-    console.log(data);
     $scope.view.bikes = data.data;
   })
 
   HitchBikeService.requestedbikes().then(function(data) {
-    console.log(data);
     $scope.view.requestedBikes = data.data;
   });
 
@@ -174,7 +166,6 @@ app.controller("BikesSearchController", ['$scope', 'HitchBikeService', '$locatio
   }
 
   $scope.view.submitRequest = function(user_id, message, startDate, endDate) {
-    console.log("SUBMIT");
     HitchBikeService.submitRequest(user_id, $routeParams.id, $routeParams.ownerid, message, startDate, endDate);
     $location.path('/dashboard/' + user_id);
   }
@@ -185,12 +176,10 @@ app.controller("BikesSearchDateController", ['$scope', 'HitchBikeService', '$loc
   $scope.view = {};
 
   HitchBikeService.requestedbikes().then(function(data) {
-    // console.log(data);
     $scope.view.requestedBikes = data.data;
   });
 
   HitchBikeService.searchBikesDate($routeParams.location, $routeParams.startTime, $routeParams.endTime).then(function(data) {
-    // console.log(data);
     $scope.view.bikes = data.data;
   })
 
@@ -246,7 +235,6 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
 
 
   HitchBikeService.dashboardBikes($routeParams.id).then(function(data) {
-    console.log(data);
     $scope.view.bikes = data.data;
     $scope.view.myBikeCount = 0;
     for(var i=0; i<$scope.view.bikes; i++) {
@@ -286,31 +274,19 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
 
   HitchBikeService.userInfo($routeParams.id).then(function(data) {
     $scope.view.userData = data.data;
-    console.log($scope.view.userData);
-    // console.log(data);
   });
 
   $scope.view.updateAddress = function(id) {
-    console.log(id);
-    console.log(updateAddressForm.street_address.value);
     HitchBikeService.updateAddress(id, updateAddressForm.street_address.value, updateAddressForm.city.value, updateAddressForm.state.value, updateAddressForm.zip_code.value);
   }
 
   $scope.view.changeBikeAvailability = function(id, status) {
-    console.log(id);
     var newStatus = !status;
-    console.log(newStatus);
     HitchBikeService.updateBikeAvailability(id, newStatus);
     $window.location.reload();
   }
 
   $scope.view.updateBikeInfo = function(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code) {
-    console.log(id);
-    // console.log($scope);
-    // console.log(form);
-    // console.log(bike);
-    // console.log(updateBikeForm.title);
-    console.log(description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
     HitchBikeService.updateBikeInfo(id, title, description, instructions, type, condition, price_day, price_hour, street_address, city, state, zip_code);
     // .then(function(){
       $window.location.reload();
@@ -318,7 +294,6 @@ app.controller("dashboardController", ['$scope', 'HitchBikeService', '$routePara
   }
 
   $scope.view.deleteBike = function(id) {
-    console.log("DELETE");
     HitchBikeService.deleteBike(id);
     $window.location.reload();
   }
@@ -330,12 +305,10 @@ app.controller("requestController", ['$scope', 'HitchBikeService', '$routeParams
   $scope.view = {};
   $scope.view.popUp = true;
   HitchBikeService.requestsToConfirm($routeParams.id).then(function(data) {
-    console.log(data);
     $scope.view.requests = data.data;
   });
 
   $scope.view.updateRequest = function(message) {
-    // console.log(request_id);
     HitchBikeService.confirmRequest($routeParams.id, message);
     $window.location.reload();
   }

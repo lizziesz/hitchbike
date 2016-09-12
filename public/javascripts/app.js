@@ -106,12 +106,5 @@ app.config(function($routeProvider, $httpProvider){
 
     if (localStorage.jwt) {
       $rootScope.user = jwt_decode(localStorage.jwt);
-      console.log("USER: " + $rootScope.user);
     }
   });
-//
-//   self.parseJwt = function(token) {
-//   var base64Url = token.split('.')[1];
-//   var base64 = base64Url.replace('-', '+').replace('_', '/');
-//   return JSON.parse($window.atob(base64));
-// }
