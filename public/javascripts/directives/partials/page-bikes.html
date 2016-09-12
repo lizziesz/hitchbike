@@ -14,13 +14,8 @@
     <div class="bike-sort">
       <h2 class="filter-by">Filter By:</h2>
       <select ng-model="sortBy" class="form-control bike-sort">
-        <!-- <option value="">availability (soonest)</option>
-        <option value="">location (nearest)</option>
-        <option value="">location (farthest)</option> -->
         <option value="price_day">price (lowest $/day)</option>
         <option value="-price_day">price (highest $/day)</option>
-        <!-- <option value="">bike condition (best)</option>
-        <option value="">bike condition (worst)</option> -->
       </select>
     </div>
   </section>
@@ -59,7 +54,6 @@
             <input class="form-control" type="button" ng-show="!user.id" ng-click="openPopUp()" value="Request Bike" id="bikeButton">
           </a>
         </section>
-        <!-- <input class="form-control" type="button" ng-click="" value="Request Bike"> -->
       </div>
     </section>
   </section>

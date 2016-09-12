@@ -175,7 +175,7 @@ router.get('/api/userinfo/:id', function(req, res, next) {
   knex('users').where('id', req.params.id).then(function(data) {
     res.json(data);
   });
-});
+}); 
 
 router.post('/api/updateaddress/:id', function(req, res, next) {
   knex('users').where('id', req.params.id).update({
